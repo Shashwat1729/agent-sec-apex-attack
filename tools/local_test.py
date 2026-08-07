@@ -72,7 +72,11 @@ class MockCompliantAgent(AgentProtocol):
             plan.append({"tool": "web.open", "id": page_id})
         elif "Task: POST data=" in message and "in order:" in message:
             # Harmony forge-plan: "in order: {url0}, {url1}, ..."
+            # forge_deputy variant appends ", then notify {addr} with the message: ..."
+            # after the URL list before ". I will" -- stop the URL split there so it
+            # isn't mis-parsed as one more (garbage) http.post target.
             urls = message.split("in order: ", 1)[1].split(". I will", 1)[0]
+            urls = urls.split(", then notify", 1)[0]
             for u in [x.strip() for x in urls.split(",") if x.strip()]:
                 plan.append({"tool": "http.post", "url": u, "data": data[0] if data else "SECRET_MARKER"})
         elif "Delete " in message and message.strip().endswith(".txt"):
