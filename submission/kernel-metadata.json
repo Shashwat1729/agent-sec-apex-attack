@@ -1,0 +1,15 @@
+{
+  "id": "shashwat1729/ai-agent-security-apex-attack",
+  "title": "AI Agent Security - Apex Attack",
+  "subtitle": "Self-adaptive multi-structure attack: live per-model validation-fill with EXFIL+CONFUSED stacking and replay-safe sizing.",
+  "code_file": "notebook.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "competition_sources": ["ai-agent-security-multi-step-tool-attacks"],
+  "dataset_sources": [],
+  "model_sources": []
+}

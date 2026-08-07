@@ -1,0 +1,18 @@
+{
+  "id": "shashwat1729/apex-attack-real-model-validation",
+  "title": "Apex Attack - Real-Model Validation",
+  "subtitle": "Runs submission/attack.py against real GGUF gpt-oss/gemma via evaluate_redteam() for ground-truth fire-rate/latency data (not a competition submission).",
+  "code_file": "notebook.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "competition_sources": ["ai-agent-security-multi-step-tool-attacks"],
+  "dataset_sources": [],
+  "model_sources": [
+    "llkh0a/gpt-oss-20b-gguf/PyTorch/default/1",
+    "llkh0a/gemma-4-26b-a4b-it-ud-q4-k-m-gguf/PyTorch/default/1"
+  ]
+}

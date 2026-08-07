@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Local Claude Code project settings (session-specific, not shared)
+.claude/
+
+# Stale/redundant local SDK copy (comp_data/ is the current, kept copy)
+comp_data_old_backup/
+comp_data_fresh/
+comp_data/*.zip
+
+# Competition SDK fixture bank: synthetic-but-realistic-looking credential strings
+# (fake AWS/Stripe/DB keys used to test secret-detection logic) that trip secret
+# scanners (GitGuardian). Not real secrets, but not worth having in git history
+# either -- kept on local disk only, needed by tools/local_test.py at runtime.
+comp_data/aicomp_sdk/fixtures/
+
+# Scratch / transient pull-and-inspect output (regenerable via tools/*.py + kaggle CLI).
+# NOTE: kaggle_output*/ dirs are intentionally NOT ignored -- they are the only surviving
+# per-version snapshots of past attack.py pushes (this repo's git history starts 2026-08-07,
+# so these are pre-git backups; kaggle_output8/9 are confirmed v8/v9 sources, see README).
+scratch_*/
+
+# Large model weights / local venvs, if ever created here
+*.gguf
+venv/
+.venv/
+node_modules/
