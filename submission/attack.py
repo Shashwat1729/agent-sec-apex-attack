@@ -1,6 +1,20 @@
-"""Apex v25 agent-security attack algorithm.
+"""Apex v26 agent-security attack algorithm.
 
 Self-adaptive per-model structure race + replay-exact validation-fill.
+
+WHAT CHANGED IN v26 (isolated single-variable branch from v25, itself the
+combination of v21+v22's confirmed wins -- see v25's own history below):
+TOP_HEAD_START raised again, 80 -> 200. v19->v22 confirmed 30->80 was a
+huge real win (+4.84). TOP_HEAD_START sets how many guaranteed reps of the
+single eff-optimal structure open EVERY pass through fill_cycle, so as it
+grows, the effective fraction of ALL emitted candidates that are the single
+best structure asymptotically approaches 100% (bounded by how many "other"
+reps the rest of fill_pool contributes, which is a small roughly-fixed
+count set by the `6.0*eff*c` proportional-fill formula elsewhere in
+_search). This tests whether that asymptote is still being approached
+usefully at 200, or whether 80 was already close enough to it that further
+increases yield only marginal (or possibly slightly negative, if extreme
+concentration increases variance / hurts unique-cell diversity) returns.
 
 WHAT CHANGED IN v25 (combines the two CONFIRMED real-score wins from the
 v20-v24 isolated A/B batch, both branched from v19 independently): removes
@@ -341,9 +355,11 @@ CONFIRM_REPS = 3                # extra probes for the top-3 finalists (selectio
 RECHECK_EVERY = 12              # kept candidates between 8-hop drift re-checks of the top
 MAX_RECHECKS = 24               # cap the expensive re-checks so they never eat the budget
 FALLBACK_N = 400                # static bank when env cannot be probed
-TOP_HEAD_START = 80              # v25: confirmed real win from v22 (77.645 -> 82.485).
+TOP_HEAD_START = 200             # v26: pushed further from v25's 80, to probe whether the
+                                 # head-start asymptote (see module docstring) still has
+                                 # useful room, or whether 80 was already near it.
                                  # forge7_deputy removed below (v21's confirmed real win,
-                                 # 77.645 -> 79.755) -- v25 combines both.
+                                 # 77.645 -> 79.755) -- kept removed for v26 too.
 
 # --------------------------------------------------------------------------
 # Message templates.  Never contain send / email / upload (CONFUSED_DEPUTY rule).
