@@ -1,6 +1,24 @@
-"""Apex v31 agent-security attack algorithm.
+"""Apex v32 agent-security attack algorithm.
 
 Self-adaptive per-model structure race + replay-exact validation-fill.
+
+WHAT CHANGED IN v32 (combines v30 + v31, the two throughput-ceiling fixes
+from this same batch, previously tested in isolation off v29 for
+attribution): both changes are applied together -- the fill loop no longer
+uses `replay_cap` to stop early (v30), AND TOP-structure repeats with an
+already-established `fire_rate >= TRUST_SKIP_FIRE_RATE` skip their real
+1-hop verification probe (v31). The two target different, non-overlapping
+budgets (v30: the real REPLAY pass's throughput ceiling; v31: the
+GENERATION pass's throughput ceiling -- how many candidates we can even
+finish deciding to emit before generation's own wall-clock runs out), so
+they are expected to compound rather than trade off against each other: v31
+lets generation produce a LONGER candidate list within its wall-clock
+budget, and v30 stops that longer list from being needlessly truncated
+before replay's own (separate, real, un-gRPC'd) budget actually runs out.
+This is the "best combined bet" variant for this batch, submitted alongside
+the two isolated v30/v31 tests so all three remain independently
+attributable once real scores land (matches the v25-combines-v21+v22
+precedent from the previous batch).
 
 WHAT CHANGED IN v31 (isolated single-variable branch from v29, NOT stacked
 with v30 -- keeps v29's replay_cap-gated fill loop as-is; the two throughput
@@ -959,9 +977,9 @@ class AttackAlgorithm(AttackAlgorithmBase):
             if s["name"] in dropped:
                 continue
             st = s["st"]
-            next_replay = float(s["mean_cost"])
-            if replay_cost + next_replay + self._env_overhead >= replay_cap:
-                break
+            # v30: replay_cap is intentionally NOT used to stop the loop anymore --
+            # see the v30 docstring section for why. replay_cost/replay_cap are
+            # still tracked below purely for the diagnostic stderr line.
             # v31: a TOP-structure repeat with an already-established fire_rate
             # at/above TRUST_SKIP_FIRE_RATE skips its real 1-hop verification
             # probe entirely -- build the message directly instead of paying
