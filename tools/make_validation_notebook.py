@@ -28,9 +28,22 @@ ATTACK_PY = ROOT / "submission" / "attack.py"
 OUT_DIR = ROOT / "validation"
 OUT_NB = OUT_DIR / "notebook.ipynb"
 
-# Per-model validation budget. Kept short for fast iteration; raise once the
-# pipeline is confirmed working. Real submissions use 9000s.
-VALIDATION_BUDGET_S = 1200.0
+# Raised to match production (8750s) after a 2200s run revealed why a
+# shorter budget doesn't work here: eval_attack's replay phase (ops.py)
+# shares ONE fixed deadline across the whole candidate list and raises a
+# hard TimeoutError if it runs out mid-list (no graceful partial-result
+# self-truncation like the real jed_attack_gateway.py has) -- a known,
+# already-documented validation-harness-only limitation (see
+# [[project_sdk_rundiagnostics_stdout_bug]]-adjacent territory: ops.py's
+# _run_until_deadline is the same helper). Generation floods close to
+# MAX_CANDIDATES=2000 quickly regardless of budget_s (fill probes are only
+# 1 hop each), so replay always needs enough budget to get through nearly
+# the full list at the real per-candidate cost -- observed this session at
+# ~4.7-5.9s/candidate on real gpt-oss-20b/Gemma-4 GGUF (see
+# project_kaggle_apex_status.md's 2026-08-09 update), meaning ~2000
+# candidates need ~9400-11800s. Matching DEFAULT_BUDGET_S exactly gives
+# replay its best real shot at completing instead of hard-failing.
+VALIDATION_BUDGET_S = 8750.0
 
 HEADER_MD = """# Apex Attack -- Real-Model Validation (NOT a submission)
 
