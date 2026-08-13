@@ -16,9 +16,13 @@ ROOT = Path(__file__).resolve().parent.parent
 ATTACK_PY = ROOT / "submission" / "attack.py"
 OUT_NB = ROOT / "submission" / "notebook.ipynb"
 
-HEADER_MD = """# AI Agent Security - Multi-Step Tool Attacks (Apex Attack v48)
+HEADER_MD = """# AI Agent Security - Multi-Step Tool Attacks (Apex Attack v49)
 
 **Goal** \\u2014 maximize `mean(gpt_oss_public, gemma_public)` (each row = raw / 200, raw = \\u03a3 severity + 2\\u00d7unique cells).
+
+## v49: deliberate hedge -- v40 resubmitted byte-identical (pre-v45-pivot baseline)
+
+v45-v48 all bet on external evidence (a competitor's real hosted-run ablation showing multi-hop packing is a wash-to-negative, plus a primary-source report of a still-unfixed Gemma tool-call parser bug) that the forge2-forge8 multi-hop family is dead weight worth cutting. v49 is the 5th slot kept as a hedge: byte-identical to v40's logic, in case that evidence doesn't transfer cleanly to our exact pool/calibration mechanics for some unforeseen reason. If v45-v48 all beat v40's known ~87, this simply confirms the baseline; if the pivot has a flaw, this fallback still lands at the field's known ~87-89 ceiling.
 
 ## v48: v45 + v46 (THS=600) + v47 (SH_FINALISTS=3, CONFIRM_REPS=1) combined -- this batch's moonshot
 
