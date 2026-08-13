@@ -1,16 +1,18 @@
-"""Apex v47 agent-security attack algorithm.
+"""Apex v48 agent-security attack algorithm.
 
-WHAT CHANGED IN v47 (isolated single-lever addition on top of v45, NOT
-stacked with v46/v48): pushes calibration-overhead reduction further --
-SH_FINALISTS 4 -> 3 and CONFIRM_REPS 2 -> 1. This mirrors v37's more
-aggressive, previously-untested cut (v40 deliberately did NOT adopt it,
-keeping the safer step), now re-tested on the v45 trimmed pool where it is
-lower-risk: with only 5 structures total, successive halving barely trims
-at SH_FINALISTS=4 anyway (5 -> ceil(5/2)=3, floored at 4 -> effectively only
-ever cuts one structure), so tightening the finalist count and confirmation
-reps trades a small amount of selection precision for more real fill time
--- the same throughput-dominance direction that has been confirmed
-positive every time it's been tested (v21, v22, v27, v28, v29).
+WHAT CHANGED IN v48 (combines v46 + v47 on top of v45 -- the "moonshot" of
+this batch, mirroring v39's established pattern of stacking independently-
+plausible, different-axis levers): TOP_HEAD_START 300 -> 600 (v46, the
+fill-cycle-weighting axis) AND SH_FINALISTS 4 -> 3 / CONFIRM_REPS 2 -> 1
+(v47, the calibration-depth axis) together. These touch unrelated
+mechanisms (how much of the fill cycle the winning structure gets, vs. how
+much real time calibration spends finding/confirming it), so unlike v31's
+confirmed negative interaction with v30, there is no known reason for these
+two to fight each other -- both push the same direction (more real fill
+time, more of it spent on the single best structure). If both v46 and v47
+show real gains in isolation, this is the best single bet for compounding
+them; if either alone is flat or negative, this shows whether the other
+still carries the combination.
 
 
 Self-adaptive per-model structure race + replay-exact validation-fill.
@@ -564,10 +566,10 @@ SH_FINALISTS = 3                 # v47: further overhead cut (v40's 4 -> 3), iso
 RECHECK_EVERY = 12              # kept candidates between 8-hop drift re-checks of the top
 MAX_RECHECKS = 24               # cap the expensive re-checks so they never eat the budget
 FALLBACK_N = 400                # static bank when env cannot be probed
-TOP_HEAD_START = 300             # v40: matches v33's confirmed value (+3.925 over v29
-                                 # in isolation; the lever has shown no saturation yet
-                                 # across 30->80->200->300). v46 (this batch) isolates
-                                 # a push to 600 as its own separate test.
+TOP_HEAD_START = 600             # v48: v46's push (300->600) combined with v47's
+                                 # calibration cut below -- see the v48 module
+                                 # docstring section for why these two are expected
+                                 # to compound rather than fight.
 
 # --------------------------------------------------------------------------
 # Message templates.  Never contain send / email / upload (CONFUSED_DEPUTY rule).
