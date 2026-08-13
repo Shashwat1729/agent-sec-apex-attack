@@ -1,23 +1,22 @@
-"""Apex v41 agent-security attack algorithm.
+"""Apex v42 agent-security attack algorithm.
 
 Self-adaptive per-model structure race + replay-exact validation-fill.
 
-WHAT CHANGED IN v41 (isolated single-lever addition on top of v40, NOT
-stacked with v42/v43/v44 -- each of this batch's 4 new hypotheses gets its
-own clean test against the SAME v40 baseline): `SH_FINALISTS` 4 -> 2. This
-is v37's successive-halving-finalist-count cut, previously only tested
-bundled with v37's OTHER changes (pool trim + CONFIRM_REPS=1) on top of the
-OLD v34 baseline (which carried v31's confirmed drag) -- v37's own real
-score is still pending and, even once it lands, won't cleanly isolate this
-one lever from the other two v37 changes. v41 isolates it properly: halving
-down to only 2 survivors before the CONFIRM_REPS round means successive
-halving spends fewer total generation-side rounds/probes converging on a
-finalist set, freeing marginally more of generation's wall-clock budget --
-though per the v40 docstring's re-derived bottleneck model, generation was
-likely NOT the binding constraint (v31's near-null real effect is the
-direct evidence), so this is a low-downside, plausibly-near-null test in
-its own right, included mainly to get a clean real data point on whether
-SH_FINALISTS matters independently of v37's other changes.
+WHAT CHANGED IN v42 (isolated single-lever addition on top of v40, NOT
+stacked with v41/v43/v44): `TOP_HEAD_START` pushed further, 300 -> 600.
+Continues the dose-response curve on the single strongest confirmed lever
+in this project's history: 30->80 (v22, +4.84), 80->200 (v26, +2.58),
+80->300 (v33, +3.925) -- every step so far has been positive with gains
+shrinking but NOT reversing, i.e. no saturation point has been found yet.
+v42 tests whether 300->600 keeps paying off, has flattened, or has started
+reversing (over-concentration on one structure could eventually crowd out
+the small amount of pool diversity `fill_pool`/`deputy` contribute, or
+leave too little generation wall-clock for the periodic drift re-check to
+run -- `RECHECK_EVERY`/`MAX_RECHECKS` are unchanged, so at very high THS
+values the recheck could fire less often relative to total candidates
+emitted). Low implementation risk (one constant, mechanism unchanged);
+real informational value regardless of direction, since this is the
+furthest point on the dose-response curve tested yet.
 
 WHAT CHANGED IN v40 (the new working baseline, built directly from v29 +
 ONLY the two changes real 2026-08-13 data confirmed positive, explicitly
@@ -462,17 +461,16 @@ CONFIRM_REPS = 2                 # v40: one modest step in v28's confirmed-posit
                                  # per-structure "reps" value at all -- round count is fully
                                  # adaptive (see _search) -- so they'd be genuinely dead
                                  # constants, not just unused metadata.
-SH_FINALISTS = 2                 # v41: cut from v40/v29's 4, isolated test (see module
-                                 # docstring). Historical note, v29: successive halving stops eliminating once at most
+SH_FINALISTS = 4                 # v29: successive halving stops eliminating once at most
                                  # this many structures remain; those finalists then go
                                  # through the existing CONFIRM_REPS top-3 round unchanged.
 RECHECK_EVERY = 12              # kept candidates between 8-hop drift re-checks of the top
 MAX_RECHECKS = 24               # cap the expensive re-checks so they never eat the budget
 FALLBACK_N = 400                # static bank when env cannot be probed
-TOP_HEAD_START = 300             # v40: matches v33's confirmed value (+3.925 over v29
-                                 # in isolation; the lever has shown no saturation yet
-                                 # across 30->80->200->300). v42 (this batch) tests
-                                 # pushing further still, isolated on top of v40.
+TOP_HEAD_START = 600             # v42: push further still, 300 -> 600 (isolated test
+                                 # of whether the dose-response lever has saturated yet;
+                                 # see module docstring for the full 30->80->200->300
+                                 # trajectory, all confirmed positive so far).
 
 # --------------------------------------------------------------------------
 # Message templates.  Never contain send / email / upload (CONFUSED_DEPUTY rule).
