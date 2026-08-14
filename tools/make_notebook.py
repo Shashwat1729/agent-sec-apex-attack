@@ -16,21 +16,25 @@ ROOT = Path(__file__).resolve().parent.parent
 ATTACK_PY = ROOT / "submission" / "attack.py"
 OUT_NB = ROOT / "submission" / "notebook.ipynb"
 
-HEADER_MD = """# AI Agent Security - Multi-Step Tool Attacks (Apex Attack v55)
+HEADER_MD = """# AI Agent Security - Multi-Step Tool Attacks (Apex Attack v56)
 
 **Goal** \\u2014 maximize `mean(gpt_oss_public, gemma_public)` (each row = raw / 200, raw = \\u03a3 severity + 2\\u00d7unique cells).
 
-## REAL SCORES LANDED MID-BATCH, FALSIFYING THE v45 PIVOT (2026-08-14)
+## RESEARCH FORK: IS 130-140 REACHABLE? (2026-08-14) -- v56 REPLACES v53
 
-v45's structural pivot (trim the pool to 5 structures, drop forge2-forge8) was built on external evidence (a competitor writeup, a Gemma parser-bug report) claiming multi-hop packing is wash-to-negative. Real Kaggle scores contradict this on our own harness: v45=83.070, v46=77.490 (worst), v47=85.610, v48=84.650 -- ALL below both full-16-structure-pool runs, v39=88.140 and v49=88.525 (best). This is directionally consistent across all four v45 derivatives, not a single noisy point, so it reads as real signal. v52 (a pure fill-lever isolation test built on the now-falsified v45 base) was retired un-submitted and replaced by **v55**, which reruns the identical fill-lever change on the full v39 pool instead. v50/v51 (partial multi-hop reintroduction on the v45 base) are kept since they directly test recovery from the pivot.
+Asked to check for any undiscovered lever that could plausibly close the ~50pt gap between our confirmed ~88.5 real ceiling and the visible #1 leaderboard score (137.130). Read-only research across 18 extracted public notebooks, 7 discussion threads, and the organizer's own notes found NO technique anywhere scoring above ~90 -- no leaked guardrail logic, no new predicate-stacking trick, no larger budget than the confirmed 8750s/phase. The one arithmetically-consistent (inferred, not proven) explanation: back-solving the field's own `S_row ~= 0.09 x N_eff` against our ~88 mean implies we're already landing ~980 candidates/model -- gemma's row is close to its own ceiling near the 2000-candidate cap, but gpt_oss (the reasoning model, slower per-candidate) still tops out around ~34-45, well short of what a 137 mean would require (~94 on gpt_oss specifically, a 2x+ throughput jump on that one row). **v53 (v51+v52 combined) was retired un-submitted and replaced by v56**, which targets this specific row instead of testing a lower-marginal-value combination of two axes already tested in isolation elsewhere in this batch.
+
+## v56: low-hop-count x terse-wrapper combination, targeting gpt_oss-specific throughput headroom
+
+Adds `forge2_lean`/`forge3_lean`/`forge4_lean` -- combines two independently-validated components that had never been tested together: the terse `_forge_plan_lean` wrapper (v35's `forge8_lean`, which drops the preamble/trailer prose) and a low hop count (v50/v51's forge2-forge4 re-tests). Purely additive to the v39 full pool (isolated from v55's FILL_FRAC/MARGIN_S change so this lever is independently attributable); the existing self-adaptive per-model structure race decides live whether these new arms are worth using, so a wrong bet costs only a little wasted calibration overhead, not a real regression. Consistent with prior research noting a real, currently-scored public notebook ("JED - Slow multipost") reaches 86.605 using a forge-commitment multipost technique aimed specifically at the slow/reasoning row.
 
 ## v55: v52's fill-lever test (FILL_FRAC 0.97->0.985, MARGIN_S 47->35), rebased onto the v39 FULL pool
 
 v52 targeted a genuinely untouched axis -- how much of the generation-phase wall-clock budget gets used before `run()` returns (the organizer writeup's confirmed +4.3 "fill toward the replay cap" lever, applied on the correct side since `replay_cap` itself is vestigial since v30). Retired v52 tested this on the falsified v45 minimal pool; v55 reruns the exact same constants change on v39/v49's confirmed ~88-89 full-pool baseline, so the fill lever gets a clean isolated test against the actually-good base instead of a worse one.
 
-## v53: v51 (forge2/3/4 reintroduced) + v52 (tighter fill sizing) combined -- this batch's moonshot (built before the v45 falsification landed; kept as-is, still a valid test of whether partial reintroduction + fill sizing compound on the v45 base)
+## RETIRED, NOT SUBMITTED: v53 -- v51 (forge2/3/4 reintroduced) + v52 (tighter fill sizing) combined moonshot
 
-Combines the broader multipost re-test with the generation-phase wall-clock push, on the theory that they touch unrelated mechanisms (which structures are in the calibration pool vs. how much real time the fill loop gets) and shouldn't fight, mirroring how last batch's v48 moonshot combined THS+calibration-cut without negative interaction. Best single bet for compounding if both v51 and v52 show real signal in isolation.
+Superseded by v56 above. Kept here for history: this combined the broader multipost re-test with the generation-phase wall-clock push on the theory they touch unrelated mechanisms and shouldn't fight. Retired because it tests lower-marginal-information combinations of two axes (v51, v55) already tested in isolation elsewhere in this same batch, whereas v56 tests a genuinely new hypothesis.
 
 ## v52: v45 + tighter generation-phase wall-clock utilization (FILL_FRAC 0.97->0.985, MARGIN_S 47->35)
 
