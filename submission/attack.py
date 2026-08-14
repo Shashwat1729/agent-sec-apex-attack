@@ -1,14 +1,32 @@
-"""Apex v54 agent-security attack algorithm.
+"""Apex v55 agent-security attack algorithm.
 
-DELIBERATE HEDGE: byte-identical to v39's logic -- our current best REAL
-score (88.140, landed 2026-08-13), achieved on the OLD forge8-heavy pool
-(the whole family v45-v53 either removed or partially reintroduced based on
-external evidence gathered after v39 was designed). v50-v53 all bet that
-v45's pivot (or a partial reversal of it, per fresh research) beats v39;
-this hedge exists in case none of those bets clear v39's already-confirmed
-88.140 for some reason this batch's reasoning didn't anticipate. Replaces
-last batch's v49 hedge (v40, 87.075) now that v39 is a stronger confirmed
-real baseline.
+v55 REPLACES v52 IN THE 2026-08-15 BATCH -- v45's REAL SCORES CAME BACK
+BEFORE THIS BATCH'S PUSH AND FALSIFIED THE PIVOT HYPOTHESIS. All four v45-
+derived variants landed BELOW both full-16-structure-pool baselines:
+  v45 (5-struct minimal pool)                         = 83.070
+  v46 (v45 + THS 600)                                 = 77.490  (worst)
+  v47 (v45 + calibration cut)                         = 85.610
+  v48 (v45+v46+v47 combined)                          = 84.650
+  v39 (full 16-structure pool, THS=300)                = 88.140
+  v49 (full pool, byte-identical hedge resubmit)       = 88.525  (best)
+Every v45 derivative underperformed both full-pool runs by a consistent
+~3-11 points -- well outside the confirmed ~5pt rerun-variance band for the
+worst cases (v46), and directionally consistent across all four, so this
+reads as real signal, not noise: the external writeup's claim that
+forge2-forge8 multi-hop packing is "wash-to-negative" does NOT hold on our
+own harness/pipeline. v50/v51 (kept in this batch, built before this
+finding landed) still usefully test PARTIAL reintroduction on the weak
+v45 base. v52, however, was ONLY a fill-lever isolation test and gains
+nothing from sitting on a now-known-worse base -- so v52 is retired
+un-submitted and replaced by v55: the exact same FILL_FRAC/MARGIN_S push,
+rebased onto v39's full pool (this file), so the fill lever gets tested
+against the actually-good baseline instead of a falsified one.
+
+WHAT CHANGED IN v55 (isolated single-lever test on the v39 FULL pool, NOT
+v45's minimal one): FILL_FRAC 0.97->0.985, MARGIN_S 47.0->35.0. Otherwise
+byte-identical to v39/v49's already-confirmed ~88-89 baseline. Tests
+whether using more of the generation-phase wall-clock budget before
+returning adds real score on top of the confirmed-good full-pool baseline.
 
 Self-adaptive per-model structure race + replay-exact validation-fill.
 
@@ -476,8 +494,10 @@ REPLAY_BUDGET_S = 8750.0        # per-model per-guardrail-pass replay budget (wa
                                  # DEFAULT_BUDGET_S=8750.0, confirmed via jed_attack_gateway.py)
 REPLAY_SAFE_FRAC = 0.97         # returned-set replay cost cap fraction of the budget
 ENV_OVERHEAD_S = 0.25           # per-candidate env rebuild during replay
-FILL_FRAC = 0.97                # generation wall-clock cap fraction
-MARGIN_S = 47.0                 # flat ceiling for the adaptive margin
+FILL_FRAC = 0.985                # v55: pushed 0.97->0.985 (was v52's change, now
+                                 # rebased onto the FULL v39 pool instead of the
+                                 # falsified v45 minimal pool -- see docstring).
+MARGIN_S = 35.0                 # v55: pushed 47.0->35.0, same rationale as above.
 MARGIN_FLOOR_MIN = 4.0          # adaptive margin floor for a very fast model
 MARGIN_SLOWEST_COEF = 2.5       # ramps margin up as slowest grows
 SLOWEST_MULT = 1.35             # next-probe wall estimate multiplier
