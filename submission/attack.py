@@ -1,27 +1,25 @@
-"""Apex v62 agent-security attack algorithm.
+"""Apex v63 agent-security attack algorithm.
 
 MAJOR FINDING (2026-08-16): v51's real score landed at 90.950, the new
 all-time best, using only 8 structures (v45's 5-structure minimal base +
-forge2/forge3/forge4 -- NOT forge5/forge6/forge8 or any of the forge8
-wrapper-diversification variants). This beats the sprawling 16-structure
-v39/v49/v54 pool (88.140-90.445) while calibrating roughly HALF as many
-arms. The staircase across this batch's own data is the real evidence:
+forge2/forge3/forge4 -- NOT forge5/forge6/forge8 or any forge8 wrapper
+variant). This beats the sprawling 16-structure v39/v49/v54 pool
+(88.140-90.445) while calibrating roughly HALF as many arms:
   v45 (no forge2-8 at all)             = 83.070
   v50 (+forge2 only)                   = 83.490  (barely moves)
   v51 (+forge2, forge3, forge4)        = 90.950  (huge jump, new best)
-This strongly suggests the sweet spot is capping multi-hop structures at
-N<=4 and dropping forge5/forge6/forge8/all wrapper variants entirely -- a
-more precise version of the original "wash-to-negative" external claim
-than either extreme (v45's cut-everything pivot, or v39's keep-everything
-pool) got right.
+Strong evidence the sweet spot is capping multi-hop structures at N<=4 and
+dropping forge5/forge6/forge8/all wrapper variants entirely.
 
-WHAT CHANGED IN v62 (isolated single-lever test on TOP of v51's winning
-8-structure pool, unchanged otherwise): pushes TOP_HEAD_START 300->450,
-the same lever independently confirmed positive on the v39 lineage (v33,
-v22 wins) and re-tested at this same value in v59 on the OLD (larger, now
-known-inferior) pool. Testing it here, on the actually-best-known base,
-answers whether the head-start-flooding lever compounds with the newly
-discovered pool-composition win.
+WHAT CHANGED IN v63 (isolated single-lever test on TOP of v51's winning
+8-structure pool, untangled from v62's TOP_HEAD_START change): re-applies
+the fill-lever push (FILL_FRAC 0.97->0.985, MARGIN_S 47->35) that landed
+inconclusive on the OLD (larger, now known-inferior) v39 pool in v55
+(88.325, inside the baseline noise band). Testing it here, on the actually-
+best-known base, checks whether the wall-clock-utilization lever compounds
+with the newly discovered pool-composition win -- a smaller pool means
+each fill-cycle pass is cheaper, so there may be more real budget-slack
+for this lever to spend productively than there was on the bloated pool.
 
 Self-adaptive per-model structure race + replay-exact validation-fill.
 
@@ -545,8 +543,9 @@ REPLAY_BUDGET_S = 8750.0        # per-model per-guardrail-pass replay budget (wa
                                  # DEFAULT_BUDGET_S=8750.0, confirmed via jed_attack_gateway.py)
 REPLAY_SAFE_FRAC = 0.97         # returned-set replay cost cap fraction of the budget
 ENV_OVERHEAD_S = 0.25           # per-candidate env rebuild during replay
-FILL_FRAC = 0.97                # generation wall-clock cap fraction
-MARGIN_S = 47.0                 # flat ceiling for the adaptive margin
+FILL_FRAC = 0.985                # v63: v55's fill-lever push, re-applied on top of
+                                 # v51's newly-discovered best-known pool.
+MARGIN_S = 35.0                 # v63: same push as above, same rationale.
 MARGIN_FLOOR_MIN = 4.0          # adaptive margin floor for a very fast model
 MARGIN_SLOWEST_COEF = 2.5       # ramps margin up as slowest grows
 SLOWEST_MULT = 1.35             # next-probe wall estimate multiplier
@@ -570,9 +569,10 @@ SH_FINALISTS = 4                 # v29: successive halving stops eliminating onc
 RECHECK_EVERY = 12              # kept candidates between 8-hop drift re-checks of the top
 MAX_RECHECKS = 24               # cap the expensive re-checks so they never eat the budget
 FALLBACK_N = 400                # static bank when env cannot be probed
-TOP_HEAD_START = 450             # v62: pushed further, 300->450, on top of v51's
-                                 # newly-discovered best-known 8-structure pool (see
-                                 # this file's own docstring).
+TOP_HEAD_START = 300             # v40: matches v33's confirmed value (+3.925 over v29
+                                 # in isolation; the lever has shown no saturation yet
+                                 # across 30->80->200->300). v42 (this batch) tests
+                                 # pushing further still, isolated on top of v40.
 
 # --------------------------------------------------------------------------
 # Message templates.  Never contain send / email / upload (CONFUSED_DEPUTY rule).
