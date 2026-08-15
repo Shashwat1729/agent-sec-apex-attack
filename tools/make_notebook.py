@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 ATTACK_PY = ROOT / "submission" / "attack.py"
 OUT_NB = ROOT / "submission" / "notebook.ipynb"
 
-HEADER_MD = """# AI Agent Security - Multi-Step Tool Attacks (Apex Attack v59)
+HEADER_MD = """# AI Agent Security - Multi-Step Tool Attacks (Apex Attack v61)
 
 **Goal** \\u2014 maximize `mean(gpt_oss_public, gemma_public)` (each row = raw / 200, raw = \\u03a3 severity + 2\\u00d7unique cells).
 
