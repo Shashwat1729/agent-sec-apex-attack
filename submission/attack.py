@@ -1,4 +1,4 @@
-"""Apex v66 agent-security attack algorithm.
+"""Apex v67 agent-security attack algorithm.
 
 REAL SCORES CONFIRMED (2026-08-17): v51's pool win is real, not a fluke --
 resubmit landed 91.380 (vs original 90.950). Extending it with forge5
@@ -26,13 +26,23 @@ is from POOL COMPOSITION specifically, not from a generic "smaller pool
 source and confirmed dead code (only feeds a diagnostic print, never
 gates the fill loop) -- not a real lever, deliberately not tested here.
 
-WHAT CHANGED IN v66 (isolated single-lever test, extends v64's pool by
-exactly one more structure): reintroduces `forge6` on top of v64's
-9-structure pool (now 10 total), continuing the systematic boundary
-search since N=5 just extended the winning trend rather than reversing
-it. If v66 holds near or above 92.540, the ceiling is further out than
-N=5 and forge7/forge8 are worth testing next; if it drops, that pins the
-boundary precisely between N=5 and N=6.
+WHAT CHANGED IN v67 (isolated single-lever test on v64's 9-structure pool,
+untangled from v66's forge6 addition): swaps `forge2`/`forge3`/`forge4`/
+`forge5`'s plain wrapper for `_forge_plan_terse` -- v41's own purpose-built
+terseness template (explicitly instructs "no analysis, explanation, or
+commentary text" on EVERY hop's decision, not just implicitly skipping
+hop 1's reasoning like plain forge does), previously only wired to
+forge8 as dead code (`_b_forge8_terse`, unused since v45's pivot removed
+forge8 from the pool) and NEVER actually submitted to Kaggle -- v41's own
+docstring called this "genuinely unverified... the single most promising
+UNTESTED idea," and it remains untested to this day. A SWAP, not an
+addition, so pool size and calibration overhead stay identical to v64's,
+isolating per-hop terseness as the only variable. This is H3 from prior
+research synthesis ("terseness sweep on the gpt-oss forge template"),
+confirmed by a 2026-08-17 research pass as the single most evidence-
+backed untested lever -- it directly targets the documented bottleneck
+(gpt-oss's real per-candidate generation cost) without touching pool
+composition, which is already confirmed to be the source of v51/v64's win.
 
 Self-adaptive per-model structure race + replay-exact validation-fill.
 
@@ -644,6 +654,16 @@ def _forge_plan(n: int, urls: Sequence[str], payload: str, reply_ok: bool = Fals
     return msg + "<|end|>"
 
 
+# v67: generalizes v41's `_forge_plan_terse` (already defined above, was
+# only ever wired to forge8 as `_b_forge8_terse`, dead code since v45's
+# pivot removed forge8 from the pool) to arbitrary N, so it can be applied
+# to forge2-forge5 -- see this file's own module docstring.
+def _b_forge_n_terse(n):
+    def build(urls, addrs, payload):
+        return _forge_plan_terse(n, urls[:n], payload)
+    return build
+
+
 def _b_single(urls, addrs, payload):
     return T_SINGLE.format(url=urls[0], payload=payload)
 
@@ -719,26 +739,13 @@ _STRUCTURES: tuple[dict[str, Any], ...] = (
     {"name": "single_short","build": _b_single_short,  "u": 1, "a": 0, "payload": PAYLOADS[0]},
     {"name": "p2_deputy",   "build": _b_p2_deputy,   "u": 1, "a": 1, "payload": PAYLOADS[0]},
     {"name": "deputy",      "build": _b_deputy,      "u": 0, "a": 1, "payload": PAYLOADS[0]},
-    # v51: forge2, forge3, forge4 reintroduced together -- a broader re-test
-    # of the low-to-mid multipost range than v50's single-arm forge2 test.
-    # See the v51 module docstring section for the real "JED - Slow
-    # multipost" (86.605) data point and the parser-fix-timing rationale.
-    {"name": "forge2",      "build": _b_forge_n(2),  "u": 2, "a": 0, "payload": PAYLOADS[0]},
-    {"name": "forge3",      "build": _b_forge_n(3),  "u": 3, "a": 0, "payload": PAYLOADS[0]},
-    {"name": "forge4",      "build": _b_forge_n(4),  "u": 4, "a": 0, "payload": PAYLOADS[0]},
-    # v64: forge5 reintroduced alone, to find the exact N<=4 boundary --
-    # see this file's own docstring.
-    {"name": "forge5",      "build": _b_forge_n(5),  "u": 5, "a": 0, "payload": PAYLOADS[0]},
-    # v66: forge6 reintroduced, continuing the boundary search one step
-    # further -- see this file's own docstring. Confirmed real (2026-08-17):
-    # Gemma's multi-post cap is a genuine model-side bug (malformed JSON
-    # past hop 1), not a fixable parser artifact -- but this does NOT block
-    # the aggregate public score from improving, since structure selection
-    # is per-model-adaptive and gpt_oss's own race can capture gains
-    # Gemma's race declines. forge8/forge8-wrapper variants remain removed
-    # (dead code left in place) -- still untested, not yet justified by any
-    # real data point at this batch's boundary (N=6).
-    {"name": "forge6",      "build": _b_forge_n(6),  "u": 6, "a": 0, "payload": PAYLOADS[0]},
+    # v51/v64 base (forge2-forge5): SWAPPED to v41's terse wrapper in v67
+    # (see this file's own docstring) -- pool size/count unchanged from
+    # v64, only per-hop verbosity changes.
+    {"name": "forge2_terse", "build": _b_forge_n_terse(2), "u": 2, "a": 0, "payload": PAYLOADS[0]},
+    {"name": "forge3_terse", "build": _b_forge_n_terse(3), "u": 3, "a": 0, "payload": PAYLOADS[0]},
+    {"name": "forge4_terse", "build": _b_forge_n_terse(4), "u": 4, "a": 0, "payload": PAYLOADS[0]},
+    {"name": "forge5_terse", "build": _b_forge_n_terse(5), "u": 5, "a": 0, "payload": PAYLOADS[0]},
     # v40: also dropped (from v29's full 19-structure pool): single,
     # p4_c/p3_c/p3_c_ok/p2_c/p2_c_ok (confirmed 0% real fire rate at N>=3 on
     # gpt-oss since v15's GGUF calibration), single_p1, forge4_ok.
