@@ -1,10 +1,18 @@
-"""Apex v80 agent-security attack algorithm.
+"""Apex v78 agent-security attack algorithm.
 
-v80 (2026-08-19/20, next-batch default, MOONSHOT): v64's exact 92.540 pool +
-v78's full forge6/7/8 boundary addition + a calibration-overhead cut
-(CONFIRM_REPS 2->1, SH_FINALISTS 4->3) combined. Part of the 2026-08-19 "5
-for 5:35am IST" batch (see v76's docstring for the full batch list). May be
-revised by hourly monitoring before the final push.
+v78 (2026-08-20 revised): SUPERSEDES the original v78 plan (forge6/7/8 pool
+addition, commit 7b0b853). Overnight real scores forced a reassessment:
+v72 (forge7 added, normal calibration) landed 81.415 (delta -11.125 vs v64's
+92.540) and v74 (calibration cut alone, no new structures) landed 82.240
+(delta -10.30) -- two INDEPENDENT confirmed-bad axes, either of which alone
+can crater the real score well outside the ~+-5 noise band. The original v78
+combined forge6+7+8 (carries the forge7 risk); dropped entirely rather than
+partially patched, since forge6 itself only showed a flat-to-negative -0.42
+in v66 and forge8 also underperformed (-4.17 in v73) -- there is currently
+NO confirmed-positive pool-expansion result past forge5. This revised v78 is
+a clean control resubmit of v64's exact 92.540 pool (byte-identical to v71,
+which itself landed 89.885 -- a second real anchor sample given v64's own
+true mean now looks closer to ~90-91 than to the single 92.540 high roll).
 
 MAJOR FINDING (2026-08-16): v51's real score landed at 90.950, the new
 all-time best, using only 8 structures (v45's 5-structure minimal base +
@@ -557,8 +565,9 @@ SLOWEST0 = 20.0                 # initial slowest cushion seed
 CALIB_HOPS = 8                  # calibration at the replay hop count (exact cost)
 PROBE_HOPS = 1                  # fill probes at 1 hop (exfil fires at hop 0)
 MIN_FIRE_RATE = 0.25            # structure must fire at least this often to be usable
-CONFIRM_REPS = 1                 # v80 (moonshot): same calibration-overhead cut as v74,
-                                 # stacked here with the full forge6/7/8 boundary pool.
+CONFIRM_REPS = 2                 # v40: one modest step in v28's confirmed-positive
+                                 # overhead-reduction direction (v25's 3 -> 2), not
+                                 # v37's more aggressive untested cut to 1.
                                  # (historical note, v29: back to v25's value (v28's cut to 2 is its own
                                  # separate, isolated test). CALIB_REPS/PRIME_REPS (from
                                  # v14-v28's flat per-structure rep counts) are removed:
@@ -566,13 +575,9 @@ CONFIRM_REPS = 1                 # v80 (moonshot): same calibration-overhead cut
                                  # per-structure "reps" value at all -- round count is fully
                                  # adaptive (see _search) -- so they'd be genuinely dead
                                  # constants, not just unused metadata.
-SH_FINALISTS = 3                 # v80 (moonshot): trimmed from v29's original 4, but less
-                                 # aggressively than v74/v75's cut to 2 -- with 12
-                                 # structures now in the pool (vs v74's 9), keeping one
-                                 # extra finalist slot before the confirmation round hedges
-                                 # against the larger pool needing slightly more
-                                 # discrimination than the leaner pools this cut was
-                                 # originally tuned on.
+SH_FINALISTS = 4                 # v29: successive halving stops eliminating once at most
+                                 # this many structures remain; those finalists then go
+                                 # through the existing CONFIRM_REPS top-3 round unchanged.
 RECHECK_EVERY = 12              # kept candidates between 8-hop drift re-checks of the top
 MAX_RECHECKS = 24               # cap the expensive re-checks so they never eat the budget
 FALLBACK_N = 400                # static bank when env cannot be probed
@@ -724,14 +729,6 @@ _STRUCTURES: tuple[dict[str, Any], ...] = (
     # v64: forge5 reintroduced alone, to find the exact N<=4 boundary --
     # see this file's own docstring.
     {"name": "forge5",      "build": _b_forge_n(5),  "u": 5, "a": 0, "payload": PAYLOADS[0]},
-    # v80 (moonshot): same full forge6/7/8 addition as v78, stacked here
-    # with the v74-style calibration-overhead cut below -- broader structure
-    # availability PLUS more budget freed up to actually exploit whichever
-    # one wins. Independent-axis combo (which structures exist vs. how much
-    # calibration overhead is spent), same reasoning as v75.
-    {"name": "forge6",      "build": _b_forge_n(6),  "u": 6, "a": 0, "payload": PAYLOADS[0]},
-    {"name": "forge7",      "build": _b_forge_n(7),  "u": 7, "a": 0, "payload": PAYLOADS[0]},
-    {"name": "forge8",      "build": _b_forge_n(8),  "u": 8, "a": 0, "payload": PAYLOADS[0]},
     # v45: forge6, forge8, and forge8_terse (the higher end of the
     # Harmony-forged multi-hop-packing family) REMAIN REMOVED -- forge5
     # above is v64's one-structure reintroduction to test the exact
