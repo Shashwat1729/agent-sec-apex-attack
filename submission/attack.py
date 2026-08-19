@@ -1,9 +1,10 @@
-"""Apex v77 agent-security attack algorithm.
+"""Apex v78 agent-security attack algorithm.
 
-v77 (2026-08-19/20, next-batch default): v64's exact 92.540 pool + a
-generation-side fill-budget squeeze (FILL_FRAC 0.97->0.99, MARGIN_S 47->40).
-Part of the 2026-08-19 "5 for 5:35am IST" batch (see v76's docstring for the
-full batch list). May be revised by hourly monitoring before the final push.
+v78 (2026-08-19/20, next-batch default): v64's exact 92.540 pool + forge6,
+forge7, AND forge8 all added together (12 structures total) -- see the pool
+comment below for the full rationale. Part of the 2026-08-19 "5 for 5:35am
+IST" batch (see v76's docstring for the full batch list). May be revised by
+hourly monitoring before the final push.
 
 MAJOR FINDING (2026-08-16): v51's real score landed at 90.950, the new
 all-time best, using only 8 structures (v45's 5-structure minimal base +
@@ -547,17 +548,8 @@ REPLAY_BUDGET_S = 8750.0        # per-model per-guardrail-pass replay budget (wa
                                  # DEFAULT_BUDGET_S=8750.0, confirmed via jed_attack_gateway.py)
 REPLAY_SAFE_FRAC = 0.97         # returned-set replay cost cap fraction of the budget
 ENV_OVERHEAD_S = 0.25           # per-candidate env rebuild during replay
-FILL_FRAC = 0.99                # v77: pushed from v64's 0.97 -- v69 tested a similar push
-                                 # (0.985) but on the TERSE-template pool (confirmed a
-                                 # different, worse-performing pool), so the fill-budget
-                                 # squeeze was never cleanly tested on the actual v64 plain
-                                 # pool. Partial-credit-on-timeout (confirmed mid-competition
-                                 # change, thread 733058) makes aggressive fill safer than
-                                 # the old all-or-nothing regime.
-MARGIN_S = 40.0                  # v77: down from v64's 47.0, paired with the FILL_FRAC
-                                 # push above -- same fill-budget-squeeze lever, not
-                                 # isolated from FILL_FRAC since both control the same
-                                 # generation-side wall-clock margin mechanism.
+FILL_FRAC = 0.97                # generation wall-clock cap fraction
+MARGIN_S = 47.0                 # flat ceiling for the adaptive margin
 MARGIN_FLOOR_MIN = 4.0          # adaptive margin floor for a very fast model
 MARGIN_SLOWEST_COEF = 2.5       # ramps margin up as slowest grows
 SLOWEST_MULT = 1.35             # next-probe wall estimate multiplier
@@ -729,6 +721,16 @@ _STRUCTURES: tuple[dict[str, Any], ...] = (
     # v64: forge5 reintroduced alone, to find the exact N<=4 boundary --
     # see this file's own docstring.
     {"name": "forge5",      "build": _b_forge_n(5),  "u": 5, "a": 0, "payload": PAYLOADS[0]},
+    # v78: forge6, forge7, forge8 ALL added together, unlike v72/v73's
+    # one-at-a-time isolated tests -- lets the self-adaptive eff-ranking
+    # (raw*fire_rate/cost) pick the true optimum N directly from real
+    # calibration data on THIS run, instead of us guessing one N ahead of
+    # time across separate submissions. Downside bounded the same way as
+    # any other pool addition: a losing structure simply gets eliminated by
+    # successive halving and never wins fill slots.
+    {"name": "forge6",      "build": _b_forge_n(6),  "u": 6, "a": 0, "payload": PAYLOADS[0]},
+    {"name": "forge7",      "build": _b_forge_n(7),  "u": 7, "a": 0, "payload": PAYLOADS[0]},
+    {"name": "forge8",      "build": _b_forge_n(8),  "u": 8, "a": 0, "payload": PAYLOADS[0]},
     # v45: forge6, forge8, and forge8_terse (the higher end of the
     # Harmony-forged multi-hop-packing family) REMAIN REMOVED -- forge5
     # above is v64's one-structure reintroduction to test the exact
