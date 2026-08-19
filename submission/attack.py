@@ -1,13 +1,9 @@
-"""Apex v76 agent-security attack algorithm.
+"""Apex v77 agent-security attack algorithm.
 
-v76 (2026-08-19/20, next-batch default): v64's exact 92.540 pool + TOP_HEAD_START
-pulled DOWN 300->150 -- see the constants-block comment below for the full
-rationale. Part of the 2026-08-19 "5 for 5:35am IST" batch prepared ahead of
-the next quota reset, alongside v77 (fill/replay budget squeeze), v78 (full
-forge6/7/8 boundary pool), v79 (replay-side budget squeeze), v80 (moonshot).
-This default set may be revised by hourly monitoring if v71-v75's real
-scores land before the push -- check this docstring's timestamp against the
-monitoring log before assuming it's still the final version.
+v77 (2026-08-19/20, next-batch default): v64's exact 92.540 pool + a
+generation-side fill-budget squeeze (FILL_FRAC 0.97->0.99, MARGIN_S 47->40).
+Part of the 2026-08-19 "5 for 5:35am IST" batch (see v76's docstring for the
+full batch list). May be revised by hourly monitoring before the final push.
 
 MAJOR FINDING (2026-08-16): v51's real score landed at 90.950, the new
 all-time best, using only 8 structures (v45's 5-structure minimal base +
@@ -551,8 +547,17 @@ REPLAY_BUDGET_S = 8750.0        # per-model per-guardrail-pass replay budget (wa
                                  # DEFAULT_BUDGET_S=8750.0, confirmed via jed_attack_gateway.py)
 REPLAY_SAFE_FRAC = 0.97         # returned-set replay cost cap fraction of the budget
 ENV_OVERHEAD_S = 0.25           # per-candidate env rebuild during replay
-FILL_FRAC = 0.97                # generation wall-clock cap fraction
-MARGIN_S = 47.0                 # flat ceiling for the adaptive margin
+FILL_FRAC = 0.99                # v77: pushed from v64's 0.97 -- v69 tested a similar push
+                                 # (0.985) but on the TERSE-template pool (confirmed a
+                                 # different, worse-performing pool), so the fill-budget
+                                 # squeeze was never cleanly tested on the actual v64 plain
+                                 # pool. Partial-credit-on-timeout (confirmed mid-competition
+                                 # change, thread 733058) makes aggressive fill safer than
+                                 # the old all-or-nothing regime.
+MARGIN_S = 40.0                  # v77: down from v64's 47.0, paired with the FILL_FRAC
+                                 # push above -- same fill-budget-squeeze lever, not
+                                 # isolated from FILL_FRAC since both control the same
+                                 # generation-side wall-clock margin mechanism.
 MARGIN_FLOOR_MIN = 4.0          # adaptive margin floor for a very fast model
 MARGIN_SLOWEST_COEF = 2.5       # ramps margin up as slowest grows
 SLOWEST_MULT = 1.35             # next-probe wall estimate multiplier
@@ -576,15 +581,10 @@ SH_FINALISTS = 4                 # v29: successive halving stops eliminating onc
 RECHECK_EVERY = 12              # kept candidates between 8-hop drift re-checks of the top
 MAX_RECHECKS = 24               # cap the expensive re-checks so they never eat the budget
 FALLBACK_N = 400                # static bank when env cannot be probed
-TOP_HEAD_START = 150             # v76: pulled DOWN from v64's 300 -- untested direction.
-                                 # The 30->80->200->300 dose-response was measured on the
-                                 # OLDER, larger (16-19 structure) pools where forcing one
-                                 # winner mattered more; v64's lean 9-structure pool with
-                                 # forge2-5 all genuinely competitive may not need as much
-                                 # forcing -- v62 (THS 450 on the pre-forge5 v51 pool)
-                                 # already showed pushing UP had turned flat/negative
-                                 # (91.165 vs v51's 91.380), so this tests the other
-                                 # direction on the current best pool instead.
+TOP_HEAD_START = 300             # v40: matches v33's confirmed value (+3.925 over v29
+                                 # in isolation; the lever has shown no saturation yet
+                                 # across 30->80->200->300). v42 (this batch) tests
+                                 # pushing further still, isolated on top of v40.
 
 # --------------------------------------------------------------------------
 # Message templates.  Never contain send / email / upload (CONFUSED_DEPUTY rule).
