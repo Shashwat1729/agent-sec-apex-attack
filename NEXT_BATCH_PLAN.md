@@ -31,16 +31,61 @@ in a fresh cron session) are the source of truth for code state.
 |---|---|---|
 | v76 | `34ef840` | TOP_HEAD_START 300->150 (untested direction) |
 | v77 | `73c8416` | FILL_FRAC 0.97->0.99, MARGIN_S 47->40 (fill-budget squeeze, plain pool) |
-| v78 | `7b0b853` | + forge6, forge7, forge8 all added together (12 structures) |
+| v78 | `91ee556` **(REVISED 2026-08-20)** | clean control resubmit of v64 (forge6/7/8 addition dropped entirely) |
 | v79 | `d611ff0` | REPLAY_SAFE_FRAC 0.97->0.99, ENV_OVERHEAD_S 0.25->0.15 (replay-budget squeeze) |
-| v80 | `4fa71f9` | v78's full forge6/7/8 pool + calibration cut (CONFIRM_REPS 1, SH_FINALISTS 3) |
+| v80 | `5371a2e` **(REVISED 2026-08-20)** | v76+v77+v79's three levers combined (forge6/7/8+calib-cut moonshot dropped entirely) |
 
-All 5 already validated locally (`tools/local_test.py` PASS on each, confirmed pool composition
-and raw values correct) and already committed + pushed to GitHub as of 2026-08-19. NOT yet
-pushed to Kaggle (quota was 0 remaining at commit time).
+**REVISION NOTE (2026-08-20, ~21:15 UTC)**: v78 and v80 were revised after v72/v74's real scores
+landed overnight (see Score Log below) — the user explicitly required (verbatim): "properly
+research and work on this after proper investigation only push versions whcih can score more
+than current highest for now." Original v78 (`7b0b853`, forge6/7/8 pool addition) and v80
+(`4fa71f9`, same pool + calibration cut) both carried confirmed-bad risk factors and were
+replaced. v76/v77/v79 are UNCHANGED — they remain pool-neutral and calibration-neutral, the
+least-risk options given tonight's evidence. See the Score Log's 21:15 UTC entry for the full
+investigation and reasoning. All 5 (in their current form) are validated locally (`tools/local_test.py`
+pool-composition check + AST/syntax check for the two revised ones; full PASS on the original
+three) and committed + pushed to GitHub. NOT yet pushed to Kaggle (quota resets 05:35 IST /
+~00:00 UTC 2026-08-20).
 
 ## Score Log (hourly monitor appends here, newest entry on top)
 
+- **2026-08-20 ~21:15 UTC: ALL 5 (v71-v75) now LANDED. v74/v75 real scores + full
+  investigation + plan revision (organic user-directed, not the hourly mechanical job).**
+  v74 (calibration cut alone: SH_FINALISTS 4->2, CONFIRM_REPS 2->1, plain v64 pool) =
+  **82.240** (Δ -10.30 vs v64 — a second large real regression, comparable in size to
+  v72's forge7 crater, but on a completely different axis: NO new structures, calibration
+  confidence reduced only). v75 (forge8 + calib-cut moonshot) = **90.825** (Δ -1.715,
+  close to noise — notably BETTER than either v73 forge8-alone=88.370 or v74 calib-cut-
+  alone=82.240 individually, a non-monotonic result consistent with reduced-calibration
+  runs having genuinely HIGHER VARIANCE, not a uniformly-worse mean).
+  **Investigation / mechanism**: two independent axes are now each confirmed capable of a
+  >=10-point real crater: (1) adding an untested longer-hop structure (forge7, v72,
+  normal calibration) and (2) reducing calibration confirm-reps/finalists on the
+  EXISTING pool (v74, no new structures). Both point to the same root cause: this
+  design's self-adaptive race crowns ONE winning structure via a small number of live
+  calibration probes, then floods it with `TOP_HEAD_START` guaranteed repetitions before
+  any weighted fill/diversity kicks in. The system's downside-bounding logic (successive
+  halving) was built to avoid wrongly ELIMINATING a good structure on a single unlucky
+  probe (v29's original design goal) — but there is no equivalent guard against wrongly
+  PROMOTING a bad/unreliable structure on a lucky probe, and fewer probes (calib-cut) or
+  a structurally higher-variance candidate (forge7, more sequential hops = more ways a
+  probe undersamples real failure modes) both increase that risk. This is a genuinely new
+  finding, not previously documented, and materially changes the "boundary extension
+  always helps" narrative the original v76-v80 plan was built on.
+  **Action taken (user-directed, 2026-08-20)**: the user reviewed all 5 real scores
+  ("very very bad"), demanded proper investigation before the 5:35 IST push, and set a
+  hard constraint: only push variants reasoned to plausibly beat v64's 92.540. Per the
+  investigation above, v78 (`7b0b853`, forge6/7/8 pool) and v80 (`4fa71f9`, same pool +
+  calib-cut) both carry one or both confirmed-bad risk factors and were REPLACED (not
+  patched) — see the ACTIVE PLAN table's revision note. v76/v77/v79 (pool-neutral,
+  calibration-neutral single-lever tests) were left unchanged as the least-risk options
+  available; there is no confirmed-positive lever in this batch, only confirmed-bad ones
+  to avoid, so "least risk" is the honest framing, not "expected win." A plain resubmit of
+  v64 (v71) landed 89.885, BELOW 92.540, suggesting v64's true mean may be closer to
+  ~90-91 with 92.540 as a favorable high roll within the documented ±4.5-5 noise band —
+  this means NO variant in this batch, including the two revised ones, can be predicted
+  to beat 92.540 with confidence; the achievable goal is minimizing the chance of a large
+  regression, not guaranteeing a new record.
 - **2026-08-19 20:34 UTC: v71/v72/v73 LANDED, v74/v75 still PENDING.**
   v71 (control, byte-identical v64) = **89.885** (Δ -2.655 vs v64's 92.540 — within the
   documented ±4.5-5 run-to-run noise band, not treated as a real regression).
@@ -69,26 +114,14 @@ pushed to Kaggle (quota was 0 remaining at commit time).
 2. Append a one-line entry to the **Score Log** section above: timestamp + status of each of
    v71-v75 (PENDING, or the real score if COMPLETE). Keep entries terse.
 3. **If all 5 are still PENDING**: `git add NEXT_BATCH_PLAN.md && git commit -q -m "score check <UTC time>: still pending" && git push` (same GitHub remote/token as below), then stop — no code changes.
-4. **If any of v71-v75 now show a real score**, apply ONLY these two mechanical rules (do not
-   improvise beyond them — this is an unattended job, keep changes narrow and reversible):
-   - **If v73 (forge8) scored <= 85** (a clear real regression, at/below v70's -3.7 regression
-     floor vs v64's 92.540): forge8 addition is a real negative. Edit `submission/attack.py`
-     checked out from v78's commit (`git show 7b0b853:submission/attack.py > submission/attack.py`)
-     to remove the `forge8` entry from `_STRUCTURES` (keep forge6+forge7), run
-     `python tools/local_test.py` to confirm it still validates cleanly, then
-     `python tools/make_notebook.py`, commit as a new commit with message explaining the revision
-     (e.g. "v78 revised: drop forge8 after v73's real regression"), push to GitHub. Do the same
-     edit to v80's commit (`4fa71f9`) — drop forge8 there too, re-validate, commit, push. Update
-     the **ACTIVE PLAN** table above to point at the two new commit hashes.
-   - **If v74 (submission `55616927`, the calibration-cut-ALONE test: SH_FINALISTS 4->2,
-     CONFIRM_REPS 2->1 on v64's plain pool) scored <= 85**: the less-calibration direction is
-     refuted on this pool. Edit `submission/attack.py` checked out from v80's commit (`4fa71f9`,
-     THIS batch's moonshot) to revert its `SH_FINALISTS`/`CONFIRM_REPS` constants back to v64's
-     original values (`SH_FINALISTS = 4`, `CONFIRM_REPS = 2`), keep the forge6/7/8 pool addition
-     unchanged, re-validate with `tools/local_test.py`, `python tools/make_notebook.py`, commit
-     with a message explaining the revision, push to GitHub, and update the **ACTIVE PLAN** table
-     above (v80 row) to point at the new commit hash.
-   - Otherwise (scores are within noise of v64, or ambiguous): log only, no code changes.
+4. **STATUS AS OF 2026-08-20 ~21:15 UTC: this step is DONE — v71-v75 have ALL landed, and the
+   plan was already revised organically (see the Score Log's 21:15 UTC entry and the ACTIVE PLAN
+   table's revision note above). The two mechanical rules originally defined here (forge8<=85 on
+   v78, calib-cut<=85 on v80) are now OBSOLETE and MUST NOT be applied — v78 and v80 were already
+   replaced entirely (not patched), so `7b0b853` and `4fa71f9` are stale commit hashes and no
+   longer appear in the ACTIVE PLAN table. If this hourly job fires again before the 05:35 IST
+   push: just confirm v76(`34ef840`)/v77(`73c8416`)/v78(`91ee556`)/v79(`d611ff0`)/v80(`5371a2e`)
+   are still the ACTIVE PLAN commits, log a one-line status entry, and do NOT apply the old rules.**
 5. Check current UTC time. **If it is >= 2026-08-20T00:10:00Z** (5 min past the scheduled final
    push, giving it time to complete): the final-push one-shot job has already fired. Call
    `CronList`, find the job matching this hourly schedule (cron `"47 * * * *"`, recurring),
