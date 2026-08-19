@@ -41,6 +41,22 @@ pushed to Kaggle (quota was 0 remaining at commit time).
 
 ## Score Log (hourly monitor appends here, newest entry on top)
 
+- **2026-08-19 20:34 UTC: v71/v72/v73 LANDED, v74/v75 still PENDING.**
+  v71 (control, byte-identical v64) = **89.885** (Δ -2.655 vs v64's 92.540 — within the
+  documented ±4.5-5 run-to-run noise band, not treated as a real regression).
+  v72 (+forge7) = **81.415** (Δ -11.125 vs v64 — a large, real regression, well outside noise).
+  v73 (+forge8) = **88.370** (Δ -4.17 vs v64 — below baseline but ABOVE the mechanical-rule
+  trigger threshold of <=85, so per the rules below, NO code change applies).
+  **Mechanical rule check**: v73's forge8-regression rule (trigger <=85) — NOT triggered
+  (88.370 > 85). v74's calibration-cut rule — not yet evaluable, still PENDING. No code changes
+  made this cycle, staying within the two authorized mechanical rules only.
+  **Not actioned (out of scope for the two mechanical rules, flagging for human/final-push
+  awareness only): v72's forge7-alone result is a large real regression (-11.125), and it is
+  NOT covered by either mechanical rule (those only cover forge8-alone and calibration-cut-alone).
+  The queued v78 and v80 in the ACTIVE PLAN table both include forge7 (alongside forge6/forge8) —
+  this new data point is relevant context for whoever runs the final push, but this hourly job is
+  intentionally not authorized to revise v78/v80 on this basis, only on the two explicit triggers
+  above.**
 - 2026-08-19 19:34 UTC: v71-v75 all `SubmissionStatus.PENDING`, no scores yet.
 - 2026-08-19 18:34 UTC: v71-v75 all `SubmissionStatus.PENDING`, no scores yet.
 - 2026-08-19 ~17:35 UTC (initial): v71-v75 all `SubmissionStatus.PENDING`, no scores yet.
