@@ -1,16 +1,15 @@
-"""Apex v72 agent-security attack algorithm.
+"""Apex v73 agent-security attack algorithm.
 
-v72 (2026-08-19): v64's exact 92.540 pool (real-money best) + ONE isolated
-addition, `forge7` -- one more rung of the boundary-extension pattern that
-has been the only lever in this project's whole 70+ version history to
-produce large, repeated, CONFIRMED real gains when tried (v45->v51 adding
-forge2/3/4: +7.88; v51->v64 adding forge5: +1.16). v66's forge6 add landed
-flat/slightly negative (92.120 vs 92.540, -0.42, within noise), leaving it
-genuinely ambiguous whether N=6 was a true plateau or just noise on that
-specific run -- forge7 is a clean, single-variable retest of the next rung.
-Self-adaptive eff-ranking (raw*fire_rate/cost) means downside is bounded:
-if forge7 is worse than the existing pool, calibration simply stops
-selecting it for fill.
+v73 (2026-08-19): v64's exact 92.540 pool + ONE isolated addition, `forge8`
+-- skips straight to the max hop count (8 == max_tool_hops) rather than one
+more incremental rung past forge5/6/7. Rationale: the 2026-08-08 real-GGUF
+validation-kernel calibration (in-process, not the real gRPC generation
+path, so not conclusive on its own) measured forge8 specifically at only
+4.7-5.9s/candidate with raw 100-130 on BOTH models -- the single strongest
+piece of prior evidence in this project for a large per-candidate win, if
+that cost-cheapness holds on the real Kaggle path. Isolated from v72's
+forge7 and v74's calibration cut so each lever stays independently
+attributable. Self-adaptive eff-ranking bounds the downside the same way.
 
 MAJOR FINDING (2026-08-16): v51's real score landed at 90.950, the new
 all-time best, using only 8 structures (v45's 5-structure minimal base +
@@ -727,11 +726,14 @@ _STRUCTURES: tuple[dict[str, Any], ...] = (
     # v64: forge5 reintroduced alone, to find the exact N<=4 boundary --
     # see this file's own docstring.
     {"name": "forge5",      "build": _b_forge_n(5),  "u": 5, "a": 0, "payload": PAYLOADS[0]},
-    # v72: forge7 added, one more rung past forge5/forge6 -- isolated single
-    # new arm on the confirmed-best v64 pool (forge6 was flat/slightly down
-    # in v66, +/-0.4, within noise; this tests whether that was truly a
-    # plateau or just noise on that particular rung).
-    {"name": "forge7",      "build": _b_forge_n(7),  "u": 7, "a": 0, "payload": PAYLOADS[0]},
+    # v73: forge8 added -- the max hop count (8 == max_tool_hops), skipping
+    # straight to the end of the boundary-extension curve rather than one
+    # more incremental rung. 2026-08-08 real-GGUF calibration data (in-
+    # process validation kernel, not the real gRPC path) measured forge8 at
+    # only 4.7-5.9s/candidate with raw 100-130 on both models -- the
+    # strongest single piece of prior evidence for a large per-candidate
+    # raw win in this pool, if that cost-cheapness holds on the real path.
+    {"name": "forge8",      "build": _b_forge_n(8),  "u": 8, "a": 0, "payload": PAYLOADS[0]},
     # v45: forge6, forge8, and forge8_terse (the higher end of the
     # Harmony-forged multi-hop-packing family) REMAIN REMOVED -- forge5
     # above is v64's one-structure reintroduction to test the exact
