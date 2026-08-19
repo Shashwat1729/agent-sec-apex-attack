@@ -1,18 +1,19 @@
-"""Apex v78 agent-security attack algorithm.
+"""Apex v80 agent-security attack algorithm.
 
-v78 (2026-08-20 revised): SUPERSEDES the original v78 plan (forge6/7/8 pool
-addition, commit 7b0b853). Overnight real scores forced a reassessment:
-v72 (forge7 added, normal calibration) landed 81.415 (delta -11.125 vs v64's
-92.540) and v74 (calibration cut alone, no new structures) landed 82.240
-(delta -10.30) -- two INDEPENDENT confirmed-bad axes, either of which alone
-can crater the real score well outside the ~+-5 noise band. The original v78
-combined forge6+7+8 (carries the forge7 risk); dropped entirely rather than
-partially patched, since forge6 itself only showed a flat-to-negative -0.42
-in v66 and forge8 also underperformed (-4.17 in v73) -- there is currently
-NO confirmed-positive pool-expansion result past forge5. This revised v78 is
-a clean control resubmit of v64's exact 92.540 pool (byte-identical to v71,
-which itself landed 89.885 -- a second real anchor sample given v64's own
-true mean now looks closer to ~90-91 than to the single 92.540 high roll).
+v80 (2026-08-20 revised): SUPERSEDES the original v80 moonshot plan
+(forge6/7/8 pool + calibration cut, commit 4fa71f9). That plan stacked BOTH
+of the two axes now confirmed independently harmful by overnight real
+scores: v72 (forge7 added, normal calibration) = 81.415 (-11.125 vs v64) and
+v74 (calibration cut alone, plain pool) = 82.240 (-10.30 vs v64) -- either
+alone can crater the score well outside noise, so stacking both was expected
+to compound the risk, not the upside. Dropped entirely. This revised v80 is
+instead a genuine "safe moonshot": all three pool/calibration-NEUTRAL budget
+levers from this batch (v76's TOP_HEAD_START pull-down, v77's fill-side
+squeeze, v79's replay-side squeeze) combined on v64's exact structure pool
+with v64's exact calibration settings untouched. None of the three
+individually adds new failure surface (no new structures, no calibration
+degradation) -- this tests only whether they compound safely, not whether
+new risk pays off.
 
 MAJOR FINDING (2026-08-16): v51's real score landed at 90.950, the new
 all-time best, using only 8 structures (v45's 5-structure minimal base +
@@ -554,10 +555,20 @@ REPLAY_BUDGET_S = 8750.0        # per-model per-guardrail-pass replay budget (wa
                                  # mirrors the DEFAULT_BUDGET_S change above, since the real
                                  # gateway's per-pass replay call now also uses budget_s=
                                  # DEFAULT_BUDGET_S=8750.0, confirmed via jed_attack_gateway.py)
-REPLAY_SAFE_FRAC = 0.97         # returned-set replay cost cap fraction of the budget
-ENV_OVERHEAD_S = 0.25           # per-candidate env rebuild during replay
-FILL_FRAC = 0.97                # generation wall-clock cap fraction
-MARGIN_S = 47.0                 # flat ceiling for the adaptive margin
+REPLAY_SAFE_FRAC = 0.99         # v80: replay-side squeeze (v79's lever), stacked here --
+                                 # caps how much of the measured-cost ledger is returned
+                                 # for replay; safer under the confirmed partial-credit-
+                                 # on-timeout regime (thread 733058) than the old
+                                 # all-or-nothing regime this fraction was tuned under.
+ENV_OVERHEAD_S = 0.15           # v80: down from v64's 0.25 (v79's lever, stacked) --
+                                 # per-candidate replay safety pad; tightening it raises
+                                 # how many candidates fit under the replay ledger.
+FILL_FRAC = 0.99                # v80: generation-side fill squeeze (v77's lever, stacked)
+                                 # -- up from v64's 0.97, same partial-credit-on-timeout
+                                 # reasoning as the replay-side squeeze above.
+MARGIN_S = 40.0                  # v80: down from v64's 47.0 (v77's lever, stacked),
+                                 # paired with FILL_FRAC since both control the same
+                                 # generation-side wall-clock margin mechanism.
 MARGIN_FLOOR_MIN = 4.0          # adaptive margin floor for a very fast model
 MARGIN_SLOWEST_COEF = 2.5       # ramps margin up as slowest grows
 SLOWEST_MULT = 1.35             # next-probe wall estimate multiplier
@@ -581,10 +592,12 @@ SH_FINALISTS = 4                 # v29: successive halving stops eliminating onc
 RECHECK_EVERY = 12              # kept candidates between 8-hop drift re-checks of the top
 MAX_RECHECKS = 24               # cap the expensive re-checks so they never eat the budget
 FALLBACK_N = 400                # static bank when env cannot be probed
-TOP_HEAD_START = 300             # v40: matches v33's confirmed value (+3.925 over v29
-                                 # in isolation; the lever has shown no saturation yet
-                                 # across 30->80->200->300). v42 (this batch) tests
-                                 # pushing further still, isolated on top of v40.
+TOP_HEAD_START = 150             # v80: combined-levers moonshot, pulled down from
+                                 # v64's 300 (same untested direction as v76, stacked
+                                 # here rather than isolated -- v64's lean 9-structure
+                                 # pool may not need as much single-winner forcing as
+                                 # the older larger pools this value was originally
+                                 # tuned on).
 
 # --------------------------------------------------------------------------
 # Message templates.  Never contain send / email / upload (CONFUSED_DEPUTY rule).
