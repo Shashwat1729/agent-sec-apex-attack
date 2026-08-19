@@ -106,6 +106,20 @@ pushed to Kaggle (quota was 0 remaining at commit time).
    why, citing the Score Log), and honest non-inflated predicted-score ranges for each (follow
    the same reasoning style as the v71-v75 batch note already in that file — do not fabricate
    confidence beyond what real evidence supports).
+6b. **Update `D:\personal\hackathon\agent-sec\WORKING_NOTE.md`** (standing rule as of 2026-08-19:
+   every submission batch updates this file, it is a living document for the competition's
+   $2,500 Working Note Award — do this for every future batch, not just this one). At minimum:
+   (a) fill in real scores for v71-v75 into Section 2.3's ledger table (new rows: forge7 addition,
+   forge8 addition, calibration-cut-alone, the v75 moonshot — same "Confirmed real / Flat-noise /
+   Confirmed regression" framing already used, citing the actual delta vs v64's 92.540);
+   (b) replace Section 5 ("Current in-flight experiments") with the NEW v76-v80 batch just pushed,
+   moving today's now-resolved v71-v75 experiments into Section 2.3's table instead; (c) if the
+   hourly monitor revised the plan (forge8 or calibration-cut dropped/reverted), add one sentence
+   documenting that as its own real-evidence finding, exactly like the existing v68 row; (d) update
+   the executive summary's "current real public-LB best" figure ONLY if one of today's variants
+   actually beat 92.540 — leave it alone otherwise. Keep the honest, non-inflated tone throughout;
+   this document is judged on writing quality about real findings, not on how impressive the
+   numbers sound. Commit and push this file alongside the memory update, same git push.
 7. Delete this file's role as "active" by leaving it in place but note at the top
    "SUPERSEDED — batch completed 2026-08-20" (do not delete the file itself, it's a useful
    record) and commit that update too.
