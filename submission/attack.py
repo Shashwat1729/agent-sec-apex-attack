@@ -1,19 +1,16 @@
-"""Apex v71 agent-security attack algorithm.
+"""Apex v72 agent-security attack algorithm.
 
-v71 (2026-08-19): byte-identical to v64's exact winning source (the current
-real-money best, 92.540) -- resubmitted as a clean anchor/control for this
-batch. HEAD (v66-v70) had drifted from v64's pool via v67's terse-template
-swap (confirmed regression, 88.855) and v66's forge6 addition (flat/slightly
-negative, 92.120 vs 92.540) -- both carried forward into v70's 90.030. This
-resets to the last CONFIRMED-best state before the v72-v75 variants (below)
-each test one new, isolated, never-before-tried-on-THIS-pool lever. Also
-serves as a second real-score confirmation of v64's pool (a third data point
-after the original 92.540 and the earlier resubmit-consistency checks on
-v51's pool), and as extensive-source-verification insurance: a fresh 2026-
-08-19 read of the live SDK guardrail/predicate/tool source (optimal.py,
-predicates.py, cells.py, http.py, fs.py, email.py) found no code drift and
-no new exploitable primitive since the 2026-08-13/14 research pass -- this
-pool remains the correct, fully-verified best starting point.
+v72 (2026-08-19): v64's exact 92.540 pool (real-money best) + ONE isolated
+addition, `forge7` -- one more rung of the boundary-extension pattern that
+has been the only lever in this project's whole 70+ version history to
+produce large, repeated, CONFIRMED real gains when tried (v45->v51 adding
+forge2/3/4: +7.88; v51->v64 adding forge5: +1.16). v66's forge6 add landed
+flat/slightly negative (92.120 vs 92.540, -0.42, within noise), leaving it
+genuinely ambiguous whether N=6 was a true plateau or just noise on that
+specific run -- forge7 is a clean, single-variable retest of the next rung.
+Self-adaptive eff-ranking (raw*fire_rate/cost) means downside is bounded:
+if forge7 is worse than the existing pool, calibration simply stops
+selecting it for fill.
 
 MAJOR FINDING (2026-08-16): v51's real score landed at 90.950, the new
 all-time best, using only 8 structures (v45's 5-structure minimal base +
@@ -730,6 +727,11 @@ _STRUCTURES: tuple[dict[str, Any], ...] = (
     # v64: forge5 reintroduced alone, to find the exact N<=4 boundary --
     # see this file's own docstring.
     {"name": "forge5",      "build": _b_forge_n(5),  "u": 5, "a": 0, "payload": PAYLOADS[0]},
+    # v72: forge7 added, one more rung past forge5/forge6 -- isolated single
+    # new arm on the confirmed-best v64 pool (forge6 was flat/slightly down
+    # in v66, +/-0.4, within noise; this tests whether that was truly a
+    # plateau or just noise on that particular rung).
+    {"name": "forge7",      "build": _b_forge_n(7),  "u": 7, "a": 0, "payload": PAYLOADS[0]},
     # v45: forge6, forge8, and forge8_terse (the higher end of the
     # Harmony-forged multi-hop-packing family) REMAIN REMOVED -- forge5
     # above is v64's one-structure reintroduction to test the exact
