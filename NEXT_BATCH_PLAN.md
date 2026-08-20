@@ -45,19 +45,38 @@ composition and raw values confirmed correct on all 5, no tracebacks):**
 
 | Variant | Commit | What it tests |
 |---|---|---|
-| v81 | `1f181fc` | Rolling-window fix ALONE on v64's exact pool (no new structure) — isolates whether the mechanism itself is harmless/neutral |
-| v82 | `31a1e2d` **(revised)** | BOTH fixes (rolling-window + raw-floor) + forge6 reintroduced (v66 landed flat/-0.42 unprotected) |
-| v83 | `99f5b3f` **(revised)** | BOTH fixes + forge7 reintroduced (v72 landed 81.415/-11.1 unprotected — the strongest test, biggest crater = most to recover) |
-| v84 | `228b149` **(revised)** | BOTH fixes + forge8 reintroduced (v73 landed 88.370/-4.2 unprotected) |
-| v85 | `d26e4fe` | Raw-floor fix (+ rolling-window fix present but no new structure) ALONE on v64's pool — isolates the SEPARATE mechanism behind v74's crater |
+| v81 | `e9c4826` **(revised again)** | BOTH fixes + forge6, forge7, AND forge8 all together — the highest-upside bet, letting the protected race pick whichever structure actually performs best |
+| v82 | `31a1e2d` | BOTH fixes + forge6 reintroduced alone (v66 landed flat/-0.42 unprotected) |
+| v83 | `99f5b3f` | BOTH fixes + forge7 reintroduced alone (v72 landed 81.415/-11.1 unprotected — the strongest single-structure test, biggest crater = most to recover) |
+| v84 | `228b149` | BOTH fixes + forge8 reintroduced alone (v73 landed 88.370/-4.2 unprotected) |
+| v85 | `d26e4fe` | BOTH fixes present, NO new structure — the clean control this whole batch's interpretation depends on |
 
-**Revision note (same day, before push)**: v82/v83/v84 were upgraded to stack BOTH fixes (not
-just the fire-rate fix) after further review found the raw-floor fix is structurally near-inert
-for forge6/7/8 specifically — each is the highest-raw structure in its own pool by construction,
-so it trivially clears any reasonable floor. Stacking costs nothing in attribution clarity (a
-score change in these variants is still most plausibly the fire-rate fix's doing) while adding
-real insurance against the separate mis-promotion failure mode v85 targets. v81 and v85 remain
-the clean single-mechanism isolation tests.
+**Revision history**: v82/v83/v84 were upgraded to stack BOTH fixes (not just the fire-rate fix)
+after review found the raw-floor fix is structurally near-inert for forge6/7/8 specifically (each
+is the highest-raw structure in its own pool by construction, so it trivially clears any
+reasonable floor) — free insurance, zero attribution cost. v81 was then replaced a second time:
+the original "fire-rate fix alone, no new structure" control was redundant with v85 (which already
+covers "both fixes, no new structure" cleanly), so v81 was swapped for the highest-upside bet in
+the batch — see the v81 commit message for the full backward-reasoning-from-the-scoring-formula
+argument (raw_total ~ gen-budget/cost-per-candidate * raw-per-candidate; PROBE_HOPS=1 means real
+cost is plausibly ~fixed regardless of N, so higher raw-per-candidate is close to a free win once
+protected; forge8 cratering LESS than forge7 despite higher N cross-checks against a promotion-
+noise explanation rather than a cost-scales-with-N one).
+
+**Re-derived honest ranges (raw≈18,500 needed for 92.540, raw≈27,400 for 137, from
+`comp_data/aicomp_sdk/scoring.py`'s exact formula — normalized=(raw/200000)*1000)**:
+- v81 (all 3 + both fixes): 78-125 — widest range in the batch. Theoretical ceiling if the
+  mechanism fully works and the race lands mostly on forge8 (raw=130 vs forge5's 82, +59%) is
+  roughly 92.540*130/82≈147, but that assumes everything goes right; floor is still real-model-
+  unverified risk if the fix is wrong or insufficient.
+- v82: 84-100 (forge6's raw edge is smallest of the three, +19.5% over forge5)
+- v83: 80-115 (forge7, +39% raw edge, the single-structure test with the most room)
+- v84: 82-118 (forge8, +59% raw edge, single-structure)
+- v85: 87-96 (pure control, should track v64's own noise band)
+
+None of these ranges have a lower bound above 100 and none can honestly be stated to. This is not
+a target-matching exercise — it is the actual uncertainty given these fixes have never touched
+the real stochastic model. Report exactly what lands, don't round toward the desired outcome.
 
 All 5 validated locally, committed, NOT yet pushed to Kaggle (today's 5/5 quota was already used
 by the v76-v80 push). Push at the next quota reset (~05:35 IST / ~00:00 UTC), per the standing SOP.
