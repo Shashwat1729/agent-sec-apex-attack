@@ -1,3 +1,9 @@
+**SUPERSEDED — batch completed 2026-08-20.** All 5 (v76-v80) pushed to Kaggle 00:05-00:09 UTC /
+~05:35-05:39 IST, confirmed PENDING. Submission IDs: v76=55633976, v77=55634002, v78=55634044,
+v79=55634068, v80=55634077. Kernel versions 64-68. See
+`project_kaggle_apex_status.md` memory for the full final batch note (predicted-score ranges
+included). Kept in place as a historical record, not deleted.
+
 # Next Batch Plan (v76-v80) — prepared 2026-08-19, for the 2026-08-20 ~05:35 IST quota reset
 
 This file is the persistence layer for an unattended cron-driven workflow. It is read and
