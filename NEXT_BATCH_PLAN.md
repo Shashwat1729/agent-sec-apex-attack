@@ -46,10 +46,18 @@ composition and raw values confirmed correct on all 5, no tracebacks):**
 | Variant | Commit | What it tests |
 |---|---|---|
 | v81 | `1f181fc` | Rolling-window fix ALONE on v64's exact pool (no new structure) — isolates whether the mechanism itself is harmless/neutral |
-| v82 | `56d693f` | Rolling-window fix + forge6 reintroduced (v66 landed flat/-0.42 unprotected) |
-| v83 | `6b0e225` | Rolling-window fix + forge7 reintroduced (v72 landed 81.415/-11.1 unprotected — the strongest test, biggest crater = most to recover) |
-| v84 | `e8c5d8e` | Rolling-window fix + forge8 reintroduded (v73 landed 88.370/-4.2 unprotected) |
+| v82 | `31a1e2d` **(revised)** | BOTH fixes (rolling-window + raw-floor) + forge6 reintroduced (v66 landed flat/-0.42 unprotected) |
+| v83 | `99f5b3f` **(revised)** | BOTH fixes + forge7 reintroduced (v72 landed 81.415/-11.1 unprotected — the strongest test, biggest crater = most to recover) |
+| v84 | `228b149` **(revised)** | BOTH fixes + forge8 reintroduced (v73 landed 88.370/-4.2 unprotected) |
 | v85 | `d26e4fe` | Raw-floor fix (+ rolling-window fix present but no new structure) ALONE on v64's pool — isolates the SEPARATE mechanism behind v74's crater |
+
+**Revision note (same day, before push)**: v82/v83/v84 were upgraded to stack BOTH fixes (not
+just the fire-rate fix) after further review found the raw-floor fix is structurally near-inert
+for forge6/7/8 specifically — each is the highest-raw structure in its own pool by construction,
+so it trivially clears any reasonable floor. Stacking costs nothing in attribution clarity (a
+score change in these variants is still most plausibly the fire-rate fix's doing) while adding
+real insurance against the separate mis-promotion failure mode v85 targets. v81 and v85 remain
+the clean single-mechanism isolation tests.
 
 All 5 validated locally, committed, NOT yet pushed to Kaggle (today's 5/5 quota was already used
 by the v76-v80 push). Push at the next quota reset (~05:35 IST / ~00:00 UTC), per the standing SOP.
