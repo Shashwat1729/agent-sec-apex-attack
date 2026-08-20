@@ -1,18 +1,6 @@
-"""Apex v82 agent-security attack algorithm.
+"""Apex v83 agent-security attack algorithm.
 
-v82 (2026-08-20, NEW MECHANISM + reintroduced structure): v81's rolling-
-window live fire-rate safety valve (see below) PLUS forge6 reintroduced
-into the pool. v66 tested forge6 alone under the OLD protection (a
-6-consecutive-fail streak, provably too slow to react -- see the math in
-v81's section of this docstring) and landed flat/-0.42 vs v64. This variant
-isolates whether that flat result was forge6 genuinely having no edge, or
-its real value being silently eaten by wasted throughput because the old
-safety net couldn't react fast enough to a structure whose live fire rate
-undershoots its calibration sample. v81 (submitted alongside this, same
-batch) tests the mechanism ALONE with NO new structure, so if v81 lands
-flat/neutral vs v64 and v82 lands meaningfully better than v66's 92.120,
-that isolates the win to "the safety valve unlocked forge6," not "the
-mechanism itself is a free lunch."
+v83 (2026-08-20, NEW MECHANISM + reintroduced structure): v81's rolling-window live fire-rate safety valve (see MOTIVATION below) PLUS forge7 reintroduced into the pool. forge7 previously landed 81.415 (v72) (-11.1 vs v64) under the OLD, provably-too-slow safety net. This retests forge7 with the new, much-faster-reacting guard, to separate "forge7 itself has no real value" from "forge7's value was being silently eaten by wasted throughput because the old safety net could not react fast enough to a live fire rate below its calibration sample." v81 (same batch) tests the mechanism ALONE with no new structure, as the neutral-result control this variant's interpretation depends on.
 
 MOTIVATION: overnight (2026-08-19/20) real scores showed two independent
 craters -- v72 (+forge7, normal calibration) = 81.415 (-11.1 vs v64) and
@@ -761,14 +749,10 @@ _STRUCTURES: tuple[dict[str, Any], ...] = (
     # v64: forge5 reintroduced alone, to find the exact N<=4 boundary --
     # see this file's own docstring.
     {"name": "forge5",      "build": _b_forge_n(5),  "u": 5, "a": 0, "payload": PAYLOADS[0]},
-    # v82: forge6 reintroduced, now protected by the v81 rolling-window live
-    # fire-rate safety valve (see module docstring) -- v66 tested forge6 alone
-    # under the OLD protection (6-consecutive-fail streak, provably too slow
-    # to react at any realistic degradation level) and landed flat/-0.42; this
-    # retests the same structure with the new, much-faster-reacting guard, to
-    # separate "forge6 itself has no real value" from "forge6's value was
-    # being silently eaten by wasted-throughput from an inert safety net."
-    {"name": "forge6",      "build": _b_forge_n(6),  "u": 6, "a": 0, "payload": PAYLOADS[0]},
+    # v83: forge7 reintroduced, protected by the v81 rolling-window live
+    # fire-rate safety valve -- see this file's own docstring for the full
+    # reasoning and forge7's prior unprotected result.
+    {"name": "forge7",      "build": _b_forge_n(7),  "u": 7, "a": 0, "payload": PAYLOADS[0]},
     # v45: forge6, forge8, and forge8_terse (the higher end of the
     # Harmony-forged multi-hop-packing family) REMAIN REMOVED -- forge5
     # above is v64's one-structure reintroduction to test the exact
