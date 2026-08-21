@@ -1,23 +1,27 @@
-"""Apex v87 agent-security attack algorithm.
+"""Apex v88 agent-security attack algorithm.
 
-v87 (2026-08-21, RE-TEST of v77's fill-budget squeeze, now stacked on both
-new fixes): FILL_FRAC 0.97->0.99, MARGIN_S 47->40 -- the EXACT v77 values --
-on top of v85's raw-floor fix AND v81's rolling-window fire-rate fix, on
-v64's plain proven pool, NO new structure.
+v88 (2026-08-21, COMBINED budget-reallocation bet): v86's calibration cut
+(SH_FINALISTS 4->2, CONFIRM_REPS 2->1) AND v87's fill squeeze (FILL_FRAC
+0.97->0.99, MARGIN_S 47->40) together, both stacked on v85's raw-floor fix
+and v81's rolling-window fire-rate fix, on v64's plain pool, NO new
+structure.
 
-WHY: of all the pool-neutral budget levers tried in the pre-fix v76-v80
-batch (THS-150=90.935, fill-squeeze=92.160, replay-squeeze=89.535, all-3-
-combined=88.550), fill-squeeze was the closest to v64's own 92.540 baseline
-and sat above the v64-family's own mean (~91.25) -- the single cleanest
-positive-ish signal of that whole batch. It works by shrinking the adaptive
-safety margin reserved before the wall-clock cutoff, converting reserved-
-but-usually-unused margin time into productive fill-loop attempts -- a
-mechanism orthogonal to both new fixes (it never touches which structure
-gets crowned or how it's judged), so stacking here is low-risk and the
-fixes should be nearly inert for this variant specifically. HONEST CAVEAT:
-one data point (92.160) is not a confirmed win -- it is within the
-documented ~5pt noise band of v64's own spread, so this is a re-confirmation
-attempt, not a guaranteed repeat.
+WHY THIS COMBINATION IS DEFENSIBLE (unlike v80's failed 3-lever combo):
+v80 combined THS-cut (structure-risk-adjacent) + replay-squeeze (already
+shown independently NEGATIVE at 89.535) and landed worst-of-batch (88.550) --
+that combo mixed a lever with no positive standalone signal into the bet.
+v86 and v88's other half (fill-squeeze) both work by the SAME general
+mechanism -- freeing generation-side time that would otherwise sit unused
+as calibration overhead or safety margin, and routing it into the fill
+loop -- rather than being unrelated levers. Both are pool-neutral and
+calibration-cut is the only one of the two that touches structure
+selection, and it does so with the raw-floor guard now in place. This is a
+genuine "do the two best-reasoned pool-neutral levers compound" test, not a
+blind kitchen-sink bet. HONEST CAVEAT: neither lever alone has more than one
+real data point confirming it works positively even before combining them --
+this variant's result will be the hardest of the batch to attribute cleanly
+if it moves a lot in either direction, since two changes are stacked. Report
+it as suggestive, not conclusive, either way.
 
 v85 (2026-08-20, SECOND NEW MECHANISM, isolated from v81-v84's fire-rate
 fix): adds a raw-value floor to which structure gets crowned TOP_HEAD_START's
@@ -607,8 +611,8 @@ REPLAY_BUDGET_S = 8750.0        # per-model per-guardrail-pass replay budget (wa
                                  # DEFAULT_BUDGET_S=8750.0, confirmed via jed_attack_gateway.py)
 REPLAY_SAFE_FRAC = 0.97         # returned-set replay cost cap fraction of the budget
 ENV_OVERHEAD_S = 0.25           # per-candidate env rebuild during replay
-FILL_FRAC = 0.99                # v87: re-test of v77's fill-squeeze (0.97->0.99)
-MARGIN_S = 40.0                 # v87: re-test of v77's fill-squeeze (47.0->40.0)
+FILL_FRAC = 0.99                # v88: fill squeeze half of the combined bet (0.97->0.99)
+MARGIN_S = 40.0                 # v88: fill squeeze half of the combined bet (47.0->40.0)
 MARGIN_FLOOR_MIN = 4.0          # adaptive margin floor for a very fast model
 MARGIN_SLOWEST_COEF = 2.5       # ramps margin up as slowest grows
 SLOWEST_MULT = 1.35             # next-probe wall estimate multiplier
@@ -633,7 +637,8 @@ ROLLING_TOP_RAW_FRAC = 0.5      # v85: the structure crowned TOP_HEAD_START's wi
                                  # eff ratio (raw*fire_rate/cost) looks good on a noisy
                                  # small calibration sample. Falls back down the eff-ranked
                                  # list until a structure clears the floor.
-CONFIRM_REPS = 2                 # v40: one modest step in v28's confirmed-positive
+CONFIRM_REPS = 1                 # v88: calibration-cut half of the combined bet (2->1)
+                                 # v40: one modest step in v28's confirmed-positive
                                  # overhead-reduction direction (v25's 3 -> 2), not
                                  # v37's more aggressive untested cut to 1.
                                  # (historical note, v29: back to v25's value (v28's cut to 2 is its own
@@ -643,7 +648,8 @@ CONFIRM_REPS = 2                 # v40: one modest step in v28's confirmed-posit
                                  # per-structure "reps" value at all -- round count is fully
                                  # adaptive (see _search) -- so they'd be genuinely dead
                                  # constants, not just unused metadata.
-SH_FINALISTS = 4                 # v29: successive halving stops eliminating once at most
+SH_FINALISTS = 2                 # v88: calibration-cut half of the combined bet (4->2)
+                                 # v29: successive halving stops eliminating once at most
                                  # this many structures remain; those finalists then go
                                  # through the existing CONFIRM_REPS top-3 round unchanged.
 RECHECK_EVERY = 12              # kept candidates between 8-hop drift re-checks of the top
