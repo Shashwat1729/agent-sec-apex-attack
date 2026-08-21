@@ -1,32 +1,23 @@
-"""Apex v86 agent-security attack algorithm.
+"""Apex v87 agent-security attack algorithm.
 
-v86 (2026-08-21, RE-TEST of v74's calibration-cut hypothesis, now that its
-likely interacting bug is patched): SH_FINALISTS 4->2, CONFIRM_REPS 2->1
-(the EXACT v74 cut), stacked on top of v85's raw-floor fix AND v81's
-rolling-window fire-rate fix, on v64's plain proven pool -- NO new structure
-(isolated per the calibration-promotion-risk rule: never combine a new
-structure with a calibration cut in the same variant).
+v87 (2026-08-21, RE-TEST of v77's fill-budget squeeze, now stacked on both
+new fixes): FILL_FRAC 0.97->0.99, MARGIN_S 47->40 -- the EXACT v77 values --
+on top of v85's raw-floor fix AND v81's rolling-window fire-rate fix, on
+v64's plain proven pool, NO new structure.
 
-WHY RE-TEST A "FAILED" LEVER: v74 (calibration cut alone, no fixes) landed
-82.240 (-10.3 vs v64's 92.540). The leading root-cause hypothesis for that
-crater (see v85's docstring below) is that `top = usable[0]` had no floor on
-mean_raw, so a cheap-but-low-value structure could win pure eff-ranking on a
-noisy SMALL calibration sample -- and cutting SH_FINALISTS/CONFIRM_REPS makes
-that sample smaller/noisier, directly raising this specific risk. v85's
-ROLLING_TOP_RAW_FRAC fix patches exactly this failure mode and has now been
-real-world tested clean (91.330, squarely inside v64's own noise band) --
-i.e. the fix works and costs nothing on its own. Re-running the calibration
-cut WITH that guard in place tests the actual upside case for cutting
-calibration: less real generation budget burned on the successive-halving/
-confirm-reps rounds before the fill loop starts means MORE of the fixed
-per-model time budget goes to the high-value fill cycle itself -- a genuine,
-previously-blocked throughput lever, not a knob-tune. HONEST CAVEAT: this
-does not rule out v74's crater having a second, independent cause besides
-mis-promotion (e.g. a noisier top pick also being wrong in ways the raw
-floor doesn't catch, like picking a genuinely lower-fire-rate structure that
-still clears the raw floor) -- the floor fix narrows but does not provably
-eliminate the promotion-risk failure mode. Treat this as a real but
-uncertain bet, not a confirmed win-in-waiting.
+WHY: of all the pool-neutral budget levers tried in the pre-fix v76-v80
+batch (THS-150=90.935, fill-squeeze=92.160, replay-squeeze=89.535, all-3-
+combined=88.550), fill-squeeze was the closest to v64's own 92.540 baseline
+and sat above the v64-family's own mean (~91.25) -- the single cleanest
+positive-ish signal of that whole batch. It works by shrinking the adaptive
+safety margin reserved before the wall-clock cutoff, converting reserved-
+but-usually-unused margin time into productive fill-loop attempts -- a
+mechanism orthogonal to both new fixes (it never touches which structure
+gets crowned or how it's judged), so stacking here is low-risk and the
+fixes should be nearly inert for this variant specifically. HONEST CAVEAT:
+one data point (92.160) is not a confirmed win -- it is within the
+documented ~5pt noise band of v64's own spread, so this is a re-confirmation
+attempt, not a guaranteed repeat.
 
 v85 (2026-08-20, SECOND NEW MECHANISM, isolated from v81-v84's fire-rate
 fix): adds a raw-value floor to which structure gets crowned TOP_HEAD_START's
@@ -616,8 +607,8 @@ REPLAY_BUDGET_S = 8750.0        # per-model per-guardrail-pass replay budget (wa
                                  # DEFAULT_BUDGET_S=8750.0, confirmed via jed_attack_gateway.py)
 REPLAY_SAFE_FRAC = 0.97         # returned-set replay cost cap fraction of the budget
 ENV_OVERHEAD_S = 0.25           # per-candidate env rebuild during replay
-FILL_FRAC = 0.97                # generation wall-clock cap fraction
-MARGIN_S = 47.0                 # flat ceiling for the adaptive margin
+FILL_FRAC = 0.99                # v87: re-test of v77's fill-squeeze (0.97->0.99)
+MARGIN_S = 40.0                 # v87: re-test of v77's fill-squeeze (47.0->40.0)
 MARGIN_FLOOR_MIN = 4.0          # adaptive margin floor for a very fast model
 MARGIN_SLOWEST_COEF = 2.5       # ramps margin up as slowest grows
 SLOWEST_MULT = 1.35             # next-probe wall estimate multiplier
@@ -642,9 +633,7 @@ ROLLING_TOP_RAW_FRAC = 0.5      # v85: the structure crowned TOP_HEAD_START's wi
                                  # eff ratio (raw*fire_rate/cost) looks good on a noisy
                                  # small calibration sample. Falls back down the eff-ranked
                                  # list until a structure clears the floor.
-CONFIRM_REPS = 1                 # v86: re-test of v74's cut (2->1), now stacked with the
-                                 # raw-floor fix that patches v74's likely mis-promotion
-                                 # cause -- see module docstring. v40: one modest step in v28's confirmed-positive
+CONFIRM_REPS = 2                 # v40: one modest step in v28's confirmed-positive
                                  # overhead-reduction direction (v25's 3 -> 2), not
                                  # v37's more aggressive untested cut to 1.
                                  # (historical note, v29: back to v25's value (v28's cut to 2 is its own
@@ -654,8 +643,7 @@ CONFIRM_REPS = 1                 # v86: re-test of v74's cut (2->1), now stacked
                                  # per-structure "reps" value at all -- round count is fully
                                  # adaptive (see _search) -- so they'd be genuinely dead
                                  # constants, not just unused metadata.
-SH_FINALISTS = 2                 # v86: re-test of v74's cut (4->2), see module docstring.
-                                 # v29: successive halving stops eliminating once at most
+SH_FINALISTS = 4                 # v29: successive halving stops eliminating once at most
                                  # this many structures remain; those finalists then go
                                  # through the existing CONFIRM_REPS top-3 round unchanged.
 RECHECK_EVERY = 12              # kept candidates between 8-hop drift re-checks of the top
