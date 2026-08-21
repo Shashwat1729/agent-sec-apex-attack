@@ -106,6 +106,20 @@ declined each time per the standing no-fudging rule (see feedback_always_predict
 7. Report a clear summary: kernel versions, submission IDs, and an explicit statement of what
    each variant's result would mean.
 
+## Candidate idea for the batch AFTER this one (not built, no free slot tonight)
+
+`TOP_HEAD_START` has only ever been tested at 150 (v76, worse: 90.935) and 300 (the long-standing
+default, confirmed positive over lower values back at v40). Nothing above 300 has been tried —
+the v40-era docstring note says the lever "has shown no saturation yet across 30->80->200->300."
+Given tonight's re-derivation confirms throughput (successful-candidate count within budget) is
+one of only two real levers left, and TOP_HEAD_START controls the *allocation* of that throughput
+between the top structure and the diversified fill pool (not the total budget itself), pushing it
+higher on a well-established, low-risk structure (the base pool's own top pick, not a new/unproven
+one) is a genuinely untested direction worth a slot once v86-v90's results are in — concentrating
+more guaranteed reps on whichever structure is already confirmed reliable, rather than spreading
+into weighted fill sooner. Not built now because there's no free slot in tonight's already-decided
+5 and swapping one of them out without a clear justification would undercut their own rationale.
+
 ## Known gotchas (carried forward)
 
 - `kaggle competitions submit` needs a BARE filename (`submission.csv`), not a real local path.
