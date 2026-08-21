@@ -59,8 +59,10 @@ head-start budget on unconfirmed live behavior.
 | v86 | `68d0a23` | Both fixes + v74's calibration cut (SH_FINALISTS 4→2, CONFIRM_REPS 2→1) re-tested now that v85's raw-floor fix patches the likely interacting bug. No new structure — isolated per the calibration-promotion-risk memory. |
 | v87 | `df7cfbb` | Both fixes + v77's fill-squeeze (FILL_FRAC 0.99, MARGIN_S 40) re-tested. No new structure — isolated re-confirmation of the best pool-neutral lever found so far. |
 | v88 | `904f284` | Both fixes + v86's calibration cut AND v87's fill-squeeze combined — tests whether two mechanistically-independent, non-negative pool-neutral levers compound (unlike v80's failed combo, which mixed in an already-negative lever). No new structure. |
-| v89 | `42661d4` | forge8 + both fixes + new `NEW_STRUCTURE_HEAD_START_FRAC` mechanism: tempers forge8's guaranteed head-start to 40% instead of the full 300, freeing the rest into weighted fill. Isolated test of the calibration-promotion-risk memory's flagged-but-unbuilt mitigation. |
-| v90 | `9a88067` | forge8 + both fixes (v84's exact config, this batch's best score) + fill-squeeze stacked on top — highest-expected-value bet if both individual signals are more than noise. |
+| v89 | `b93b6e5` (revised) | forge8 + both fixes + new `NEW_STRUCTURE_HEAD_START_FRAC` mechanism: tempers forge8's guaranteed head-start to 40% instead of the full 300, freeing the rest into weighted fill. Isolated test of the calibration-promotion-risk memory's flagged-but-unbuilt mitigation. |
+| v90 | `e0a2e00` (revised) | forge8 + both fixes (v84's exact config) + fill-squeeze stacked on top — highest-ceiling bet if both individual signals are more than noise. |
+
+**Revision (2026-08-21, later same evening)**: re-checked v89/v90's original write-up against the actual v64-family noise band and found it overstated the evidence — v84's 91.625 is only 0.35 stdev above the family mean (91.249, stdev 1.085), statistically indistinguishable from noise, not "the batch's best config" or "a first hint of an edge." Docstrings revised to state this plainly; no code/constants changed in either variant, ranges unchanged. v89 is now honestly framed as a low-stakes test of the tempering *mechanism* (useful infrastructure for a future, more aggressive structure) rather than a claim that forge8 is provably degraded — it is a genuine two-sided bet: if forge8 has no real problem, tempering its commitment could make v89 WORSE than v84 by diverting guaranteed reps away from what may already be the pool's best structure.
 
 ## Honest predicted ranges
 
@@ -89,7 +91,9 @@ declined each time per the standing no-fudging rule (see feedback_always_predict
 
 1. Confirm quota fresh: `kaggle competitions submissions ai-agent-security-multi-step-tool-attacks`
    should show no new rows yet for today.
-2. For each of v86-v90 in order: `git show <commit>:submission/attack.py > submission/attack.py`,
+2. For each of v86-v90 in order (v86=`68d0a23`, v87=`df7cfbb`, v88=`904f284`, v89=`b93b6e5`,
+   v90=`e0a2e00` — v89/v90 were revised after the original plan was written; use these hashes,
+   not the ones in the original ACTIVE PLAN commit message): `git show <commit>:submission/attack.py > submission/attack.py`,
    `python tools/make_notebook.py`, `kaggle kernels push -p submission`, poll
    `kaggle kernels status shashwat1729/ai-agent-security-apex-attack` until COMPLETE, then
    `kaggle competitions submit ai-agent-security-multi-step-tool-attacks -k shashwat1729/ai-agent-security-apex-attack -v <version> -f submission.csv -m "<variant + rationale>"`
