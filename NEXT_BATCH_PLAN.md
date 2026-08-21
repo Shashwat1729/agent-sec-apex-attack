@@ -1,120 +1,95 @@
-**SUPERSEDED — batch completed 2026-08-21.** All 5 (v81-v85) pushed to Kaggle 00:06-00:09 UTC /
-~05:36-05:39 IST, confirmed PENDING. Submission IDs: v81=55656362, v82=55656403, v83=55656439,
-v84=55656459, v85=55656479. Kernel versions 69-73. See `project_kaggle_apex_status.md` memory and
-`WORKING_NOTE.md` Section 5 for the full writeup. v76-v80's real scores also landed by this push
-(v76=90.935, v77=92.160, v78=91.240, v79=89.535, v80=88.550 — none beat 92.540). Kept in place as
-a historical record, not deleted.
-
-# Next Batch Plan (v81-v85) — prepared 2026-08-20, for the next daily quota reset
+# Next Batch Plan (v86-v90) — prepared 2026-08-21, for the next daily quota reset
 
 This file is the persistence layer for an unattended cron-driven workflow. Git commit hashes
 (not scratchpad files) are the source of truth for code state.
 
-## Context — why this batch is different from v76-v80
+## v81-v85 real scores (landed 2026-08-21, this batch's starting point)
 
-v76-v80 (pushed 2026-08-20 ~00:05-00:09 UTC) were defensive: pool-neutral budget-lever tweaks
-plus two control resubmits, explicitly designed to avoid regression after v72/v74's real
-craters. The user reviewed that whole run (v71-v80, all landed at or below 92.540, several well
-below) and pushed back hard: "you are not innovating anything new ... think properly." That
-criticism is fair — v76-v80 tested no new idea, just avoided risk.
+| Variant | Real score | vs 92.540 baseline | vs unprotected predecessor |
+|---|---|---|---|
+| v81 (forge6+7+8 combined, both fixes) | 90.640 | -1.900 | n/a (new combo, no direct predecessor) |
+| v82 (forge6, both fixes) | 87.345 | -5.195 | -4.775 vs v66 unprotected (92.120) |
+| v83 (forge7, both fixes) | 91.530 | -1.010 | **+10.115** vs v72 unprotected (81.415) |
+| v84 (forge8, both fixes) | 91.625 | -0.915 | +3.255 vs v73 unprotected (88.370) |
+| v85 (control, both fixes) | 91.330 | -1.210 | n/a (control) |
 
-This batch (v81-v85) is a genuine mechanism-level fix, not a knob tweak. Investigation (source
-read of the `_search` fill loop, `submission/attack.py` ~line 1150-1230) found a concrete,
-provable throughput-loss bug: the fill loop's only protection against a `top` structure whose
-REAL live fire rate is worse than its calibration sample is a 6-CONSECUTIVE-FAILURE streak.
-Math (verified): for a structure with true fire rate in the realistic 55-95% range, the expected
-number of attempts before 6 consecutive fails occur ranges from ~200 (at 55%) to tens of millions
-(at 95%) — i.e. this safety valve is asymptotically inert at any realistic degradation level.
-Every attempt (success or fail) costs one real generation round-trip, so a structure sitting at
-e.g. fire_rate=0.75 silently wastes ~25% of its ENTIRE `TOP_HEAD_START` budget on failed attempts
-that produce zero score, without ever triggering the old drop. This is a strong, source-verified
-candidate explanation for why forge7 (v72, -11.1) and forge8 (v73, -4.2) cratered when reintroduced
-— they are far less battle-tested than forge2-5 (only a handful of calibration probes vs. dozens
-of historical real submissions), so a lucky small calibration sample could easily overstate their
-true live fire rate.
+v64-family noise band across all real submissions so far (92.540, 89.885, 91.240, 91.330):
+mean 91.249, stdev 1.085. None of v81-v85 beat 92.540; v84 came closest (-0.915).
 
-A SEPARATE mechanism was also identified for v74's crater (calibration cut alone, -10.3, no new
-structures — the fire-rate fix above doesn't apply since no new/less-tested structure was
-involved): `top = usable[0]` picks the single highest eff-ranked structure with no floor on
-`mean_raw` — a cheap-but-low-value structure (e.g. `deputy`, raw~6) can win pure eff-ranking on a
-noisy small sample despite contributing little raw per completion, especially with fewer confirm
-reps. v85 addresses this independently.
+## Honest interpretation of v81-v85
 
-**Fixes implemented and validated locally (`tools/local_test.py` — syntax/AST clean, pool
-composition and raw values confirmed correct on all 5, no tracebacks):**
-- `ROLLING_WINDOW`/`ROLLING_MIN_RATIO` (v81+): a live rolling fire-rate check every 20 attempts
-  per structure, dropping it if live rate falls below 60% of its calibrated rate — reacts within
-  one window instead of hundreds-to-thousands of wasted attempts.
-- `ROLLING_TOP_RAW_FRAC` (v85 only): the head-start pick must have `mean_raw` >= 50% of the
-  pool's own best measured raw, or the next-best eligible structure is used instead.
+1. **v83's recovery is the cleanest confirmed result of the whole investigation.** +10.115 vs
+   its unprotected predecessor is far outside the ~5pt noise band. The rolling-window fire-rate
+   fix genuinely works for forge7 — it stopped the crater.
+2. **v84's recovery is smaller (+3.255) and technically inside the noise band**, but v84 also
+   posted the single best real score in the batch (91.625), edging above v85's own clean control
+   (91.330). Suggestive, not proven, that forge8 specifically has some real edge once protected.
+3. **Neither v83 nor v84 beat v64's own baseline/control band.** Despite forge7/forge8 having a
+   39%/59% higher measured raw-per-success than forge5, protected they land competitive-with, not
+   clearly-above, the existing pool. The most likely explanation: real-world fire rate for
+   higher-hop structures carries a persistent moderate discount below calibration that the
+   rolling-window fix's 60%-of-calibrated threshold does not catch (it only catches severe,
+   crater-level drops) — so raw-per-ATTEMPT, not just raw-per-success, roughly cancels out
+   against forge5's. This reframes the earlier "higher raw-per-candidate is close to a free win"
+   backward-reasoning argument from the v81-v85 plan as INCOMPLETE: it accounted for fixed
+   per-candidate RPC cost but not for a real fire-rate cost that scales with hop count.
+4. **v82's regression (-4.775 vs its unprotected predecessor) is genuinely puzzling** and not
+   fully resolved. Tentatively attributed to run-to-run noise per the project's own ±5 convention
+   (forge6 never had a real problem to begin with, only -0.42 unprotected, so the fixes should be
+   near-inert for it) — but this is a judgment call, not a proof, and is flagged honestly rather
+   than explained away.
+5. **v81 (all three combined) landed below v85's clean control** (90.640 vs 91.330) — splitting
+   attempts across three barely-differentiated new structures added calibration/switching
+   overhead without a compensating benefit. This closes the "just combine everything" direction;
+   it is not a source of extra throughput on its own.
+
+**Conclusion driving this batch**: further extending the new-structure family (forge9, forge10,
+etc.) is not supported by the data — the hop-count fire-rate tax appears to cancel the raw
+advantage. This batch instead does three things: (a) re-tests a previously-abandoned lever
+(calibration-cut) now that its likely interacting bug is patched, (b) re-confirms the best
+pool-neutral lever found so far (fill-squeeze) and tests whether it compounds with the
+calibration cut, (c) implements the specific mitigation this investigation flagged but never
+built — tempering commitment to an unproven structure (forge8) rather than betting its full
+head-start budget on unconfirmed live behavior.
 
 ## ACTIVE PLAN
 
 | Variant | Commit | What it tests |
 |---|---|---|
-| v81 | `e9c4826` **(revised again)** | BOTH fixes + forge6, forge7, AND forge8 all together — the highest-upside bet, letting the protected race pick whichever structure actually performs best |
-| v82 | `31a1e2d` | BOTH fixes + forge6 reintroduced alone (v66 landed flat/-0.42 unprotected) |
-| v83 | `99f5b3f` | BOTH fixes + forge7 reintroduced alone (v72 landed 81.415/-11.1 unprotected — the strongest single-structure test, biggest crater = most to recover) |
-| v84 | `228b149` | BOTH fixes + forge8 reintroduced alone (v73 landed 88.370/-4.2 unprotected) |
-| v85 | `d26e4fe` | BOTH fixes present, NO new structure — the clean control this whole batch's interpretation depends on |
+| v86 | `68d0a23` | Both fixes + v74's calibration cut (SH_FINALISTS 4→2, CONFIRM_REPS 2→1) re-tested now that v85's raw-floor fix patches the likely interacting bug. No new structure — isolated per the calibration-promotion-risk memory. |
+| v87 | `df7cfbb` | Both fixes + v77's fill-squeeze (FILL_FRAC 0.99, MARGIN_S 40) re-tested. No new structure — isolated re-confirmation of the best pool-neutral lever found so far. |
+| v88 | `904f284` | Both fixes + v86's calibration cut AND v87's fill-squeeze combined — tests whether two mechanistically-independent, non-negative pool-neutral levers compound (unlike v80's failed combo, which mixed in an already-negative lever). No new structure. |
+| v89 | `42661d4` | forge8 + both fixes + new `NEW_STRUCTURE_HEAD_START_FRAC` mechanism: tempers forge8's guaranteed head-start to 40% instead of the full 300, freeing the rest into weighted fill. Isolated test of the calibration-promotion-risk memory's flagged-but-unbuilt mitigation. |
+| v90 | `9a88067` | forge8 + both fixes (v84's exact config, this batch's best score) + fill-squeeze stacked on top — highest-expected-value bet if both individual signals are more than noise. |
 
-**Revision history**: v82/v83/v84 were upgraded to stack BOTH fixes (not just the fire-rate fix)
-after review found the raw-floor fix is structurally near-inert for forge6/7/8 specifically (each
-is the highest-raw structure in its own pool by construction, so it trivially clears any
-reasonable floor) — free insurance, zero attribution cost. v81 was then replaced a second time:
-the original "fire-rate fix alone, no new structure" control was redundant with v85 (which already
-covers "both fixes, no new structure" cleanly), so v81 was swapped for the highest-upside bet in
-the batch — see the v81 commit message for the full backward-reasoning-from-the-scoring-formula
-argument (raw_total ~ gen-budget/cost-per-candidate * raw-per-candidate; PROBE_HOPS=1 means real
-cost is plausibly ~fixed regardless of N, so higher raw-per-candidate is close to a free win once
-protected; forge8 cratering LESS than forge7 despite higher N cross-checks against a promotion-
-noise explanation rather than a cost-scales-with-N one).
+## Honest predicted ranges
 
-**Re-derived honest ranges (raw≈18,500 needed for 92.540, raw≈27,400 for 137, from
-`comp_data/aicomp_sdk/scoring.py`'s exact formula — normalized=(raw/200000)*1000)**:
-- v81 (all 3 + both fixes): 78-125 — widest range in the batch. Theoretical ceiling if the
-  mechanism fully works and the race lands mostly on forge8 (raw=130 vs forge5's 82, +59%) is
-  roughly 92.540*130/82≈147, but that assumes everything goes right; floor is still real-model-
-  unverified risk if the fix is wrong or insufficient.
-- v82: 84-100 (forge6's raw edge is smallest of the three, +19.5% over forge5)
-- v83: 80-115 (forge7, +39% raw edge, the single-structure test with the most room)
-- v84: 82-118 (forge8, +59% raw edge, single-structure)
-- v85: 87-96 (pure control, should track v64's own noise band)
+None of these ranges have a guaranteed lower bound above 92.540 or 100, and none should be
+stated to. All are genuinely uncertain in both directions — every lever here is either a
+re-test of something that has at most one prior real data point, or a brand-new untested
+mechanism.
 
-None of these ranges have a lower bound above 100 and none can honestly be stated to. This is not
-a target-matching exercise — it is the actual uncertainty given these fixes have never touched
-the real stochastic model. Report exactly what lands, don't round toward the desired outcome.
+- v86 (calibration cut, patched): **78-104**. Re-test of a lever that cratered once (82.240)
+  under a now-patched bug. Could recover to competitive, could still be wrong for a different
+  reason.
+- v87 (fill-squeeze, re-test): **85-99**. One prior data point (92.160) inside the noise band —
+  a re-confirmation attempt, not a repeat guarantee.
+- v88 (calibration cut + fill-squeeze combined): **80-108**. Widest uncertainty in the batch —
+  two stacked, individually-unconfirmed levers.
+- v89 (forge8, tempered head-start): **83-112**. New mechanism; v84's 91.625 (its baseline) is
+  one data point.
+- v90 (forge8 + fill-squeeze): **84-118**. Highest ceiling if both v84's and v77's signals are
+  real, but neither is confirmed.
 
-All 5 validated locally, committed, NOT yet pushed to Kaggle (today's 5/5 quota was already used
-by the v76-v80 push). Push at the next quota reset (~05:35 IST / ~00:00 UTC), per the standing SOP.
-
-## Honest interpretation guide (fill in once real scores land)
-
-- If v81 ≈ v64 (within noise) and v82/v83/v84 all beat their unprotected predecessors (v66, v72,
-  v73) meaningfully: strong confirmation of the throughput-loss hypothesis — the mechanism is
-  real and worth extending (larger pool, maybe forge6+7+8 all together, now protected).
-- If v81 alone already beats v64: possible that some of v64's OWN existing structures were also
-  quietly bleeding throughput to this bug (less likely given they're heavily battle-tested, but
-  not ruled out).
-- If v82/v83/v84 do NOT recover vs. their unprotected predecessors: the fire-rate throughput-loss
-  hypothesis is wrong or insufficient — forge6/7/8's real problem is something else (e.g. genuinely
-  lower per-candidate RAW value on the real model, not fire rate), and the boundary-extension
-  direction should be treated as closed, not just paused.
-- v85 vs v64: if v85 beats v64 clearly, the raw-floor fix has independent value even without any
-  new structure — worth keeping in the base config going forward. If flat, v74's crater mechanism
-  may need a different explanation than the one hypothesized here — report honestly, don't force
-  a confirmation.
-
-Do not fabricate confidence in the write-up once scores land — this is a well-reasoned, source-
-verified hypothesis with working local validation, but it has NEVER been tested against the real
-stochastic model. It could easily be wrong, partially right, or right but insufficient to reach
-100+. Report whatever the real data actually shows.
+Report exactly what lands, don't round toward the desired outcome — the user has explicitly and
+repeatedly asked for a guaranteed lower bound above 92.540/100 and this has been explicitly
+declined each time per the standing no-fudging rule (see feedback_always_predict_scores memory).
 
 ## Push job — what to do at the next quota reset
 
 1. Confirm quota fresh: `kaggle competitions submissions ai-agent-security-multi-step-tool-attacks`
    should show no new rows yet for today.
-2. For each of v81-v85 in order: `git show <commit>:submission/attack.py > submission/attack.py`,
+2. For each of v86-v90 in order: `git show <commit>:submission/attack.py > submission/attack.py`,
    `python tools/make_notebook.py`, `kaggle kernels push -p submission`, poll
    `kaggle kernels status shashwat1729/ai-agent-security-apex-attack` until COMPLETE, then
    `kaggle competitions submit ai-agent-security-multi-step-tool-attacks -k shashwat1729/ai-agent-security-apex-attack -v <version> -f submission.csv -m "<variant + rationale>"`
@@ -122,12 +97,10 @@ stochastic model. It could easily be wrong, partially right, or right but insuff
 3. Confirm all 5 `SubmissionStatus.PENDING`.
 4. `git checkout master -- submission/attack.py submission/notebook.ipynb submission/kernel-metadata.json`,
    `git push` to GitHub (`https://shashwat1729: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@github.com/shashwat1729/agent-sec-apex-attack.git master`).
-5. Update `project_kaggle_apex_status.md` memory and `WORKING_NOTE.md` per the standing rules —
-   include the mechanism explanation above, not just the score numbers, since this batch's whole
-   point is testing a hypothesis, not a knob.
+5. Update `project_kaggle_apex_status.md` memory and `WORKING_NOTE.md` per the standing rules.
 6. Mark this file "SUPERSEDED — batch completed <date>" at the top, commit, push.
 7. Report a clear summary: kernel versions, submission IDs, and an explicit statement of what
-   each variant's result would mean per the interpretation guide above.
+   each variant's result would mean.
 
 ## Known gotchas (carried forward)
 
@@ -136,3 +109,6 @@ stochastic model. It could easily be wrong, partially right, or right but insuff
 - Competition slug must be positional, not `-c`.
 - Cron jobs are session-only — verify at the start of the next normal turn whether a scheduled
   push actually landed; push manually from this file's ACTIVE PLAN table if not.
+- A cron job's `prompt` field is a static string baked in at creation time — always re-read this
+  file fresh at fire time rather than trusting data embedded in the prompt, since this file may
+  be revised after the cron job is created.
