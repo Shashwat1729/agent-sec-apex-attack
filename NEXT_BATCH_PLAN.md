@@ -1,3 +1,11 @@
+**SUPERSEDED — batch completed 2026-08-22.** All 5 (v86-v90) pushed to Kaggle 00:06-00:10 UTC /
+~05:36-05:40 IST via the scheduled cron job, correctly using the revised v89/v90 commit hashes
+(`b93b6e5`/`e0a2e00`) from this file's live content rather than the stale ones baked into the
+cron prompt at creation time. Submission IDs: v86=55679339, v87=55679367, v88=55679392,
+v89=55679410, v90=55679437. Kernel versions 74-78, all confirmed `SubmissionStatus.PENDING`. See
+`project_kaggle_apex_status.md` memory and `WORKING_NOTE.md` Section 5 for the full writeup.
+Real scores not yet known — this file kept in place as a historical record, not deleted.
+
 # Next Batch Plan (v86-v90) — prepared 2026-08-21, for the next daily quota reset
 
 This file is the persistence layer for an unattended cron-driven workflow. Git commit hashes
