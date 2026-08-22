@@ -1,4 +1,11 @@
-# Next Batch Plan (v91-v93) — prepared 2026-08-22, for the 2026-08-23 quota reset
+# Next Batch Plan (v91-v95) — prepared 2026-08-22, for the 2026-08-23 quota reset
+
+**Revision (same evening)**: originally planned as 3 variants with 2 slots deliberately held in
+reserve. User pushback: don't waste quota this close to the deadline. Added v94 (the natural
+combination of v91+v92, which the batch's own methodology calls for submitting alongside the
+isolated halves for interpretability) and v95 (a second best-of-public re-roll, this time of v84's
+config — our second-best real score, 91.625 — rather than a second v85 roll, so the two re-rolls
+diversify across different structures rather than duplicating one distribution). All 5 slots used.
 
 **Context: competition Entry Deadline is 2026-08-25.** Confirmed via live web search
 (kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks). At most 2-3 daily quota
@@ -50,17 +57,20 @@ on both public and private scoring (same scorer, staff-confirmed). See
 `research/synthesis/next_steps.md` H1 section for the full trace. This would have cost a real
 submission slot to discover the hard way; caught it from source instead.
 
-## ACTIVE PLAN — v91, v92, v93
+## ACTIVE PLAN — v91, v92, v93, v94, v95
 
-Both v91 and v92 are branched from `d26e4fe` (v85's clean control, real score 91.330 — no
-calibration change, no fill-squeeze, no new structure), each with exactly ONE isolated change, for
-clean attribution. v93 is v85's control resubmitted byte-for-byte.
+v91 and v92 are branched from `d26e4fe` (v85's clean control, real score 91.330 — no calibration
+change, no fill-squeeze, no new structure), each with exactly ONE isolated change, for clean
+attribution. v93 is v85's control resubmitted byte-for-byte. v94 combines v91+v92. v95 is v84's
+config (forge8 + both fixes, 91.625) resubmitted byte-for-byte.
 
 | Variant | Commit | What it tests |
 |---|---|---|
 | v91 | `a6619b0` | `TOP_HEAD_START` 300 -> 450. **First-ever test above 300** in this project's history (only 150 and 300 have real data: 150 scored 90.935, worse; 300 has been the default since v40 with "no saturation yet" noted at every prior step 30->80->200->300). Directly targets the ceiling model's remaining free variable: allocation of confirmed throughput between the top structure and the diversified fill pool. Flagged in the prior NEXT_BATCH_PLAN, never built until now. |
 | v92 | `8e50015` | Calibration confidence RAISED (opposite of v86's cut): `SH_FINALISTS` 4->6, `CONFIRM_REPS` 2->3 (v25's original value). Direct response to v86 landing below control a second time — if cutting confidence costs real score, raising it should be neutral-to-positive. Genuinely untested direction (every prior calibration experiment in this project's history has been a CUT, never an increase past the v25 baseline). |
-| v93 | `d26e4fe` (byte-identical resubmit of v85) | Best-of-public re-roll. Community-confirmed same-bytes variance is 2-12 points (public_notebooks.md); v85's one real sample (91.330) is solid but a second roll of the identical config could land closer to — or above — 92.540 purely on search-stochasticity luck. With only ~2-3 windows left before the deadline, resubmitting a known-good, well-understood config to fish for a high roll is a legitimate use of a slot, not wasted effort — especially since whichever roll scores highest becomes a strong candidate for one of the 2 Final Submissions. |
+| v93 | `d26e4fe` (byte-identical resubmit of v85) | Best-of-public re-roll #1. Community-confirmed same-bytes variance is 2-12 points (public_notebooks.md); v85's one real sample (91.330) is solid but a second roll of the identical config could land closer to — or above — 92.540 purely on search-stochasticity luck. |
+| v94 | `6286556` | v91 + v92 combined (`TOP_HEAD_START`=450 AND `SH_FINALISTS`=6/`CONFIRM_REPS`=3 together, no new structure). Submitted alongside its isolated halves in the same batch so the combination is interpretable (per WORKING_NOTE 3.2's own methodology) — but the project's history (v81, v88, v89, v90) shows combined variants underperforming their simpler halves more often than not, so this is genuinely uncertain rather than an expected win. |
+| v95 | `228b149` (byte-identical resubmit of v84) | Best-of-public re-roll #2, of a DIFFERENT config than v93 — v84 (forge8 + both fixes) is our second-best real score (91.625) and structurally different from v85's plain-pool control. Re-rolling a second, different distribution (rather than a second v85 roll) also diversifies the pool of candidate Final Submissions in case forge8's 8-post structure survives the private guardrail differently than the plain pool. |
 
 ## Honest predicted ranges
 
@@ -72,28 +82,31 @@ clean attribution. v93 is v85's control resubmitted byte-for-byte.
   helps" by the same magnitude — could just cost calibration wall-clock for a wash.
 - v93 (v85 byte-identical re-roll): **83-113**. Same distribution v85 itself was drawn from (its own
   91.330 sample); this is a second draw from that same distribution, not a different config.
+- v94 (v91+v92 combined): **78-112**. Widest uncertainty in the batch — two individually-untested
+  levers stacked, and this project's own history says combinations underperform their halves more
+  often than not.
+- v95 (v84 byte-identical re-roll): **84-118**. Second draw from v84's own distribution (91.625
+  sample) — highest ceiling in the batch if that draw runs hot, since it's redrawing from the
+  batch's best-known real sample.
 
 No lower bound above 92.540 or 100 is claimed for any of these — per the standing no-fudging rule.
 
 ## Push job — what to do at the next quota reset (2026-08-23, ~05:35 IST)
 
 1. Confirm quota fresh: `kaggle competitions submissions ai-agent-security-multi-step-tool-attacks`.
-2. For each of v91 (`a6619b0`), v92 (`8e50015`), v93 (`d26e4fe`) in order:
-   `git show <commit>:submission/attack.py > submission/attack.py`, `python tools/make_notebook.py`,
-   `kaggle kernels push -p submission`, poll `kaggle kernels status
+2. For each of v91 (`a6619b0`), v92 (`8e50015`), v93 (`d26e4fe`), v94 (`6286556`), v95 (`228b149`)
+   in order: `git show <commit>:submission/attack.py > submission/attack.py`,
+   `python tools/make_notebook.py`, `kaggle kernels push -p submission`, poll `kaggle kernels status
    shashwat1729/ai-agent-security-apex-attack` until COMPLETE, then
    `kaggle competitions submit ai-agent-security-multi-step-tool-attacks -k
    shashwat1729/ai-agent-security-apex-attack -v <version> -f submission.csv -m "<variant +
    rationale>"` (bare filename `submission.csv`).
-3. Only 3 variants this batch (not 5) — 2 quota slots deliberately left free. With the deadline this
-   close, keep 1-2 slots in reserve in case v91/v92/v93's real scores suggest an obvious same-day
-   follow-up (e.g. if v91 shows continued upside, immediately test 600; if it shows a ceiling,
-   that's also useful to know before the deadline) rather than committing all 5 slots to a plan made
-   before today's results are in.
+3. All 5 quota slots used this batch (revised from an original 3-variant plan after user pushback
+   against leaving slots unused this close to the deadline).
 4. Confirm all `SubmissionStatus.PENDING`, restore `submission/` to clean HEAD state, push to GitHub.
 5. Update `project_kaggle_apex_status.md` memory and `WORKING_NOTE.md`.
 6. Mark this file superseded, commit, push.
-7. **New this batch**: once v91/v92/v93 real scores land, review the full submission history and
+7. **New this batch**: once v91-v95 real scores land, review the full submission history and
    explicitly select the 2 Final Submissions in the Kaggle UI (Submissions tab) rather than leaving
    it to auto-select — pick the single highest real score, plus one submission that includes the
    deputy hedge (CONFUSED_DEPUTY leg) for structural diversity in case the private guardrail
