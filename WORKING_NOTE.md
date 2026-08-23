@@ -194,6 +194,10 @@ Honest predicted ranges (none imply a guaranteed lower bound above 92.540 or 100
 
 Honest predicted ranges: v91 80-108, v92 86-104, v93 83-113 — no lower bound above 92.540 or 100 is claimed for any of them. Only 3 of 5 daily slots are used deliberately this batch, keeping 2 in reserve for a same-day follow-up once these results are in, given how few windows remain before the deadline.
 
+**Revision, 2026-08-22 evening**: the user pushed back on holding 2 slots in reserve this close to the deadline ("use the rest 2 as well otherwise those will go to waste"). Two more variants were added to use all 5 slots: **v94** (`6286556`) combines v91's `TOP_HEAD_START` increase and v92's calibration-confidence raise in one variant — submitted alongside its isolated halves in the same batch so the combination is interpretable, per this note's own Section 3.2 methodology. **v95** (`228b149`) is a byte-identical resubmission of v84 (91.625, forge8 + both fixes) — a second best-of-public re-roll, but of a structurally different config than v93's v85 re-roll, so the two re-rolls diversify the eventual Final Submission candidate pool rather than duplicating one distribution. Honest ranges: v94 78-112, v95 84-118.
+
+**Push executed 2026-08-23.** The scheduled cron did not fire (session-only cron limitation — this is now the second time a scheduled push has silently failed to run, after an earlier incident cost a full day's quota; see the corresponding feedback memory). The user noticed and asked for an immediate manual push. All 5 variants were pushed and submitted ~05:22-05:27 IST: v91 → kernel v79 → submission 55706928; v92 → kernel v80 → submission 55706965; v93 → kernel v81 → submission 55706981; v94 → kernel v82 → submission 55707000; v95 → kernel v83 → submission 55707018. All confirmed `SubmissionStatus.PENDING`. `submission/` restored to clean HEAD state. Real scores not yet known — will be folded into this note once they land, per the standing no-fudging rule.
+
 ---
 
 ## Appendix: reproducibility

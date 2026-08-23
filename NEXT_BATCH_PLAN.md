@@ -1,3 +1,10 @@
+**SUPERSEDED — batch completed 2026-08-23.** All 5 (v91-v95) pushed manually ~05:22-05:27 IST after
+the scheduled cron failed to fire (second such failure — see the cron-unreliability feedback memory).
+Submission IDs: v91=55706928 (kernel v79), v92=55706965 (v80), v93=55706981 (v81), v94=55707000
+(v82), v95=55707018 (v83). All confirmed `SubmissionStatus.PENDING`. See `project_kaggle_apex_status.md`
+memory and `WORKING_NOTE.md` for the full writeup. Real scores not yet known — this file kept in
+place as a historical record, not deleted.
+
 # Next Batch Plan (v91-v95) — prepared 2026-08-22, for the 2026-08-23 quota reset
 
 **Revision (same evening)**: originally planned as 3 variants with 2 slots deliberately held in
