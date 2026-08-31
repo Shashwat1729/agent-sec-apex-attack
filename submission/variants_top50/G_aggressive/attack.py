@@ -36,9 +36,9 @@ DEFAULT_BUDGET_S = 8750.0
 REPLAY_BUDGET_S = 8750.0
 
 # Search tuning (defaults = v85/v94 lineage; see docs/experiments.md for sweep history)
-REPLAY_SAFE_FRAC = 0.97
+REPLAY_SAFE_FRAC = 0.99
 ENV_OVERHEAD_S = 0.25
-FILL_FRAC = 0.97
+FILL_FRAC = 0.99
 MARGIN_S = 47.0
 MARGIN_FLOOR_MIN = 4.0
 MARGIN_SLOWEST_COEF = 2.5
@@ -55,7 +55,7 @@ SH_FINALISTS = 4
 RECHECK_EVERY = 12
 MAX_RECHECKS = 24
 FALLBACK_N = 400
-TOP_HEAD_START = 300
+TOP_HEAD_START = 600
 
 # === src\apex_attack\primitives\labels.py ===
 

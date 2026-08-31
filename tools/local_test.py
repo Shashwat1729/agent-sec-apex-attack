@@ -349,7 +349,7 @@ def main():
     # short local budget (production uses the module defaults).
     candidates = attack_mod.AttackAlgorithm(
         config={"margin_s": 3.0, "replay_frac": 0.12, "fill_frac": 0.99, "slowest0": 1.5}
-    ).run(opaque_env, AttackRunConfig(time_budget_s=45.0, max_tool_hops=8))
+    ).run(opaque_env, AttackRunConfig(time_budget_s=12.0, max_tool_hops=8))
     print(f"attack produced {len(candidates)} candidates in {time.monotonic()-start:.1f}s")
 
     findings = replay_and_score(candidates, MockCompliantAgent, OptimalGuardrail)
@@ -376,7 +376,7 @@ def main():
     print("\n--- 3. No-crash with VulnerableDeterministicAgent ---")
     env2 = SandboxEnv(seed=123, fixtures_dir=FIXTURES, agent=build_agent("deterministic"), guardrail=OptimalGuardrail(), max_tool_hops=8)
     opaque2 = _OpaqueAttackEnv(env2)
-    cands2 = attack_mod.AttackAlgorithm().run(opaque2, AttackRunConfig(time_budget_s=15.0, max_tool_hops=8))
+    cands2 = attack_mod.AttackAlgorithm(config={"n_candidates": 20}).run(opaque2, AttackRunConfig(time_budget_s=8.0, max_tool_hops=8))
     print(f"deterministic-agent run returned {len(cands2)} candidates (no crash)")
     findings2 = replay_and_score(cands2, lambda: build_agent("deterministic"), OptimalGuardrail)
     s2 = summarize(findings2)

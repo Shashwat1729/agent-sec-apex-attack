@@ -1,30 +1,168 @@
-# Python
+﻿# =============================================================================
+# agent-sec .gitignore — organized by section, preserves project decisions
+# Last updated: 2026-08-24
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# 1) Python — bytecode & caches (always regenerable)
+# ---------------------------------------------------------------------------
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
+*$py.class
 
-# Local Claude Code project settings (session-specific, not shared)
+# ---------------------------------------------------------------------------
+# 2) Python — packaging / build artifacts
+# ---------------------------------------------------------------------------
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+*.whl
+*.tar.gz
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ---------------------------------------------------------------------------
+# 3) Python — test / lint / type-check caches
+# ---------------------------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.dmypy.json
+dmypy.json
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.pyre/
+
+# ---------------------------------------------------------------------------
+# 4) Virtual environments & large local weights
+# ---------------------------------------------------------------------------
+venv/
+.venv/
+.env/
+env/
+ENV/
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.ckpt
+
+# ---------------------------------------------------------------------------
+# 5) Node / frontend (if ever added)
+# ---------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+
+# ---------------------------------------------------------------------------
+# 6) IDE / OS / editor droppings
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# ---------------------------------------------------------------------------
+# 7) Jupyter
+# ---------------------------------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ---------------------------------------------------------------------------
+# 8) Logs — transient, regenerable (exception: kaggle_output* snapshots kept)
+# ---------------------------------------------------------------------------
+*.log
+logs/
+# Re-include version-snapshot logs (project decision: keep history)
+!kaggle_output/
+!kaggle_output*/
+!kaggle_output*/*.log
+!kaggle_output*/**/*.log
+
+# ---------------------------------------------------------------------------
+# 9) Playwright / browser automation (session dumps)
+# ---------------------------------------------------------------------------
+.playwright-mcp/
+playwright-report/
+test-results/
+.playwright/
+
+# ---------------------------------------------------------------------------
+# 10) Claude Code — session-specific local settings (not shared)
+# ---------------------------------------------------------------------------
 .claude/
 
-# Stale/redundant local SDK copy (comp_data/ is the current, kept copy)
+# ---------------------------------------------------------------------------
+# 11) Competition data — stale / redundant SDK copies
+# ---------------------------------------------------------------------------
 comp_data_old_backup/
 comp_data_fresh/
 comp_data/*.zip
 
-# Competition SDK fixture bank: synthetic-but-realistic-looking credential strings
-# (fake AWS/Stripe/DB keys used to test secret-detection logic) that trip secret
-# scanners (GitGuardian). Not real secrets, but not worth having in git history
-# either -- kept on local disk only, needed by tools/local_test.py at runtime.
+# Competition SDK fixture bank: synthetic-but-realistic-looking credential
+# strings (fake AWS/Stripe/DB keys used to test secret-detection logic) that
+# trip secret scanners (GitGuardian). Not real secrets, but not worth having
+# in git history — kept on local disk only, needed by tools/local_test.py.
 comp_data/aicomp_sdk/fixtures/
 
-# Scratch / transient pull-and-inspect output (regenerable via tools/*.py + kaggle CLI).
-# NOTE: kaggle_output*/ dirs are intentionally NOT ignored -- they are the only surviving
-# per-version snapshots of past attack.py pushes (this repo's git history starts 2026-08-07,
-# so these are pre-git backups; kaggle_output8/9 are confirmed v8/v9 sources, see README).
+# ---------------------------------------------------------------------------
+# 12) Scratch / transient pull-and-inspect output
+#     Regenerable via tools/*.py + kaggle CLI — never commit.
+# ---------------------------------------------------------------------------
+# Top-level scratch dirs (covers scratch_pull, scratch_validation_output, etc.)
 scratch_*/
+scratch_pull/
+scratch_validation_output/
 
-# Large model weights / local venvs, if ever created here
-*.gguf
-venv/
-.venv/
-node_modules/
+# Nested scratch inside validation/ (not covered by top-level scratch_*/)
+validation/scratch_*/
+validation/scratch_*
+
+# One-off probe / diagnostic workspaces
+probe/
+validation_diag/
+validation_diag
+
+# ---------------------------------------------------------------------------
+# 13) Kaggle version snapshots — INTENTIONALLY KEPT (DO NOT IGNORE)
+#     This repo''s git history starts 2026-08-07, so kaggle_output*/ are the
+#     only surviving per-version snapshots of past attack.py pushes.
+#     kaggle_output8/9 are confirmed v8/v9 sources (see README). Keep them.
+# ---------------------------------------------------------------------------
+!kaggle_output/
+!kaggle_output*/
+# Re-ignore bytecode inside snapshots (cleanable, not needed in git)
+kaggle_output*/__pycache__/
+kaggle_output*/**/__pycache__/
+kaggle_output*/**/*.pyc
+kaggle_output*/**/*.pyo
+# IMPORTANT: do not add `kaggle_output*/` as an ignore — these snapshots are
+# version history (see README). If you must ignore a new pattern inside them,
+# re-ignore it explicitly after the ! lines above.
+
+# ---------------------------------------------------------------------------
+# 14) Misc local secrets / env (never commit even if fake)
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.pem
+*.key
+secrets/
+

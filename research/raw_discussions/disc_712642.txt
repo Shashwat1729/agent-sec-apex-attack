@@ -1,0 +1,350 @@
+﻿"menu
+Skip to
+content
+Create
+explore
+
+Home
+
+emoji_events
+
+Competitions
+
+leaderboard
+
+Benchmarks
+
+smart_toy
+
+Game Arena
+
+code
+
+Data Hub
+
+expand_more
+format_list_bulleted
+
+More
+
+expand_more
+search
+â€‹
+Sign In
+Register
+Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic.
+Learn more
+OK, Got it.
+OPENAI Â· FEATURED CODE COMPETITION Â· 19 DAYS TO GO
+Join Competition
+more_horiz
+AI Agent Security - Multi-Step Tool Attacks
+
+Develop attack algorithms to identify reproducible multi-step failures in tool-using AI agents.
+
+Overview
+Data
+Code
+Models
+Discussion
+Leaderboard
+Rules
+OWENVALLIS Â· POSTED 2 MONTHS AGO
+Â·
+COMPETITION HOST
+arrow_drop_up
+17
+more_vert
+Evaluator update and FAQ
+
+We have deployed the evaluator update. It keeps the 9,000-second maximum for each evaluation phase, raises the global runtime limit to 15 hours, and fixes secret-exfiltration scoring.
+
+Several of you have spent a long time waiting on submissions, trying to understand whether your attack code was still running, or debugging cases where a valid exfiltration did not count. We know that is frustrating. Your concrete examples helped us find places where the harness did not fully match the intended contract, and we appreciate the time people spent reporting them.
+
+We will not rescore existing submissions. We know this is not a clean outcome for participants who submitted before the update. We checked whether the previous evaluator gave earlier submissions a scoring advantage and confirmed that it did not. Given that, we think the least disruptive path is to keep the competition moving rather than block it with a full rescore, especially because we are still early in the competition. If you want an existing approach evaluated under the updated evaluator, please resubmit it. We want to be transparent about that tradeoff rather than pretend it is ideal.
+
+What changed
+Runtime enforcement: each of the attack-generation, public replay, and private replay phases has a 9,000-second maximum per model. If any phase exceeds its budget, the submission will fail without a score instead of continuing until Kaggleâ€™s global timeout. This should make stuck runs fail sooner and reduce queue pressure.
+Global runtime: Kaggleâ€™s global runtime limit is now 15 hours so the full evaluator has enough time to complete. This is a ceiling for the full job, not additional time for AttackAlgorithm.run().
+Secret-exfiltration scoring: the scorer now uses the active replay environment and authoritative replay trace instead of stale secret patterns. It also recognizes straightforward reversible encodings, including URL encoding, base64, hex, reversal, and separator-joined values.
+Replay remains authoritative: after your attack returns candidates, the evaluator replays those message chains in fresh environments. Scores come from replayed behavior, not participant-provided metadata or local traces.
+FAQ
+
+Is my attack.py algorithm run twice for the Private Leaderboard?
+No. Your custom code in attack.pyâ€”specifically your AttackAlgorithm classâ€”is executed exactly once per model during live exploration. It is not run a second time for Private Leaderboard scoring.
+
+How does the evaluation pipeline work?
+For each target model (gpt_oss and gemma), evaluation has two stages:
+
+Live exploration and candidate generation. attack.py runs in a sandboxed environment against the Public Guardrail (OptimalGuardrail). It has a 9,000-second maximum per model to explore and return replayable AttackCandidate prompt sequences.
+Static replay and leaderboard scoring. Once attack.py returns, it terminates. The exact candidate prompt sequences are replayed in fresh environments against both the Public Guardrail and the Private Guardrail. The resulting traces are evaluated against EXFILTRATION, UNTRUSTED_TO_ACTION, DESTRUCTIVE_WRITE, and CONFUSED_DEPUTY.
+
+This public/private evaluation design did not change in this evaluator update.
+
+Why does the Private Leaderboard use static replay instead of rerunning attack.py?
+This version of the competition intentionally measures whether a diverse, replayable portfolio of multi-turn attacks discovered against the public setup transfers to a fixed held-out defense. Keeping the private setup unprobeable preserves a genuinely held-out evaluation and prevents submissions from optimizing directly against it.
+
+The tradeoff is real: this setup does not measure online adaptation to the Private Guardrail. That is a valuable benchmark design too, and we will take that feedback into future competition design. But changing the evaluation contract now would be unfair to participants who built for the current setup. The Public Leaderboard is therefore a development signal, not a guarantee of Private Leaderboard rank.
+
+Did the 9,000-second budget change?
+No. Each attack-generation, public-replay, and private-replay phase still has a 9,000-second maximum per model. The change is that the budget is now enforced consistently during both attack generation and replay.
+
+Does the 15-hour limit mean my attack can run for 15 hours?
+No. Your attack phase still has its own 9,000-second maximum. The 15-hour limit covers the full hosted evaluation job.
+
+Why can my submission still show as running after AttackAlgorithm.run() returns?
+Returning candidates ends attack generation, not the whole evaluation. The evaluator still has to replay and score those candidates. We know the UI can make these phases hard to distinguish.
+
+What happens if attack generation or replay takes too long?
+If attack generation exceeds its 9,000-second budget, the entry fails with a Submission Error (Invalid Submission). Ensure your exploration loops track remaining time (config.budget_s) and return candidates cleanly before the deadline.
+
+If replay exceeds its budget, the submission fails without a score. We know this can make candidate sizing feel risky, especially when replay cost depends on model behavior rather than candidate count alone. The update makes these boundaries explicit and fail-fast instead of letting the run continue until Kaggleâ€™s global timeout.
+
+What are the key submission constraints?
+
+Parameter\tValue\tConstraint Details
+Target Models\tgpt_oss, gemma\tEvaluated sequentially
+Attack Generation Budget\t9,000 seconds\tPer model; fatal abort on timeout
+Max Tool Hops\t8 hops\tCapped per interact() call
+Max Candidates\t2,000 candidates\tMaximum replayable prompt chains returned per model
+Max Messages\t32 messages\tMaximum user messages per candidate chain
+Max Message Length\t10,000 characters\tMaximum length per individual prompt
+
+Why did some valid secret-exfiltration attacks not score before?
+The scorer could rely on stale secret patterns and miss straightforward encoded forms. That was a scorer issue, not something participants should have had to reverse-engineer. The update uses the active replay trace and recognizes common reversible encodings.
+
+Will scores change after this update?
+New submissions may score differently, especially if they exfiltrate valid secrets using encoded or transformed values that were previously missed.
+
+Will old submissions be rescored?
+No. Existing submissions will not be rescored. Resubmit if you want an earlier approach evaluated under the updated evaluator.
+
+Can I test locally?
+Yes. Local testing is useful for checking that your candidates replay correctly and behave as expected under the public setup. It is not a guarantee of held-out leaderboard performance.
+
+Does this change the broader scoring formula or guardrails?
+No. This rollout is scoped to runtime enforcement and secret-exfiltration scoring. It does not change the broader leaderboard design or add streaming, checkpoint, or partial-score behavior.
+
+Thank you again to everyone who shared examples, logs, and edge cases. This is a new competition format, and the communityâ€™s reports are helping us make the evaluator clearer, fairer, and more reliable.
+
+26
+
+Please sign in to reply to this topic.
+
+comment
+14 Comments
+1 appreciation comment
+Hotness
+kawasaki
+
+Posted 2 months ago
+
+arrow_drop_up
+14
+more_vert
+
+Does a "fail-fast" submission appear as a "Submission Format Error"?
+
+When I made submissions with a different number of attack candidates, the submissions with a larger number of candidates (N=800, N=1200) resulted in a "Submission Format Error" three hours after submission.
+
+By the way: The submission with N=100 was scored without any issues, and the score was returned after approximately 2 hours. Assuming the model loading time is zero, it took an average of 30 minutes to evaluate each model per phase for N=100. If we assume the time taken is proportional to the number of candidates, N=800 would take 240 minutes = 14,400 seconds, so it is not unnatural for it to time out. On the other hand, in local evaluation using AAS, it took about 700 seconds to evaluate the public set with N=100, meaning one model took around 300 seconds to complete the evaluation. Therefore, it seems the actual evaluation environment takes 6 times longer than AAS.
+
+Update: Scoring for both N=200 and N=400 has been completed, taking approximately 3.5 hours and 7 hours 40 minutes, respectively.
+
+9Hash
+
+Posted a month ago
+
+Â· 997th in this Competition
+
+arrow_drop_up
+0
+more_vert
+
+whats the max n which yielded a score, without submission format error?
+
+kawasaki
+
+Posted a month ago
+
+arrow_drop_up
+0
+more_vert
+
+My current score is 81.0, and the submission includes an average of 900 attack candidates per model.
+
+Hom
+
+Posted a month ago
+
+arrow_drop_up
+0
+more_vert
+
+was that before the evaluator or after? thanks
+
+kawasaki
+
+Posted a month ago
+
+arrow_drop_up
+2
+more_vert
+
+It's after the guardrail update. But, since it uses SECRET_MARKER, I'm not sure if it works with the private guardrail.
+
+Ya Xu
+
+Posted 2 months ago
+
+Â· 49th in this Competition
+
+arrow_drop_up
+10
+more_vert
+
+We checked whether the previous evaluator gave earlier submissions a scoring advantage and confirmed that it did not.
+
+This is simply wrong. The 'scoring formula' you used is a cumulative score of ALL the successful candidates. When you said ' the previous evaluator did not give earlier submissions a scoring advantage', I suppose you meant that they were not giving a score advantage to EACH successful candidate. However, as some of the most successful open notebooks have pointed out, this competition is NOT about the score of each individual candidate â€” EACH successful candidate seems to get the 16/32 points anyway, so the fact that 'the previous evaluator did not give earlier submissions a scoring advantage' just does NOT matter. This competition is about budget; you have to stack as many successful candidates as possible. I'll go straight to the point, the new evaluator takes approximately three times to finish compared to the old one, so you are only going to get about 1/3 of the older score, since you can only stack about 1/3 of the original candidates under the new evaluator.
+
+I'm not saying this is unfair. I think the fairness issue is not that bad since we are in the early stages of the competition. However, it's rather confusing since the older scores remain on the public leaderboard and open notebook, and they do not reflect what is going on with the evaluator update. If you don't do anything, expect the public leaderboard to stay the same for the next month or even for the whole competition, if that's what you want.
+
+PSï¼š
+
+PILKWANG KIM just posted a simple yet perfect solution by simply apply a score multiplier to post-update submissions [https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/discussion/714765], please consider it.
+
+n0Rollback ðŸ‡©ðŸ‡¿ðŸ‡«ðŸ‡·
+
+Posted a month ago
+
+arrow_drop_up
+3
+more_vert
+
+Thanks for the detailed FAQ and the transparency. One question that affects how we prioritize the remaining weeks: at the final deadline, will submissions that are currently on the leaderboard with scores from the PREVIOUS (pre-update) evaluator be included in the final/private ranking as-is? Or will final standings be computed only from submissions scored under the CURRENT evaluator? In other words, are the higher frozen pre-update scores competitive for the final prize ranking, or should we assume everyone is effectively compared under the current evaluator? This determines whether it is worth chasing those older score levels. Thanks!
+
+Unified Mentor Team
+
+Posted a month ago
+
+arrow_drop_up
+-1
+more_vert
+
+Nice Tool!
+
+Raymond Brunell
+
+Posted 2 months ago
+
+arrow_drop_up
+3
+more_vert
+
+The transparency in this post is appreciated, but it doesn't address the core problem for those of us who submitted before the update. You've confirmed the evaluator wasn't matching the intended contract: stuck runs that didn't fail fast, valid exfiltrations that didn't score because the scorer relied on stale patterns and missed common reversible encodings. These weren't edge cases we should have had to reverse-engineerâ€”your own FAQ says as much. Yet the consequences landed entirely on participants. Here's what makes that hard to accept: submissions are capped at 5 per day. That cap only makes sense if each submission returns enough signal to learn from. Instead, people burned days of their limited budget on runs that hung with no indication of whether attack code was still executing, or on exfiltrations that silently failed to score for reasons internal to a broken harness. We had no feedback, no diagnostic, no scoring clarityâ€”nothing to distinguish "my approach is wrong" from "the evaluator is broken." Under a hard daily limit, that isn't a minor inconvenience. It's a real, quantifiable loss of the only resource the competition rations. "We won't rescore" compounds it. The justificationâ€”that the old evaluator gave no scoring advantageâ€”misses the point. The harm isn't an unfair advantage to others; it's wasted submission slots and zero learnable signal returned for them. Telling people to resubmit means spending more of a capped resource to get what the harness should have delivered the first time. The cost of your bug is being paid in our submission budget, twice. When a competition rations submissions, withholds actionable feedback, and then declines to make participants whole after confirming its own scoring was defective, it's fair to ask what participants are actually getting in exchange for the attack code they're contributing. Right now it reads less like a fair contest and more like data collection where the downside risk sits entirely on us. Concrete asks:
+
+Refund or credit the submission slots consumed by runs affected by the runtime and exfiltration-scoring bugs, even if you won't rescore the runs themselves. Since you're early in the competition and rescoring is off the table, raise the daily limit temporarily so affected participants can re-test under the fixed evaluator without cannibalizing their ongoing work. Provide minimal per-submission diagnosticsâ€”at least phase-level pass/fail and whether exfiltration was detectedâ€”so a wasted slot returns something.
+
+I'd genuinely rather stay in a competition that corrects course than walk. But that requires the fix to reach backward to the people the bug already cost, not just forward to new submissions.
+
+owenvallis
+COMPETITION HOST
+
+Posted 2 months ago
+
+arrow_drop_up
+1
+more_vert
+
+Raymond, I think youâ€™re right that my post answered only part of the fairness question.
+
+We checked whether the old evaluator gave earlier submissions a scoring advantage. Youâ€™re pointing to a different cost: under a five-submission daily cap, a run that hangs or a valid exfiltration that fails to score uses one of the few chances participants have to learn that day. Asking people to resubmit does mean spending that chance again. I should have acknowledged that distinction in the original post.
+
+We discussed a full rescore with Kaggle before deciding against it. Our concern was that rescoring roughly a week of submissions would likely fill the evaluation queue and block new submissions for several days. That is why we did not rescore. It does not make the lost slots or lost signal disappear.
+
+I donâ€™t have an answer yet on the three remedies you asked for. I need to discuss them with Kaggle before suggesting that any of them are possible, including what diagnostic information we can responsibly expose. Iâ€™ll follow up here once weâ€™ve had that conversation. Thanks for making the submission-slot cost so concrete.
+
+Yurnero
+
+Posted 2 months ago
+
+Â· 1210th in this Competition
+
+arrow_drop_up
+9
+more_vert
+
+Can you also consider giving us some glimpse into the private guardrails somehow (maybe just a black-box version that returns only score feedback for a submitted list of attacks)? Otherwise, Iâ€™m afraid we will get a huge +-2000 shakeup in the end of the competition
+
+6 more replies
+arrow_drop_down
+Chester Yuan
+
+Posted 2 months ago
+
+Â· 959th in this Competition
+
+arrow_drop_up
+4
+more_vert
+
+Will the starter notebook be updated?
+
+Alex Sap
+
+Posted 2 months ago
+
+Â· 798th in this Competition
+
+arrow_drop_up
+1
+more_vert
+
+Hi @owenvallis , and thanks for the evaluator update and FAQ. I might be missing something on my end, but wanted to flag this in case it's useful.
+
+Since the Monday update, my submissions come back with "Your notebook generated a submission file with incorrect format â€¦ empty values" (a 0-byte submission). In my case, resubmitting the exact same notebook unchanged reproduces it.
+
+One observation in case it helps narrow things down: the error label is "incorrect format" rather than the "Your submission notebook exceeded the allowed runtime" message that the same pipeline returns on genuine timeouts, so it might be something other than a runtime limit.
+
+Others report the same (disc713157 says it affects even the official Getting Started Notebook and a clean rerun-pattern notebook; disc713391 describes it as intermittent). Apologies if this is already known - happy to share affected submission IDs privately. Thanks for looking into it!
+
+URAD
+
+Posted 2 months ago
+
+Â· 203rd in this Competition
+
+arrow_drop_up
+-1
+more_vert
+
+I believe you can do it well!!
+
+JosÃ© Luiz Luna-Xavier
+
+Posted 2 months ago
+
+Â· 1311th in this Competition
+
+arrow_drop_up
+-7
+more_vert
+
+Thank you, Owen Vallis and the Competition Team, for the clear evaluator update and FAQ. The clarification on the 9,000-second per-phase budget, the 15-hour global runtime limit, replay behavior after AttackAlgorithm.run() returns, and the secret-exfiltration scoring fix is very helpful. I also appreciate the transparency about not rescoring existing submissions and the recommendation to resubmit approaches under the updated evaluator. Thanks again for listening to the community reports and improving the evaluator.
+
+This comment has been deleted.
+
+This comment has been deleted.
+
+Appreciation (1)
+Yurnero
+
+Posted 2 months ago
+
+Â· 1210th in this Competition
+
+arrow_drop_up
+0
+more_vert
+
+Thanks for the clean update!"

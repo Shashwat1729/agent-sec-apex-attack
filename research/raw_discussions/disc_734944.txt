@@ -1,0 +1,66 @@
+﻿"menu
+Skip to
+content
+Create
+explore
+
+Home
+
+emoji_events
+
+Competitions
+
+leaderboard
+
+Benchmarks
+
+smart_toy
+
+Game Arena
+
+code
+
+Data Hub
+
+expand_more
+format_list_bulleted
+
+More
+
+expand_more
+search
+â€‹
+Sign In
+Register
+Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic.
+Learn more
+OK, Got it.
+OPENAI Â· FEATURED CODE COMPETITION Â· 19 DAYS TO GO
+Join Competition
+more_horiz
+AI Agent Security - Multi-Step Tool Attacks
+
+Develop attack algorithms to identify reproducible multi-step failures in tool-using AI agents.
+
+Overview
+Data
+Code
+Models
+Discussion
+Leaderboard
+Rules
+RADIANT-ALLOMANCER Â· 248TH IN THIS COMPETITION Â· POSTED 9 HOURS AGO
+arrow_drop_up
+1
+more_vert
+[Working Note] Reading the objective from source: a payload blind spot and reasoning-channel injection
+
+I've published my working note for this competition. It reads the scorer, replay harness, and reference guardrail directly from the shipped SDK and documents two concrete agent-security weaknesses â€” a guardrail that inspects the destination but not the payload, and a model that honors chat-template control tokens from untrusted input â€” each paired with a defensive fix, plus the throughput/timeout analysis behind the current frontier and a ledger of what did not work (multi-post, all-hops forging, multi-step chaining) with the source reason each fails. Feedback welcome.
+
+https://www.kaggle.com/writeups/radiantallomancer/reading-the-objective-from-source-a-throughput-bo
+
+Please sign in to reply to this topic.
+
+comment
+0 Comments
+Hotness"

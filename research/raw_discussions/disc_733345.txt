@@ -1,0 +1,139 @@
+﻿"menu
+Skip to
+content
+Create
+explore
+
+Home
+
+emoji_events
+
+Competitions
+
+leaderboard
+
+Benchmarks
+
+smart_toy
+
+Game Arena
+
+code
+
+Data Hub
+
+expand_more
+format_list_bulleted
+
+More
+
+expand_more
+search
+â€‹
+Sign In
+Register
+Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic.
+Learn more
+OK, Got it.
+OPENAI Â· FEATURED CODE COMPETITION Â· 19 DAYS TO GO
+Join Competition
+more_horiz
+AI Agent Security - Multi-Step Tool Attacks
+
+Develop attack algorithms to identify reproducible multi-step failures in tool-using AI agents.
+
+Overview
+Data
+Code
+Models
+Discussion
+Leaderboard
+Rules
+à¸­à¸˜à¸´à¸„à¸¡ à¸«à¸§à¸±à¸‡à¹€à¸ˆà¸£à¸´à¸à¸§à¸‡à¸¨à¹Œ Â· 199TH IN THIS COMPETITION Â· POSTED 7 DAYS AGO
+arrow_drop_up
+3
+more_vert
+How much fluctuate can shake on score . in same notebook?
+
+For me it about 2-12 point. Is it can happen in private?
+
+1
+
+Please sign in to reply to this topic.
+
+comment
+6 Comments
+Hotness
+xz
+
+Posted 7 days ago
+
+Â· 1223rd in this Competition
+
+arrow_drop_up
+1
+more_vert
+
+This has to be a bug. It should be deterministic.
+
+Mohammad Shadab Alam
+
+Posted 7 days ago
+
+Â· 10th in this Competition
+
+arrow_drop_up
+1
+more_vert
+
+Yes, this is quite concerning. If the same level of fluctuation occurs on the private leaderboard, the final outcome could feel more like a lottery. I have also observed significant variation up to an 8-point drop for very similar submissions since the announcement. Organizers should look into it.
+
+Rustam Bazarbayev
+
+Posted 7 days ago
+
+Â· 700th in this Competition
+
+arrow_drop_up
+-1
+more_vert
+
+In my opinion, it's because of the generation of LLMs.
+
+Adarsh Balanolla
+
+Posted 6 days ago
+
+Â· 1st in this Competition
+
+arrow_drop_up
+0
+more_vert
+
+Yes this is huge. Sometimes I wonder if i'm moving in the right direction. Maybe the new scoring mechanism will fix it.
+
+Suzanne Crippin
+
+Posted 7 days ago
+
+Â· 1053rd in this Competition
+
+arrow_drop_up
+0
+more_vert
+
+Would it help clarify the source of the variation if the organisers (or a competitor within the submission limits) submitted the exact same notebook multiple times? If the resulting scores are identical, that would suggest deterministic execution under those conditions. If they vary, it might indicate that candidate generation or execution introduces variability. It seems like that could help distinguish between scoring variability and submission variability. Of course, this only helps if the notebook actually produces identical candidate sets on each execution; if attack.py itself is stochastic, then repeated submissions could legitimately differ.
+
+zigiella
+
+Posted 7 days ago
+
+Â· 775th in this Competition
+
+arrow_drop_up
+0
+more_vert
+
+Same notebook does not necessarily mean the same evaluated attack set. If attack.py is executed again, stochastic model/tool-call generation and wall-clock-sensitive candidate construction can change both the number and content of the returned candidates, even if the scorer itself is deterministic.
+
+So I would not conclude that every fluctuation is a scoring bug. A 2â€“12 point swing is still large enough to deserve clarification. The key question for the private leaderboard is whether Kaggle reruns attack.py or reuses the candidate chains from the original submission, and whether seeds and runtime conditions are fixed. Without that information, I don't think we can infer how much of the public fluctuation will carry over to private."

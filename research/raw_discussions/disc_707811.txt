@@ -1,0 +1,180 @@
+﻿"menu
+Skip to
+content
+Create
+explore
+
+Home
+
+emoji_events
+
+Competitions
+
+leaderboard
+
+Benchmarks
+
+smart_toy
+
+Game Arena
+
+code
+
+Data Hub
+
+expand_more
+format_list_bulleted
+
+More
+
+expand_more
+search
+â€‹
+Sign In
+Register
+Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic.
+Learn more
+OK, Got it.
+OPENAI Â· FEATURED CODE COMPETITION Â· 19 DAYS TO GO
+Join Competition
+more_horiz
+AI Agent Security - Multi-Step Tool Attacks
+
+Develop attack algorithms to identify reproducible multi-step failures in tool-using AI agents.
+
+Overview
+Data
+Code
+Models
+Discussion
+Leaderboard
+Rules
+OWENVALLIS Â· POSTED 2 MONTHS AGO
+Â·
+COMPETITION HOST
+arrow_drop_up
+26
+more_vert
+Welcome to the AI Agent Security: Multi-Step Tool Attacks competition!
+
+He everyone, welcome to the competition!
+
+I'm Owen Vallis from OpenAI. I've been working with Manish, Catherine, and colleagues across Google, IEEE, Kaggle, and OpenAI to organize the competition and develop the evaluation framework.
+
+One of the things that makes this challenge particularly interesting is that agent security extends beyond individual prompts or responses. Tool-using agents operate across multiple turns, interact with external systems, and may maintain state or memory. These capabilities create new system-level attack surfaces that we are only beginning to understand.
+
+The goal of this competition is to identify creative and generalizable attack strategies that expose these failure modes. We hope the results will produce more than a leaderboard: they should help us better understand how attacks unfold, why they succeed, and how future agent systems can be made more secure.
+
+Please use the discussion forum to ask questions, compare ideas, and share what you learn. We also strongly encourage participants to publish write-ups describing their approach, including ideas that did not work. Those lessons can be just as valuable to the broader research community as the final winning solutions.
+
+To get started, take a look at:
+
+Starter Notebook
+Eval Harness Documentation
+
+We'll be following the forum and will respond where we can. I'm excited to see the approaches everyone develops.
+
+Good luck, and have fun!
+
+Owen
+
+10
+9
+6
+2
+
+Please sign in to reply to this topic.
+
+comment
+8 Comments
+Hotness
+Unified Mentor Team
+
+Posted a month ago
+
+arrow_drop_up
+0
+more_vert
+
+Amazing work!
+
+Dhanvin S
+
+Posted 2 months ago
+
+Â· 787th in this Competition
+
+arrow_drop_up
+3
+more_vert
+
+Hi I had a doubt regarding the final evaluation Will it be like equal weightage for both public and private guardrails Or will you be considering based on only the private guardrail
+
+Manish Bhatt
+COMPETITION HOST
+
+Posted 2 months ago
+
+arrow_drop_up
+4
+more_vert
+
+Welcome to the competition yâ€™all! +1 to everything Owen said.
+
+Iâ€™m Manish, and as Owen noted Iâ€™ve been supporting this competition with colleagues from OAI, Google, IEEE.
+
+We are very excited! Hope yâ€™all have a blast in this competition. We sure had fun designing it.
+
+Ramsha Ghulam Mustafa
+
+Posted 2 months ago
+
+arrow_drop_up
+1
+more_vert
+
+hey, can you help me with submission . my code is generating attack.py but when i am trying to submit it is showing could not find provided outputfile attack.py even though i can view file in output section
+
+Anjana mohan
+
+Posted a month ago
+
+arrow_drop_up
+1
+more_vert
+
+same issue, not able to proceed further for so many days
+
+Success Oduduru
+
+Posted 3 days ago
+
+Â· 1239th in this Competition
+
+arrow_drop_up
+0
+more_vert
+
+my score keeps giving me 0.000
+
+Mahmoud saad Elgharib
+
+Posted a month ago
+
+arrow_drop_up
+-1
+more_vert
+
+Thank you, Owen, for this insightful introduction. Iâ€™m truly excited to be part of this competition. The shift towards agent security and multi-step tool attacks is a fascinating and crucial area of research.
+
+Ragheb haddara
+
+Posted 3 days ago
+
+arrow_drop_up
+0
+more_vert
+
+The multi-step aspect is what makes this competition interesting. Single-step attacks (direct prompt injection) are well-studied, but chaining multiple legitimate tool calls to construct a malicious payload is a newer attack vector. The SDK provides several agent implementations â€” the deterministic_agent is a good starting point. Key insight: the attack isn't in any single tool call â€” it's in the SEQUENCE of calls.
+
+This comment has been deleted."

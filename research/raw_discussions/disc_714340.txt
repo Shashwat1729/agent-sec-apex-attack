@@ -1,0 +1,200 @@
+﻿"menu
+Skip to
+content
+Create
+explore
+
+Home
+
+emoji_events
+
+Competitions
+
+leaderboard
+
+Benchmarks
+
+smart_toy
+
+Game Arena
+
+code
+
+Data Hub
+
+expand_more
+format_list_bulleted
+
+More
+
+expand_more
+search
+â€‹
+Sign In
+Register
+Kaggle uses cookies from Google to deliver and enhance the quality of its services and to analyze traffic.
+Learn more
+OK, Got it.
+OPENAI Â· FEATURED CODE COMPETITION Â· 19 DAYS TO GO
+Join Competition
+more_horiz
+AI Agent Security - Multi-Step Tool Attacks
+
+Develop attack algorithms to identify reproducible multi-step failures in tool-using AI agents.
+
+Overview
+Data
+Code
+Models
+Discussion
+Leaderboard
+Rules
+MANISH BHATT Â· POSTED 2 MONTHS AGO
+Â·
+COMPETITION HOST
+arrow_drop_up
+2
+more_vert
+On why Private Leaderboard uses static replay...
+
+FAQ: Why does the Private Leaderboard use static replay instead of rerunning attack.py?
+
+A: This version of the competition intentionally measures whether a diverse, replayable portfolio of multi-turn attacks discovered against the public setup transfers to a fixed held-out defense. Keeping the private setup unprobeable preserves a genuinely held-out evaluation and prevents submissions from optimizing directly against it.
+
+The tradeoff is real: this setup does not measure online adaptation to the Private Guardrail (although you have the full SDK, so you can experiment with whatever approaches you'd like on the public setup). We think that's a valuable benchmark design too.
+
+That said, we really appreciate the feedback, and we'll definitely keep it in mind for future competition designs. My view is that changing the evaluation contract now would be unfair to participants who built around the current setup. The Public Leaderboard is therefore a development signal, not a guarantee of Private Leaderboard rank.
+
+This is mitigated in the private setup, which we can't disclose.
+
+4
+
+Please sign in to reply to this topic.
+
+comment
+7 Comments
+Hotness
+Alex Sap
+
+Posted a month ago
+
+Â· 795th in this Competition
+
+arrow_drop_up
+3
+more_vert
+
+Hi @theprofe1321
+
+To calibrate our understanding of the private (held-out) leaderboard evaluation, could the hosts clarify the class of decision the private guardrail makes - without revealing the guardrail itself?
+
+Specifically: does the private guardrail allow/deny an outbound tool call based on the content of its arguments (i.e. inspecting/scanning the outgoing data for sensitive patterns), or based on the provenance / data-flow of the values involved (i.e. blocking only values that were derived from a protected or sensitive source)?
+
+I understand the exact private guardrail is intentionally held out and you may not be able to answer - even a high-level "primarily content-based / primarily provenance-based / both / can't say" would help participants reason about robustness without disclosing the implementation. Thanks!
+
+Manish Bhatt
+COMPETITION HOST
+
+Posted 2 months ago
+
+arrow_drop_up
+4
+more_vert
+
+Offline diversity algorithms e.g. https://arxiv.org/abs/2402.16822
+
+Manish Bhatt
+COMPETITION HOST
+
+Posted 2 months ago
+
+arrow_drop_up
+2
+more_vert
+
+https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/discussion/711457#3481516
+
+Crosspost.
+
+Manish Bhatt
+COMPETITION HOST
+
+Posted 2 months ago
+
+arrow_drop_up
+1
+more_vert
+
+More FAQ - https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/discussion/712642
+
+Chester Yuan
+
+Posted 2 months ago
+
+Â· 956th in this Competition
+
+arrow_drop_up
+0
+more_vert
+
+Hi @theprofe1321 . Quick question: If a submission doesn't time out on the public guardrail, does that guarantee it won't time out during the private guardrail rerun?
+
+kawasaki
+
+Posted 2 months ago
+
+arrow_drop_up
+0
+more_vert
+
+In my opinion, no. I submitted two things at the same time:
+
+Baseline: It returned a score after 8.5 hours without timing out.
+A version with a slightly increased number of attack candidates from the baseline: It timed out after 7.5 hours.
+
+7.5 hours is equivalent to three 2.5-hour (9,000 seconds) intervals. Therefore, I believe this indicates that the two public guardrails were completed, but it timed out on the first private guardrail. It is likely that private guardrails take longer to verify than public guardrails.
+
+Alex Sap
+
+Posted a month ago
+
+Â· 795th in this Competition
+
+arrow_drop_up
+0
+more_vert
+
+Hi @zhtngr ! thanks, that's a really useful data point.
+
+Could you share two details to help calibrate?
+
+What was the exact error/status on the timed-out submission - a timeout / "exceeded runtime", a "Submission Scoring Error / incorrect format", or something else?
+
+How did you attribute the timeout to the private phase specifically - inferred from the total wall-time (~7.5h â‰ˆ 3Ã—2500s), or was there a per-phase signal (a log line / submission detail) that named the phase?
+
+Trying to understand whether a public-COMPLETE run can still fail on the private replay. Thanks!
+
+kawasaki
+
+Posted a month ago
+
+arrow_drop_up
+1
+more_vert
+Submissions that timed out were displayed as "Submission Format Error."
+I determined this based on the inference time. For example, if a submission times out during the public replay of GPT-OSS, it takes about 2.5 hours. If it times out during the private replay of GPT-OSS, it takes around 7.5 hours. Since one of my submissions timed out about 7 hours after submission, I suspect that it timed out during the GPT-OSS private replay.
+Alex Sap
+
+Posted a month ago
+
+Â· 795th in this Competition
+
+arrow_drop_up
+0
+more_vert
+
+Thanks, @kawasaki - really helpful, both points. Good to have the "Submission Format Error" = timeout mapping confirmed; we've seen the same on our end. And noted that the public-vs-private attribution is inferred from wall-clock, not an explicit per-phase signal - useful caveat.
+
+Appreciate you sharing the numbers. ðŸ™
+
+This comment has been deleted."
