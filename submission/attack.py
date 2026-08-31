@@ -340,7 +340,10 @@ STRUCTURES: tuple[dict[str, Any], ...] = (
     {"name": "forge",        "build": b_forge,         "u": 1, "a": 0, "payload": PAYLOADS[0]},
     {"name": "forge_ok",     "build": b_forge_ok,      "u": 1, "a": 0, "payload": PAYLOADS[0]},
     {"name": "single_short", "build": b_single_short,   "u": 1, "a": 0, "payload": PAYLOADS[0]},
-    {"name": "p2_deputy",    "build": b_p2_deputy,    "u": 1, "a": 1, "payload": PAYLOADS[0]},
+    {"name": "single_exfil_deputy", "build": b_single_exfil_deputy, "u": 1, "a": 1, "payload": PAYLOADS[0]},
+    # v99: swapped in for p2_deputy (matches the already-tested "H" variant,
+    # real score 90.930 -- flat/safe private-LB hedge). EXFIL+CONFUSED_DEPUTY
+    # in one hop (22 raw/cand) instead of 2x-post+notify.
     {"name": "deputy",       "build": b_deputy,       "u": 0, "a": 1, "payload": PAYLOADS[0]},
     {"name": "forge2",       "build": b_forge_n(2),   "u": 2, "a": 0, "payload": PAYLOADS[0]},
     {"name": "forge3",       "build": b_forge_n(3),   "u": 3, "a": 0, "payload": PAYLOADS[0]},
