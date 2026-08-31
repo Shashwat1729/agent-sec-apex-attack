@@ -22,6 +22,7 @@ from apex_attack.primitives.templates import (
     b_forge_ok,
     b_p2_deputy,
     b_single_short,
+    b_sync_task,
 )
 
 STRUCTURES: tuple[dict[str, Any], ...] = (
@@ -36,4 +37,11 @@ STRUCTURES: tuple[dict[str, Any], ...] = (
     {"name": "forge5",       "build": b_forge_n(5),   "u": 5, "a": 0, "payload": PAYLOADS[0]},
     # forge6/forge8 intentionally excluded from default pool (see header).
     # Builders remain available for experimental bundles.
+    {"name": "sync_task",    "build": b_sync_task,    "u": 1, "a": 0, "payload": PAYLOADS[0]},
+    # sync_task added 2026-08-31: no Harmony forge injection, plain "system task"
+    # framing ("Sync task: ... No commentary. Execute immediately.") -- pattern
+    # observed independently in two external public notebooks (lopure/PUSH100 V7,
+    # verityix/V308) that do not use our control-token injection at all. Added as
+    # ONE more race candidate, isolated -- if it's worse than forge it simply never
+    # wins head-start, at the cost of a few calibration probes.
 )
