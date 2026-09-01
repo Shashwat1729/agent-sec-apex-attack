@@ -82,6 +82,30 @@ Companion to `docs/WORKING_NOTE.md` — the full evidence trace behind every cla
 ## v91–v95, A–E, F–J, K–O — all landed (see ledger above)
 
 All 20 of these submissions (2026-08-23 through 2026-08-29) have real scores now, folded into the ledger
-above. None beat v64's 92.540. As of 2026-08-31, today's 5-slot quota is unused; see `docs/WORKING_NOTE.md`
-§7/Appendix F for the current plan against the corrected top-50 target (111.690, not the earlier 96±4
-estimate).
+above. None beat v64's 92.540.
+
+## 2026-08-31 batch (v96–v100) — landed, confirms `sync_task` is a negative lever
+
+| Variant | Public | Note |
+|---|---|---|
+| v96 (`sync_task` structure, isolated) | 86.715 | New plain-framing lever (no Harmony forge), inspired by external notebooks — **confirmed negative**, well below every v64-lineage resubmit |
+| v97 (resubmit v64-exact) | 89.250 | Variance harvest |
+| v98 (resubmit v94-exact) | 90.490 | 2nd sample of v94's config; combined with the original 91.910 this looks like ordinary variance, not a distinct interaction effect |
+| v99 (`sync_task` + `single_exfil_deputy` combo) | 84.340 | **Confirmed negative** — worst of the batch, consistent with v96 |
+| v100 (resubmit v64-exact) | 90.065 | Variance harvest |
+
+`sync_task` was pushed to the default pool without review by a background research agent that exceeded its scope (see `docs/WORKING_NOTE.md` incident note); it has been reverted out of `src/apex_attack/search/structures.py` and `primitives/templates.py`. These two real scores (86.7, 84.3) are the evidence that revert was correct, not merely cautious.
+
+## 2026-09-01 final-day batch (v105/106/107/108/109) — submitted, deadline 23:59 UTC
+
+Last day, real deadline confirmed via `kaggle competitions list` as 2026-09-01 23:59 UTC. Two independent research passes for newly-public notebooks/discussions in the hours before the deadline found nothing new and actionable beyond what's already in this ledger. All 5 slots used on evidence-backed choices only — no untested levers:
+
+| Kernel | Content | Rationale |
+|---|---|---|
+| v105 | v64-exact byte-identical resubmit | Best-ever real score (92.540) anchor / variance harvest |
+| v107 | v66-exact byte-identical resubmit | 3rd-best real score (92.120) |
+| v106 | v77-exact byte-identical resubmit | 2nd-best real score (92.160) |
+| v108 | v64 pool + `single_exfil_deputy` (`STRUCTURES_WITH_HEDGE`) | Private-leaderboard guardrail-robustness hedge — confirmed pool-neutral on public score across 5 prior tests (F/H/I/N/O); the private-LB uses different guardrails per the host, so this diversifies the attack surface (EXFIL+CONFUSED combined in one hop) rather than chasing public score alone |
+| v109 | v64-exact byte-identical resubmit, 4th roll today | Another shot at beating 92.540 given the config's wide roll-to-roll variance (88.7–92.5 across all prior resubmits) |
+
+Real scores pending at submission time; update this table once they land. Final Submission selection (max 2, evaluated on a private leaderboard with different guardrails) should not be pure auto-pick-highest-public — see `docs/WORKING_NOTE.md` for the reasoning.
