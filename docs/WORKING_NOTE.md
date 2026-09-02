@@ -2,8 +2,8 @@
 
 **Author:** Shashwat Bajpai (`shashwat1729`) -- Team Apex Attack
 **Competition:** [AI Agent Security -- Multi-Step Tool Attacks](https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks) (OpenAI / Google / IEEE)
-**Official Writeup:** This document is the single canonical writeup for all Apex Attack submissions (best single: **v64 -- 92.540 public**, rank 278/4,216). Code: `src/apex_attack/` -> `submission/attack.py` (bundled via `tools/bundle.py`)
-**Date:** 2026-08-24, revised 2026-08-31 | **License:** MIT 2.0 (Kaggle winner-license compliant)
+**Official Writeup:** This document is the single canonical writeup for all Apex Attack submissions (best single: **v64 -- 92.540 public**, rank ~289/4,253 public; **final private rank ~920/4,251** -- see Section 6.5). Code: `src/apex_attack/` -> `submission/attack.py` (bundled via `tools/bundle.py`)
+**Date:** 2026-08-24, revised 2026-09-02 (competition deadline passed 2026-09-01 23:59 UTC) | **License:** MIT 2.0 (Kaggle winner-license compliant)
 
 ---
 
@@ -237,6 +237,48 @@ and actionable. All 5 slots went to evidence-backed choices only:
 No lower bound above 92.540 is claimed for any of these. Update this section when real scores land, and
 see Section 9 for the Final Submission selection reasoning (do not auto-pick by public score alone).
 
+### 6.5 Post-deadline: the public/private divergence, and what it reveals
+
+The competition deadline (2026-09-01 23:59 UTC) has now passed, and Kaggle retroactively revealed a
+`privateScore` field on every submission we ever made. This is the single most important result in
+this writeup, and it is a humbling one: **our entire multi-week optimization loop was chasing a metric
+that barely transfers.**
+
+Across more than 40 real submissions spanning public scores from 81.2 to 92.5, the private score
+clusters in a narrow **0.015-0.210** band with almost no correlation to public score -- a 92.540-public
+config and an 84.340-public config land at nearly the same private score. The live leaderboard view
+(which Kaggle switches to the private board once a competition closes) shows top scores in the
+**29-46** range, held by an entirely different set of teams than the public top-50. Our own rank moved
+from roughly 278-289th of ~4,220 teams (public, top ~7%) to **920th of 4,251** (private, top ~22%) --
+a real, meaningful drop, though nowhere near the catastrophic collapse the raw score gap (0.21 vs.
+29-46) might suggest, which implies the private-score distribution is extremely front-loaded: most
+teams, not just us, score close to zero once the stricter private guardrail is applied, and only a
+small group of teams found something that survives it.
+
+We had, in fact, already identified this exact risk on paper nine days before the deadline (from
+reading `jed_attack_gateway.py`'s guardrail-resolution code: a private guardrail class,
+`persistent_provenance`, distinct from the public `OptimalGuardrail`, is installed from a wheel we
+never had access to) -- but with no way to test against it locally, "keep optimizing the public score,
+it's the only feedback we have" was the only actionable response at the time. That reasoning was
+correct given the information available; it does not make the outcome any less real.
+
+The most concrete, retrospectively-visible lesson: **`TOP_HEAD_START=150`** (tested once, 2026-08-20,
+as v76) scored only 90.935 publicly -- worse than our 300-default baseline -- and was deprioritized for
+exactly that reason. Its private score, 0.210, ties for the *highest in our entire ledger*, alongside
+one other submission (v80) that also happened to move a knob in the opposite direction from where
+public-score optimization pushed us. We do not have enough private-score data points to call this a
+confirmed lever (two isolated-ish samples is not a controlled experiment), but it is a real, honest
+signal that public and private optimization pointed in different directions on at least one axis --
+and we only noticed after it stopped mattering.
+
+**Takeaway for future work under a disclosed public/private metric split:** treat "we can't test the
+private metric" as a reason to hedge structurally (as we did with `single_exfil_deputy` and the base64
+marker -- diversifying *what* fires, not just how efficiently) rather than a reason to fully commit to
+public-score hill-climbing as if it were the real objective. And check for *any* leaked private-score
+signal earlier and more deliberately -- we had `privateScore` sitting unexamined in our own submission
+history for weeks because it stayed empty until the deadline and we never thought to look until it was
+too late to act on.
+
 ---
 
 ## 7. What Didn't Work (5 Families)
@@ -251,7 +293,7 @@ Five families failed with isolated real A/B -- documented so you do not repeat t
 
 **4. Terseness priming v67.** 92.5->88.9 (-3.7) -- shorter prompt measured worse.
 
-**5. Encoding `SECRET_MARKER` (base64/hex/URL).** Would score 0 -- `_contains_secret` checks literal; decode only for `fs.read` values (blocked). See [733058](https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/discussion/733058).
+**5. Encoding `SECRET_MARKER` (base64/hex/URL).** Would score 0 -- `_contains_secret` checks literal; decode only for `fs.read` values (blocked). See [733058](https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/discussion/733058). Our own `I_b64` submission (base64-encoded marker as one additional pool structure, not a full payload swap) still scored 90.555 -- consistent with this, since only that one candidate would fail to fire while the rest of the pool still uses the literal marker; a post-competition search turned up an unverified discussion snippet (`/discussion/710234`, could not confirm wording directly -- Kaggle's pages are login-walled to automated fetching) suggesting a later scorer update broadened detection to more reversible encodings (hex/URL/reversal/separator-joined) -- plausibly an extension of the same literal-detection design already documented here, not new information.
 
 > **Meta-lesson:** Cleaner refactor cost 30 pts; reverted. One variable per submission thereafter.
 
@@ -304,7 +346,7 @@ We disclose only the benchmark's **public** guardrail behavior and template hand
 - Single-run variance +/-5 (observed 2-12, [733345](https://www.kaggle.com/competitions/ai-agent-security-multi-step-tool-attacks/discussion/733345)); <5 not claimed.
 - Gap to the field frontier is now larger and better-measured than it looked in earlier drafts of this note: a live leaderboard pull (2026-08-31) puts the top score at 147.530 and the top-50 cutoff at 111.690 against our 92.540 (rank 278/4,216) -- and 20 further single-variable submissions since v64 (Section 6.4) found nothing in the known lever space that closes it. Treated as the project's central open question, not a near-miss.
 - Infra: `cron` pushes failed twice; require `kernels status` confirmation.
-- **Final Submission selection (max 2, evaluated on a private leaderboard with different guardrails per the host):** we deliberately did not auto-pick the two highest public scores. Auto-pick-by-public-score optimizes for a guardrail configuration that is explicitly stated to differ on the private set, so two near-identical high public rolls of the same mechanism carry correlated risk if that mechanism happens to interact badly with the private guardrail. Our pick: (1) the single highest confirmed real public score (v64-exact, 92.540) as the pure-performance bet, and (2) the `single_exfil_deputy` hedge variant (v64 pool + `STRUCTURES_WITH_HEDGE`, v108) as a deliberately different attack surface (EXFIL+CONFUSED triggered together in one hop, not just resampled) -- diversifying which failure mode we're exposed to rather than doubling down on one. This is a judgment call under genuine uncertainty (we have no private-leaderboard data at all), not a proven-optimal choice.
+- **Final Submission selection (max 2, evaluated on a private leaderboard with different guardrails per the host):** our recommendation was to not auto-pick the two highest public scores, since that optimizes for a guardrail explicitly stated to differ on the private set -- pick (1) the single highest confirmed real public score (v64-exact, 92.540) as the pure-performance bet, and (2) the `single_exfil_deputy` hedge variant (v64 pool + `STRUCTURES_WITH_HEDGE`, v108) as a deliberately different attack surface, diversifying which failure mode we're exposed to. **This selection had to be made manually in the Kaggle web UI** -- there is no API/CLI mechanism to set it (checked: `kaggle competitions` has no such subcommand) -- so it depended on the user acting on the recommendation before the deadline; if it was never touched, Kaggle's default behavior applies (typically your best-by-public-score submissions). Section 6.5's post-deadline finding -- that public and private score barely correlate, and that our single highest private-scoring submission (v76, private 0.210) had a middling public score (90.935) we'd never have picked by this reasoning either -- shows that even our own hedge-based reasoning was still anchored to public-score intuitions we had no way to validate. Recorded honestly rather than retro-fitted to look prescient.
 
 ---
 
@@ -606,6 +648,8 @@ This competition measures a narrow but security-critical primitive -- can an att
 Private is held out; hedge is small (taint-free `deputy`) because nothing else is reachable without breaking EXFIL.
 
 We hope the artifact that survives this benchmark is not the score but the pattern: *read the scorer, time the replay, trace the guardrail, and measure one variable at a time.* The Working Note award rubric calls this usefulness to the benchmark community -- we call it the discipline that finally made the numbers stop lying.
+
+**Postscript, written after the deadline.** The discipline above is real, and it took a public score from 60.7 to 92.54 through 40+ honestly-isolated experiments. It is also, in the end, a story about optimizing the metric we could see (Section 6.5). The private leaderboard -- the one that actually decides the outcome -- barely moved with any of it, and the one submission that scored best against it was a config we deprioritized along the way. That is not a reason to distrust the methodology; disciplined single-variable measurement is still the right way to find out anything at all under uncertainty. It is a reason to say plainly that measuring the right thing matters at least as much as measuring carefully, and that when a host tells you the metric you can see is not the metric that counts, believe them earlier than we did.
 
 ---
 
