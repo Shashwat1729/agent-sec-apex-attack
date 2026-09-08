@@ -1,0 +1,702 @@
+[
+ {
+  "ref": "martynaplomecka/getting-started-notebook",
+  "title": "Getting Started Notebook",
+  "author": "MartynaPlomecka",
+  "lastRunTime": "2026-07-13T13:04:02.040000",
+  "totalVotes": 1763
+ },
+ {
+  "ref": "foysalemonshanto/ai-agent-security-v15",
+  "title": "AI Agent Security V15",
+  "author": "FOYSAL",
+  "lastRunTime": "2026-08-04T17:40:16.763000",
+  "totalVotes": 546
+ },
+ {
+  "ref": "llkh0a/aas-local-validation",
+  "title": "AAS | Local validation",
+  "author": "Kh0a",
+  "lastRunTime": "2026-08-24T01:51:34.697000",
+  "totalVotes": 459
+ },
+ {
+  "ref": "dimong4/ai-agent-security",
+  "title": "AI Agent Security",
+  "author": "Dmitry Belan",
+  "lastRunTime": "2026-08-16T14:45:13.587000",
+  "totalVotes": 426
+ },
+ {
+  "ref": "evgendvorkin/ai-agent",
+  "title": "AI Agent",
+  "author": "Дворкин Евгений Владимирович",
+  "lastRunTime": "2026-08-31T18:06:32.470000",
+  "totalVotes": 371
+ },
+ {
+  "ref": "foysalemonshanto/ai-agent-security-v12",
+  "title": "AI Agent Security V12",
+  "author": "FOYSAL",
+  "lastRunTime": "2026-07-25T04:07:34.263000",
+  "totalVotes": 317
+ },
+ {
+  "ref": "canqiang/aiagsec-ea-b-0721",
+  "title": "AIAgSec Ea B 0721",
+  "author": "Xander",
+  "lastRunTime": "2026-07-21T06:31:44.707000",
+  "totalVotes": 273
+ },
+ {
+  "ref": "pilkwang/ai-agent-replay-dense-exfiltration",
+  "title": "AI Agent: Replay-Dense Exfiltration",
+  "author": "Pilkwang Kim",
+  "lastRunTime": "2026-06-16T09:52:13.737000",
+  "totalVotes": 231
+ },
+ {
+  "ref": "tetsutani/ai-agent-sec-adaptive-uniform-two-probe-recovery",
+  "title": "AI Agent Sec Adaptive Uniform Two Probe Recovery",
+  "author": "tetsu2131",
+  "lastRunTime": "2026-07-26T16:45:41.237000",
+  "totalVotes": 217
+ },
+ {
+  "ref": "pilkwang/ai-agent-v3-1-2-single-post-exfiltration",
+  "title": "AI Agent v3.1.2 - Single-Post Exfiltration",
+  "author": "Pilkwang Kim",
+  "lastRunTime": "2026-07-24T06:05:01.873000",
+  "totalVotes": 189
+ },
+ {
+  "ref": "yusuketogashi/ai-agent-sec-another-approach",
+  "title": "AI Agent Sec | Another Approach 🧭",
+  "author": "Yusuke Togashi",
+  "lastRunTime": "2026-07-19T21:31:40.777000",
+  "totalVotes": 182
+ },
+ {
+  "ref": "nctuan/jed-v25",
+  "title": "JED - v25",
+  "author": "Nguyễn Công Tuấn",
+  "lastRunTime": "2026-07-30T03:55:44.803000",
+  "totalVotes": 170
+ },
+ {
+  "ref": "pilkwang/ai-agent-working-note",
+  "title": " AI Agent - 📘 Working Note",
+  "author": "Pilkwang Kim",
+  "lastRunTime": "2026-07-05T03:18:45.847000",
+  "totalVotes": 159
+ },
+ {
+  "ref": "nctuan/jed-slow-multipost",
+  "title": "JED - Slow multipost",
+  "author": "Nguyễn Công Tuấn",
+  "lastRunTime": "2026-08-04T03:37:04.947000",
+  "totalVotes": 154
+ },
+ {
+  "ref": "rokaiyasomapti/ai-agent-sec-another-approach-resubmission",
+  "title": "AI Agent Sec | Another Approach (Resubmission)",
+  "author": "RS",
+  "lastRunTime": "2026-07-18T00:45:20.977000",
+  "totalVotes": 142
+ },
+ {
+  "ref": "yusuketogashi/lb60-525-july-safe-edge-prune-tail8-upgrade",
+  "title": "LB60.525 July Safe Edge-Prune 🛡️ | Tail8 Upgrade",
+  "author": "Yusuke Togashi",
+  "lastRunTime": "2026-07-08T01:01:11.700000",
+  "totalVotes": 138
+ },
+ {
+  "ref": "kaiwalyaatulraut/ai-agent-security-competition-solution",
+  "title": "AI Agent Security Competition Solution",
+  "author": "KAIWALYA RAUT",
+  "lastRunTime": "2026-08-13T11:37:47.210000",
+  "totalVotes": 135
+ },
+ {
+  "ref": "boristown/agi-ai-agent-security",
+  "title": "【暗黑AGI】AI Agent Security",
+  "author": "暗黑AGI",
+  "lastRunTime": "2026-06-21T08:24:20.167000",
+  "totalVotes": 129
+ },
+ {
+  "ref": "pilkwang/eda-agent-security-trajectory-search",
+  "title": "EDA: Agent Security Trajectory Search",
+  "author": "Pilkwang Kim",
+  "lastRunTime": "2026-06-13T22:34:19.580000",
+  "totalVotes": 125
+ },
+ {
+  "ref": "haodou092/conservative-replay-safe-sizing",
+  "title": "Conservative Replay-Safe Sizing",
+  "author": "haodou092",
+  "lastRunTime": "2026-07-20T01:52:09.413000",
+  "totalVotes": 124
+ },
+ {
+  "ref": "kaiwalyaatulraut/ai-agent-security-solution",
+  "title": "AI Agent Security Solution",
+  "author": "KAIWALYA RAUT",
+  "lastRunTime": "2026-07-23T15:37:26.337000",
+  "totalVotes": 122
+ },
+ {
+  "ref": "karnakbaevarthur/multi-endpoint-severity-stacker",
+  "title": "Multi Endpoint Severity Stacker ",
+  "author": "Karnakbayev Artur",
+  "lastRunTime": "2026-06-16T05:28:20.557000",
+  "totalVotes": 118
+ },
+ {
+  "ref": "adhirajjagtap/probe-and-flood-strategy",
+  "title": "Probe-and-Flood Strategy",
+  "author": "Adhiraj Jagtap",
+  "lastRunTime": "2026-08-22T04:44:26.357000",
+  "totalVotes": 116
+ },
+ {
+  "ref": "yaroslavkholmirzayev/ai-agent-security-k1-short",
+  "title": "AI Agent Security | k1-short",
+  "author": "Yaroslav kholmirzayev",
+  "lastRunTime": "2026-06-24T18:58:34.707000",
+  "totalVotes": 111
+ },
+ {
+  "ref": "anasriaz/ai-agent-security",
+  "title": "AI Agent Security ",
+  "author": "Anas Riaz",
+  "lastRunTime": "2026-08-29T19:06:44.697000",
+  "totalVotes": 108
+ },
+ {
+  "ref": "haodou092/notebookcb9f3b04b6",
+  "title": "notebookcb9f3b04b6",
+  "author": "haodou092",
+  "lastRunTime": "2026-07-18T12:06:16.493000",
+  "totalVotes": 106
+ },
+ {
+  "ref": "yaroslavkholmirzayev/replay-dense-boundary-exact-aggressive",
+  "title": "Replay Dense Boundary Exact + Aggressive",
+  "author": "Yaroslav kholmirzayev",
+  "lastRunTime": "2026-06-22T11:08:20.077000",
+  "totalVotes": 104
+ },
+ {
+  "ref": "caoyupeng/v23-alpha2co-667-break60",
+  "title": "V23 Alpha2CO 667 Break60",
+  "author": "SpeedSci",
+  "lastRunTime": "2026-06-22T02:49:18.317000",
+  "totalVotes": 94
+ },
+ {
+  "ref": "lucifer19/cognitive-firewall",
+  "title": "🧠🛡️ Cognitive Firewall",
+  "author": "Krizsó Gergely",
+  "lastRunTime": "2026-07-18T07:16:57.437000",
+  "totalVotes": 90
+ },
+ {
+  "ref": "anvithpothula/aisec-pilk",
+  "title": "AISec Pilk",
+  "author": "Anvith Pothula",
+  "lastRunTime": "2026-07-21T19:11:34.547000",
+  "totalVotes": 86
+ },
+ {
+  "ref": "canqiang/aiagsec-submission",
+  "title": "AIAgSec Submission",
+  "author": "Xander",
+  "lastRunTime": "2026-07-17T12:53:15.090000",
+  "totalVotes": 82
+ },
+ {
+  "ref": "kokinnwakashuu/ai-agent-security-working-diary",
+  "title": "AI Agent Security - Working Diary",
+  "author": "kokinnwakashuu",
+  "lastRunTime": "2026-06-25T09:36:58.600000",
+  "totalVotes": 77
+ },
+ {
+  "ref": "lucifer19/shadow-cat-firewall",
+  "title": "🐈‍⬛⚡ Shadow Cat Firewall",
+  "author": "Krizsó Gergely",
+  "lastRunTime": "2026-07-18T07:51:20.777000",
+  "totalVotes": 74
+ },
+ {
+  "ref": "caoyupeng/ai-agent-security-v2-exfil-mass-shift",
+  "title": "AI Agent Security - V2 Exfil Mass Shift",
+  "author": "SpeedSci",
+  "lastRunTime": "2026-06-13T16:01:18.113000",
+  "totalVotes": 72
+ },
+ {
+  "ref": "lopure/jed-multi-step-attack-relay-push100",
+  "title": "JED Multi Step Attack RELAY PUSH100",
+  "author": "Who am I?",
+  "lastRunTime": "2026-08-30T02:30:45.927000",
+  "totalVotes": 69
+ },
+ {
+  "ref": "arizalfirdaus123/multi-turn-exfiltration-with-adaptive-burst",
+  "title": "Multi-Turn Exfiltration with Adaptive Burst",
+  "author": "Arizal Muluk",
+  "lastRunTime": "2026-07-02T09:14:05.297000",
+  "totalVotes": 62
+ },
+ {
+  "ref": "junaid512/agent-security-attack-submission",
+  "title": "Agent-Security Attack Submission",
+  "author": "Muhammad Junaid",
+  "lastRunTime": "2026-07-03T18:25:52.880000",
+  "totalVotes": 62
+ },
+ {
+  "ref": "nawfeelrahman1124444/baseline-solution-4-900",
+  "title": "Baseline Solution - 4.900 🔥🫡",
+  "author": "(ノ◡ <)",
+  "lastRunTime": "2026-06-11T19:12:50.857000",
+  "totalVotes": 61
+ },
+ {
+  "ref": "karnakbaevarthur/verify-and-keep-deterministic-red-team-attack",
+  "title": "Verify-and-Keep: Deterministic Red-Team Attack",
+  "author": "Karnakbayev Artur",
+  "lastRunTime": "2026-06-12T07:17:05.840000",
+  "totalVotes": 56
+ },
+ {
+  "ref": "mccocoful/local-cpu-submission-for-hengck23",
+  "title": "local cpu + submission for hengck23",
+  "author": "cm391",
+  "lastRunTime": "2026-08-26T11:49:06.403000",
+  "totalVotes": 53
+ },
+ {
+  "ref": "gdataranger/jed-attack-starter-v3-1-2-fixed",
+  "title": "JED Attack — Starter (v3.1.2 Fixed)",
+  "author": "Mark Susol",
+  "lastRunTime": "2026-06-26T14:18:35.887000",
+  "totalVotes": 53
+ },
+ {
+  "ref": "caoyupeng/lb-66-015-from-kun-zhang",
+  "title": "LB【66.015】from Kun Zhang",
+  "author": "SpeedSci",
+  "lastRunTime": "2026-07-12T04:37:53.243000",
+  "totalVotes": 51
+ },
+ {
+  "ref": "georgymamarin/red-team-starter-what-fires-and-what-it-s-worth",
+  "title": "Red-team starter: what fires, and what it's worth",
+  "author": "Georgy Mamarin",
+  "lastRunTime": "2026-08-19T10:41:42.900000",
+  "totalVotes": 51
+ },
+ {
+  "ref": "caoyupeng/ai-agent-security-v22-urlcompact-642",
+  "title": "AI Agent Security - V22 URLCompact 642",
+  "author": "SpeedSci",
+  "lastRunTime": "2026-06-21T07:19:21.427000",
+  "totalVotes": 48
+ },
+ {
+  "ref": "coolin666/jed-attack-v12",
+  "title": "JED Attack v12",
+  "author": "coolin666",
+  "lastRunTime": "2026-08-13T14:11:10.673000",
+  "totalVotes": 44
+ },
+ {
+  "ref": "adonisleu/jed-attack-submission",
+  "title": "JED Attack Submission",
+  "author": "ElijahMingLiu",
+  "lastRunTime": "2026-07-04T05:59:03.727000",
+  "totalVotes": 35
+ },
+ {
+  "ref": "karnakbaevarthur/dynamic-replay-architecture",
+  "title": "Dynamic Replay Architecture",
+  "author": "Karnakbayev Artur",
+  "lastRunTime": "2026-06-18T10:24:40.760000",
+  "totalVotes": 35
+ },
+ {
+  "ref": "caoyupeng/jed-multi-step-attack-2",
+  "title": "JED Multi Step Attack 2",
+  "author": "SpeedSci",
+  "lastRunTime": "2026-07-16T18:27:54.517000",
+  "totalVotes": 33
+ },
+ {
+  "ref": "nawfeelrahman1124444/getting-started-notebook-0-9",
+  "title": "Getting Started Notebook - 0.9",
+  "author": "(ノ◡ <)",
+  "lastRunTime": "2026-06-21T16:53:58.270000",
+  "totalVotes": 33
+ },
+ {
+  "ref": "tiktoktrendz/jed-submission",
+  "title": "JED 🐐 Submission ",
+  "author": "patchmeifucan.ko",
+  "lastRunTime": "2026-07-24T03:51:25.067000",
+  "totalVotes": 31
+ },
+ {
+  "ref": "verityix/ai-agent-security-attack-algorithm-hitherto",
+  "title": "AI Agent Security — Attack Algorithm (Hitherto)",
+  "author": "Verity IX",
+  "lastRunTime": "2026-09-01T22:43:29.540000",
+  "totalVotes": 30
+ },
+ {
+  "ref": "yaroslavkholmirzayev/ai-agent-security-achieve-and-validate",
+  "title": "AI Agent Security | achieve and validate 🌀",
+  "author": "Yaroslav kholmirzayev",
+  "lastRunTime": "2026-06-30T09:23:24.307000",
+  "totalVotes": 29
+ },
+ {
+  "ref": "yaroslavkholmirzayev/ai-agent-security-first-submission",
+  "title": "AI Agent Security - First Submission",
+  "author": "Yaroslav kholmirzayev",
+  "lastRunTime": "2026-06-12T18:32:46.337000",
+  "totalVotes": 29
+ },
+ {
+  "ref": "lucifer19/jed-strategy-sentinel",
+  "title": "⚡🧿 JED Strategy Sentinel",
+  "author": "Krizsó Gergely",
+  "lastRunTime": "2026-07-16T06:29:57.487000",
+  "totalVotes": 28
+ },
+ {
+  "ref": "djenkivanov/local-validation-guide",
+  "title": "Local Validation Guide",
+  "author": "Djenk Ivanov",
+  "lastRunTime": "2026-06-24T22:10:33.250000",
+  "totalVotes": 27
+ },
+ {
+  "ref": "ferencjuhsz/ghostpost-verify-and-keep-agent-red-team",
+  "title": "GHOSTPOST — verify-and-keep agent red-team",
+  "author": "Catcatcher",
+  "lastRunTime": "2026-06-12T12:35:37.317000",
+  "totalVotes": 26
+ },
+ {
+  "ref": "kojimar/ai-agent-security-attack-baseline",
+  "title": "AI Agent Security Attack Baseline",
+  "author": "islet",
+  "lastRunTime": "2026-06-13T06:01:39.537000",
+  "totalVotes": 26
+ },
+ {
+  "ref": "blacklions/ai-agent-replay-dense-exfiltration",
+  "title": "AI Agent: Replay-Dense Exfiltration",
+  "author": "陈耀洋",
+  "lastRunTime": "2026-06-18T13:31:38.190000",
+  "totalVotes": 25
+ },
+ {
+  "ref": "pengwang91/jed-fill-v26-replaysafe",
+  "title": "jed-fill-v26-replaysafe",
+  "author": "Peng Wang",
+  "lastRunTime": "2026-07-13T02:08:05.020000",
+  "totalVotes": 24
+ },
+ {
+  "ref": "avikdas567/state-space-search-for-multi-step-agent-attacks",
+  "title": "State-Space Search for Multi-Step Agent Attacks",
+  "author": "Avik Das",
+  "lastRunTime": "2026-08-31T03:26:12.320000",
+  "totalVotes": 23
+ },
+ {
+  "ref": "jek1wantaufik/tool-attack-submission",
+  "title": "Tool Attack Submission",
+  "author": "Jeki Wan Taufik",
+  "lastRunTime": "2026-06-15T18:48:13.547000",
+  "totalVotes": 23
+ },
+ {
+  "ref": "yaroslavkholmirzayev/ai-agent-security-trajectory-search",
+  "title": "👾AI Agent Security - Trajectory Search",
+  "author": "Yaroslav kholmirzayev",
+  "lastRunTime": "2026-06-13T08:29:31.747000",
+  "totalVotes": 23
+ },
+ {
+  "ref": "anthonytherrien/agent-security-trajectory",
+  "title": "Agent Security Trajectory",
+  "author": "AnthonyTherrien",
+  "lastRunTime": "2026-06-13T11:29:02.027000",
+  "totalVotes": 21
+ },
+ {
+  "ref": "avikdas567/diversity-optimized-multi-step-agent-red-teaming",
+  "title": "Diversity Optimized Multi-Step Agent Red Teaming",
+  "author": "Avik Das",
+  "lastRunTime": "2026-06-19T03:13:52.060000",
+  "totalVotes": 20
+ },
+ {
+  "ref": "adhirajjagtap/omni-stack-multiplier-v25",
+  "title": "OMNI_STACK_MULTIPLIER_V25",
+  "author": "Adhiraj Jagtap",
+  "lastRunTime": "2026-06-28T15:51:02.503000",
+  "totalVotes": 18
+ },
+ {
+  "ref": "arnavkewalram/ais-attack-notebook",
+  "title": "AIS Attack Notebook",
+  "author": "Arnav Kewalram",
+  "lastRunTime": "2026-06-24T11:11:29.803000",
+  "totalVotes": 18
+ },
+ {
+  "ref": "nawfeelrahman1124444/multi-step-tool-attacks-16-980",
+  "title": "Multi-Step Tool Attacks - 16.980 🏅🔥",
+  "author": "(ノ◡ <)",
+  "lastRunTime": "2026-06-11T20:13:04.487000",
+  "totalVotes": 18
+ },
+ {
+  "ref": "nakamurasyuta/jed-scoring-surface-analysis",
+  "title": "JED Scoring Surface Analysis",
+  "author": "Syuta",
+  "lastRunTime": "2026-06-23T12:37:16.490000",
+  "totalVotes": 16
+ },
+ {
+  "ref": "uctpexx123/aas-kun-lb66015-official-v1",
+  "title": "AAS Kun LB66015 Official V1",
+  "author": "uctpexx123",
+  "lastRunTime": "2026-07-20T03:17:18.670000",
+  "totalVotes": 14
+ },
+ {
+  "ref": "prvsiyan/ai-agent-security-defense-in-depth-audit",
+  "title": "AI Agent Security | Defense-in-Depth Audit",
+  "author": "prvsiyan",
+  "lastRunTime": "2026-07-21T14:12:19.767000",
+  "totalVotes": 13
+ },
+ {
+  "ref": "imbikramsaha/ai-agent-security-v10-score-56-87",
+  "title": "AI Agent Security - v10 | Score-56.87",
+  "author": "Bikram Saha",
+  "lastRunTime": "2026-06-20T17:26:49.933000",
+  "totalVotes": 13
+ },
+ {
+  "ref": "cdeotte/final-cd5",
+  "title": "final-cd5",
+  "author": "Chris Deotte",
+  "lastRunTime": "2026-09-01T11:22:00.160000",
+  "totalVotes": 12
+ },
+ {
+  "ref": "antoniorotundo2/a-throughput-floor-plus-a-genuine-multi-step-searc",
+  "title": "A throughput floor plus a genuine multi-step searc",
+  "author": "Antonio Rotundo",
+  "lastRunTime": "2026-09-04T18:38:30.493000",
+  "totalVotes": 12
+ },
+ {
+  "ref": "ayushkhaire/clean-getting-started-notebook",
+  "title": "Clean Getting Started Notebook",
+  "author": "Ayush Khaire",
+  "lastRunTime": "2026-06-12T13:38:51.800000",
+  "totalVotes": 12
+ },
+ {
+  "ref": "maximbatykovich/ai-agent",
+  "title": "AI Agent",
+  "author": "Maxim Batykovich",
+  "lastRunTime": "2026-06-15T18:47:19.370000",
+  "totalVotes": 11
+ },
+ {
+  "ref": "yaroslavkholmirzayev/ai-agent-security-v8-9-10-11",
+  "title": "AI Agent Security - V8-9-10-11",
+  "author": "Yaroslav kholmirzayev",
+  "lastRunTime": "2026-06-13T16:31:44.520000",
+  "totalVotes": 11
+ },
+ {
+  "ref": "caoyupeng/real-submission-fork-from-pilkwang-changed",
+  "title": "[real submission]Fork from pilkwang-changed",
+  "author": "SpeedSci",
+  "lastRunTime": "2026-07-01T16:16:04.887000",
+  "totalVotes": 10
+ },
+ {
+  "ref": "kokinnwakashuu/ai-agent-security-v038-pipeline-check",
+  "title": "AI Agent Security v038 pipeline check",
+  "author": "kokinnwakashuu",
+  "lastRunTime": "2026-07-01T10:18:48.207000",
+  "totalVotes": 10
+ },
+ {
+  "ref": "debugendless/jed-attack-mutation-baseline",
+  "title": "🔓 JED Attack: Mutation Baseline",
+  "author": "Yamaguchi",
+  "lastRunTime": "2026-06-12T14:55:02.160000",
+  "totalVotes": 10
+ },
+ {
+  "ref": "dakbsabsa/ai-agent-security-multi-step-tool-attacks",
+  "title": "ai-agent-security-multi-step-tool-attacks",
+  "author": "I PUTU KRISNA PRAMANA YUDA",
+  "lastRunTime": "2026-07-20T11:30:56.300000",
+  "totalVotes": 9
+ },
+ {
+  "ref": "llccqq624/shadow-cat-firewall",
+  "title": "🐈‍⬛⚡ Shadow Cat Firewall",
+  "author": "Jiachen Li",
+  "lastRunTime": "2026-07-12T14:15:52.263000",
+  "totalVotes": 9
+ },
+ {
+  "ref": "boristown/shadow-cat-firewall-darkagi-edited",
+  "title": "🐈‍⬛⚡ Shadow Cat Firewall - DarkAGI Edited",
+  "author": "暗黑AGI",
+  "lastRunTime": "2026-07-13T00:35:35.423000",
+  "totalVotes": 9
+ },
+ {
+  "ref": "maj0rt0m/private-eval-proxy-gpu",
+  "title": "Private-Eval Proxy (GPU)",
+  "author": "MAJ0RT0M",
+  "lastRunTime": "2026-06-26T00:10:56.557000",
+  "totalVotes": 9
+ },
+ {
+  "ref": "caoyupeng/fork-from-ai-agent-security",
+  "title": "Fork from AI Agent Security",
+  "author": "SpeedSci",
+  "lastRunTime": "2026-06-18T03:43:55.387000",
+  "totalVotes": 9
+ },
+ {
+  "ref": "imbikramsaha/ai-agent-security-explained-eda-starter",
+  "title": "AI Agent Security Explained EDA Starter ",
+  "author": "Bikram Saha",
+  "lastRunTime": "2026-06-14T13:11:19.297000",
+  "totalVotes": 9
+ },
+ {
+  "ref": "mdabdulalhasib/solution-using-very-deep-reaserch",
+  "title": "Solution using very deep reaserch",
+  "author": "Md Abdul Al Hasib",
+  "lastRunTime": "2026-06-14T14:47:53.540000",
+  "totalVotes": 9
+ },
+ {
+  "ref": "konbu17/jed-attack-exp093",
+  "title": "JED Attack exp093",
+  "author": "konbu17",
+  "lastRunTime": "2026-09-01T10:04:00.577000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "sumangnalla/project-agent-security",
+  "title": "PROJECT AGENT SECURITY",
+  "author": "NALLA SUMANG",
+  "lastRunTime": "2026-07-17T00:22:32.147000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "verise6211/aas-pilk-gx2",
+  "title": "aas-pilk-gx2",
+  "author": "verise6211",
+  "lastRunTime": "2026-07-07T13:37:48.800000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260626-161244",
+  "title": "Hermes OpenClaw Attack E005-20260626-161244",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-26T16:12:49.710000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "simplexcomplex/run-the-ai-agent-locally-without-a-gpu",
+  "title": "Run the AI Agent Locally WITHOUT a GPU",
+  "author": "Aryan Yadav",
+  "lastRunTime": "2026-06-23T18:42:01.860000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "rauffauzanrambe/chain-of-thought-security-mileware",
+  "title": "Chain of Thought Security Mileware",
+  "author": "Ra'uf Fauzan Rambe",
+  "lastRunTime": "2026-06-22T04:42:42.473000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "kokinnwakashuu/ai-agent-security-working-diary-v002",
+  "title": "AI Agent Security - Working Diary v002",
+  "author": "kokinnwakashuu",
+  "lastRunTime": "2026-06-21T11:12:23.047000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "caoyupeng/ai-agent-security-trajectory-search-plus-2",
+  "title": "AI Agent Security - Trajectory Search Plus-2",
+  "author": "SpeedSci",
+  "lastRunTime": "2026-06-13T06:19:16.750000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "sohaibdevv/ai-agent-security",
+  "title": "AI Agent Security",
+  "author": "Sohaib Malik",
+  "lastRunTime": "2026-06-13T06:01:35.907000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "rauffauzanrambe/agent-v20-security-for-the-openai",
+  "title": "Agent V20 Security for the OpenAI",
+  "author": "Ra'uf Fauzan Rambe",
+  "lastRunTime": "2026-06-13T05:30:41.627000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "mdabdulalhasib/apex-attack-engine-multi-step",
+  "title": "APEX Attack Engine: Multi-Step",
+  "author": "Md Abdul Al Hasib",
+  "lastRunTime": "2026-06-13T04:37:22.090000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "rumblingb/ai-security-lb60120-yusuke-fork-20260706",
+  "title": "AI Security LB60120 Yusuke Fork 20260706",
+  "author": "rumbling_b",
+  "lastRunTime": "2026-07-06T17:42:46.173000",
+  "totalVotes": 7
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260627-140935",
+  "title": "Hermes OpenClaw Attack E005-20260627-140935",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-27T14:09:39.207000",
+  "totalVotes": 7
+ },
+ {
+  "ref": "akshitasrivastava1/omega-attack-v9-0-secret-marker-n250",
+  "title": "omega attack v9 0 secret marker n250",
+  "author": "Akshita Srivastava",
+  "lastRunTime": "2026-06-25T16:01:05.927000",
+  "totalVotes": 7
+ }
+]

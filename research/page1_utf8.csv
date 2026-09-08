@@ -1,0 +1,213 @@
+﻿C:\Users\shash\AppData\Local\Programs\Python\Python312\Scripts\kaggle.exe : [sitecustomize] preload torch DLLs from 
+C:\Users\shash\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\lib
+At line:1 char:76
++ ... | Out-Null; C:\Users\shash\AppData\Local\Programs\Python\Python312\Sc ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([sitecustomize]...kages\torch\lib:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[sitecustomize] torch preload results: [('libiompstubs5md.dll', True), ('libiomp5md.dll', True), 
+('torch_global_deps.dll', True), ('shm.dll', True), ('uv.dll', True), ('c10.dll', True), ('torch_cpu.dll', True), 
+('torch_python.dll', True), ('torch.dll', True)]
+ref,title,author,lastRunTime,totalVotes
+
+habanwer/auto-secage,Auto-SecAge,Shehab Anwer,2026-09-05 15:34:42.860000,0
+
+outliar/post-sub,post_sub,Mohammad Shadab Alam,2026-09-05 02:36:02.647000,0
+
+liwanqi03/jed-working-note,JED Working Note,liwanqi03,2026-09-07 02:54:39.880000,0
+
+huanligong/jed-multi-step-attack-final-http-email,Jed Multi Step Attack final_http_email,Filtered,2026-09-04 06:18:07.733000,0
+
+thwaitsusa2/jed-working-note-verifier,JED Working Note verifier,thwaitsusa2,2026-09-02 19:41:34.517000,1
+
+abukayyisahbasyid/ai-agent-security-working-note,AI Agent Security - Working Note,Abu Kayyisah Basyid,2026-09-02 12:55:54.330000,2
+
+kkrasikov/workingnote-66th-place-method-harness,[WorkingNote] 66th place - Method & Harness,Kirill Krasikov,2026-09-03 01:49:33.110000,1
+
+takamichitoda/the-objective-is-raw-per-second,The objective is raw per second,Takamichi Toda,2026-09-02 11:54:16.543000,5
+
+merkiraz/jed-v84-deputymax-attack,JED-v84-DeputyMax-attack,├Âmer kiraz,2026-09-02 08:44:55.360000,0
+
+ahmedmobasher86/working-note-guardrail-predicate-asymmetry,Working Note: Guardrail-Predicate Asymmetry,Ahmed Mobasher,2026-09-02 06:40:02.843000,0
+
+takamichitoda/the-hedge-that-survived-clean-confused-deputy,The hedge that survived: clean CONFUSED_DEPUTY,Takamichi Toda,2026-09-02 06:32:28.767000,0
+
+backtracking/jed-silver-solution-writeup,jed-silver-solution-writeup,Le Trong Hieu,2026-09-02 04:26:07.683000,0
+
+backtracking/jed-silver-private-hedge-v37,jed-silver-private-hedge-v37,Le Trong Hieu,2026-09-02 04:16:11.120000,0
+
+backtracking/jed-silver-public-v43,jed-silver-public-v43,Le Trong Hieu,2026-09-02 04:16:09.030000,0
+
+gerwynng/ai-agent-security-final-leaderboard-shake,AI Agent Security: Final Leaderboard Shake,Gerwyn,2026-09-02 07:55:04.873000,2
+
+municef1/105-silver-private-lb-22-155-confused-deputy,#105 Silver: Private LB 22.155 Confused Deputy,ýòêÙàòÝòÿýä©ýÜöýØ┤ýä©ý×àÙïêÙïñý×ÿÙÂÇÝâüÙô£Ùª¢ÙïêÙïñ,2026-09-02 11:11:39.087000,4
+
+zashraf1337hs/msta-working-note,MSTA Working Note,zashraf1337-hs,2026-09-02 00:27:05.643000,0
+
+sirikilohit/submission-v170-dual-harmony,submission_v170_dual_harmony,rellik13,2026-09-01 21:18:58.913000,0
+
+cdeotte/final-cd5,final-cd5,Chris Deotte,2026-09-01 11:22:00.160000,14
+
+konbu17/jed-attack-exp093,JED Attack exp093,konbu17,2026-09-01 10:04:00.577000,11
+
+merkiraz/jed-v35-uniquecellmax-v1,jed-v35-uniquecellmax-v1,├Âmer kiraz,2026-09-01 07:09:23.720000,0
+
+samwiz/aas-v15-gpu,AAS v15 GPU,Sam-wiz,2026-09-01 05:32:59.570000,1
+
+jamesweatherhead/jed-final-private-04-cd-model-native,JED Final Private 04 CD Model Native,James Weatherhead,2026-09-01 04:46:06.683000,0
+
+adostie3/jed-attack-cd-v1,JED Attack CD v1,Adam Dostie,2026-09-01 13:41:14.207000,0
+
+rikitomo0526/ai-agent-security-attack-script-exp021,AI Agent Security - Attack script exp021,Rick,2026-08-31 14:23:23.270000,4
+
+finalsunflower/aas-working-note-measurement,AAS Working Note Measurement,FinalSunFlower,2026-09-06 02:10:34.507000,1
+
+wguesdon/ai-agent-security-attack-v19,AI Agent Security - Attack v19,Will,2026-08-31 11:40:39.420000,0
+
+seungjunleeofficial/aas-v14-cd-only-kaggle-submit,aas_v14_cd_only_kaggle_submit,Seungjun Lee,2026-08-31 08:23:03.777000,1
+
+avikdas567/state-space-search-for-multi-step-agent-attacks,State-Space Search for Multi-Step Agent Attacks,Avik Das,2026-08-31 03:26:12.320000,23
+
+anvithpothula/aisec-jedcd6,aisec-jedcd6,Anvith Pothula,2026-08-31 01:57:22.693000,1
+
+ayushanand01/jed-mab-attack,JED MAB Attack,Ayush Anand,2026-09-01 17:11:43.153000,0
+
+aleaiest/13th-aisec-cdrole-adaptive,­ƒÑç 13th: aisec-cdrole-adaptive,Taewoong Kim,2026-09-02 05:23:21.907000,0
+
+xiaoz259/aas-final-submission-cd,AAS | Final Submission - CD,xz,2026-09-01 09:42:11.557000,7
+
+sirikilohit/agent-sec-tool-atk-v170-winner,agent_sec_tool_atk_v170_winner,rellik13,2026-08-30 16:21:31.337000,0
+
+isakatsuyoshi/jed-clean-email-rick-use-allcaps-n2000,JED clean email Rick USE allcaps N2000,ISAKA Tsuyoshi,2026-08-30 12:47:19.800000,2
+
+malikhammadfarooq/jed-attack-v38-slowest-1-29,Jed Attack V38: Slowest 1.29,Hammad Farooq,2026-08-30 06:26:50.647000,0
+
+jamesweatherhead/jed-gpt-low-reasoning-selector,JED GPT Low Reasoning Selector,James Weatherhead,2026-08-30 04:59:17.197000,0
+
+aleixlopez/v49-confused-deputy-hedge,v49_confused_deputy_hedge,Aleix L├│pez,2026-08-30 18:34:13.233000,0
+
+merkiraz/notebook5ed42e3e8f,notebook5ed42e3e8f,├Âmer kiraz,2026-08-29 15:16:15.633000,0
+
+samwiz/aas-v8deputy-gpu,AAS v8deputy GPU,Sam-wiz,2026-08-31 18:00:03.953000,1
+
+anvithpothula/aisec-jedcdprobe,aisec-jedcdprobe,Anvith Pothula,2026-08-29 00:22:31.860000,1
+
+josephadamski91/conditional-draft-generation-control-v4,Conditional Draft Generation Control V4,Joseph Adamski,2026-08-30 00:10:43.450000,2
+
+malikhammadfarooq/per-post-exfil-budget-sized,"Per-Post EXFIL, Budget-Sized",Hammad Farooq,2026-08-28 16:46:39.417000,0
+
+kazeneko77/chk-078-deputy-max-v1,chk-078-deputy-max-v1,Kazeneko,2026-08-27 22:47:58.397000,0
+
+ashraf1232/isolating-the-taint-boundary-working-note,Isolating the Taint Boundary -- Working Note,Ashraf 1232,2026-09-03 08:10:56.730000,0
+
+aleaiest/aisec-n38urllast,aisec-n38urllast,Taewoong Kim,2026-08-27 05:03:16.953000,1
+
+malikhammadfarooq/multi-step-tool-attacks-replay-aware-exfil,Multi-Step Tool Attacks ÔÇö Replay-Aware Exfil,Hammad Farooq,2026-08-27 09:20:16.733000,0
+
+kazeneko77/chk-060-88-replay-safe-v1,chk-060-88-replay-safe-v1,Kazeneko,2026-08-27 22:47:54.043000,0
+
+tatuhelander/jed-attack-forge33-email,JED Attack Forge33 Email,Tatu Helander,2026-08-30 04:56:56.473000,0
+
+kashyapsinhgohil/multi-step-tool, Multi-Step Tool,Kashyapsinh gohil,2026-08-27 13:17:52.687000,0
+
+outliar/agi-deputy-nb2-v14-gpt2000-gem2000-sub,agi-deputy-nb2-v14-gpt2000-gem2000_sub,Mohammad Shadab Alam,2026-08-27 13:27:25.930000,0
+
+malikhammadfarooq/jed-x-adaptive-trace-guided-attack-search,JED-X: Adaptive Trace-Guided Attack Search,Hammad Farooq,2026-08-25 10:29:38.847000,0
+
+mehdielm/jed-attack-budget-aware-portfolio-search,JED Attack - budget-aware portfolio search,Mehdi El Mouttaki,2026-08-31 11:11:56.747000,0
+
+eugeneyeung/ai-agent-security-private-pp-corp-wide,AI Agent Security Private PP Corp Wide,EUGENEYEUNG,2026-09-02 12:31:39.857000,4
+
+sebastianmateus/replayforge-k8-correctness-router-0824,ReplayForge K8 Correctness Router 0824,Sebastian Mateus,2026-08-24 12:01:18.267000,1
+
+kkrasikov/workingnote-66th-place-submission,[WorkingNote] 66th place submission,Kirill Krasikov,2026-09-03 01:47:28.770000,2
+
+mccocoful/local-cpu-submission-for-hengck23,local cpu + submission for hengck23,cm391,2026-08-26 11:49:06.403000,53
+
+youssefyacoup/ai-agent,AI AGENT,Youssef Yacoup,2026-08-22 16:36:34.533000,0
+
+outliar/agi-deputy-nb1-v11b-gpt2000-gem2000-sub,agi-deputy-nb1-v11b-gpt2000-gem2000_sub,Mohammad Shadab Alam,2026-08-27 13:27:46.890000,0
+
+outliar/agi-exfil-160-gpt500-gem2000-sub,agi-exfil-160-gpt500-gem2000_sub,Mohammad Shadab Alam,2026-08-28 09:30:23.303000,1
+
+antoniorotundo2/a-throughput-floor-plus-a-genuine-multi-step-searc,A throughput floor plus a genuine multi-step searc,Antonio Rotundo,2026-09-06 19:30:03.123000,14
+
+addonyas/adiya,adiya,Adiya Orazbek,2026-08-21 18:36:53.600000,3
+
+hiranorm/publiclb-95-130-privatelb-0-00-aas-mf-k8-ff-test,"[publicLB:95.130,privateLB:0.00]aas-mf-k8-ff-test",Hira Norm,2026-08-20 08:54:20.353000,1
+
+diladiclekeke/working-note-ai-agent-security,Working Note AI Agent Security,dila dicle kekec,2026-08-31 21:38:34.357000,0
+
+danischaparov/ai-agent-security-v12,AI Agent Security V12,karnezz,2026-09-01 10:46:57.247000,1
+
+eugeneyeung/ai-agent-security-fillmax-m34-f099,AI Agent Security fillmax_m34_f099,EUGENEYEUNG,2026-09-02 12:31:36.373000,4
+
+souldrive/drop-them-a-line-quietly-deletes-a-file,Drop them a line quietly deletes a file,souldrive,2026-09-02 12:02:35.160000,3
+
+maqsoudtawaliou/aas-attack-deputy-uncond-frac97,AAS Attack Deputy Uncond Frac97,Maqsoud Tawaliou,2026-08-16 05:49:53.737000,0
+
+maqsoudtawaliou/aas-attack-exp9,AAS Attack Exp9,Maqsoud Tawaliou,2026-08-16 05:48:42.573000,0
+
+antoniorotundo2/throughput-floor-discovery-search-attack,Throughput Floor + Discovery Search Attack,Antonio Rotundo,2026-09-05 13:57:34.537000,1
+
+aqibrazadev/maximum-throughput-attack-code,MAXIMUM THROUGHPUT Attack Code,Aqib Raza,2026-09-01 20:39:57.237000,1
+
+coolin666/jed-attack-v12,JED Attack v12,coolin666,2026-08-13 14:11:10.673000,44
+
+giovannyrodrguez/ai-security-beta-emailv2,AI security beta: emailv2,Giovanny Rodr├¡guez,2026-09-05 22:12:29.757000,0
+
+seb001010/51-silver-working-note-the-gate-reads-payloads,#51 Silver | Working Note: the gate reads payloads,Sebastian Martin,2026-09-04 13:20:00.107000,1
+
+sebastianmateus/champion-v8-1-cdframe-0811000200,Champion V8 1 Cdframe 0811000200,Sebastian Mateus,2026-08-11 00:02:04.833000,0
+
+busyaprime/what-every-attack-is-worth-and-what-never-pays,What every attack is worth and what never pays,Busya PRIME,2026-09-06 21:48:36.653000,2
+
+merkiraz/v8-hybrid-frame-gpt-oss-biraz-daha-agresif-r,v8 hybrid + FRAME (gpt_oss) + biraz daha agresif R,├Âmer kiraz,2026-08-29 17:18:33.907000,0
+
+farbricated/confused-deputy,Confused Deputy,Farbricated,2026-08-16 15:39:37.953000,1
+
+naveenvenubagadi/ai-attack-probe,ai-attack-probe,Naveen Venu Bagadi,2026-08-26 16:26:12.343000,0
+
+hiranorm/publiclb-21-465-privatelb-21-465-aas-email-hedge,"[publicLB:21.465,privateLB:21.465]aas-email-hedge",Hira Norm,2026-08-26 15:30:22.893000,0
+
+nctuan/jed-slow-multipost,JED - Slow multipost,Nguyß╗àn C├┤ng Tuß║Ñn,2026-08-04 03:37:04.947000,154
+
+naveenvenubagadi/ai-agent-security-exfil-primary-v2,AI Agent Security - Exfil Primary v2,Naveen Venu Bagadi,2026-08-23 17:35:12.310000,0
+
+enriro0/replay-throughput-and-guardrail-reachability-jed,Replay-Throughput and Guardrail Reachability (JED),Enrique Rodr├¡guez,2026-09-04 14:01:01.673000,1
+
+nctuan/jed-v25,JED - v25,Nguyß╗àn C├┤ng Tuß║Ñn,2026-07-30 03:55:44.803000,170
+
+nkosindwandwe/jed-attack-multi-step,JED Attack Multi-Step,The light that shines,2026-08-15 19:29:33.370000,0
+
+raunakdey07/ai-agent-security-adaptive-template-race,AI Agent Security ÔÇö Adaptive Template Race,Raunak Dey,2026-09-01 17:33:28.870000,1
+
+anvithpothula/aisec-pilk,AISec Pilk,Anvith Pothula,2026-07-21 19:11:34.547000,86
+
+paul720810/hermes-attack-v72-m112-20260721-151926,Hermes Attack v72-m112-20260721-151926,Paul720810,2026-07-21 15:19:30.777000,2
+
+prvsiyan/ai-agent-security-defense-in-depth-audit,AI Agent Security | Defense-in-Depth Audit,prvsiyan,2026-07-21 14:12:19.767000,13
+
+paul720810/hermes-attack-v71-n1000-20260721-102018,Hermes Attack v71-n1000-20260721-102018,Paul720810,2026-07-21 10:20:21.030000,6
+
+paul720810/hermes-attack-v70-n900-20260721-101920,Hermes Attack v70-n900-20260721-101920,Paul720810,2026-07-21 10:19:24.107000,4
+
+canqiang/aiagsec-ea-b-0721,AIAgSec Ea B 0721,Xander,2026-07-21 06:31:44.707000,273
+
+paul720810/hermes-attack-v69-proven-code-20260721-052046,Hermes Attack v69-proven-code-20260721-052046,Paul720810,2026-07-21 05:20:49.097000,1
+
+sravanikamjula/ai-agent-security-multi-step-tool-attack-baseline,AI Agent SecurityÔÇôMulti-Step Tool Attack Baseline,sravani kamjula,2026-07-21 21:24:01.860000,2
+
+paul720810/hermes-attack-v68-tight-20260721-003427,Hermes Attack v68-tight-20260721-003427,Paul720810,2026-07-21 00:34:32.267000,1
+
+ojanapalash/notebook6d94950baf,notebook6d94950baf,OjanaPalash MD. KAMAL UDDIN,2026-07-20 19:46:52.387000,2
+
+anvithpothula/aisec-sevstack,AISec SevStack,Anvith Pothula,2026-07-20 19:01:01.437000,6
+
+aratisantoshshinde/ai-agent-security-adaptive-tool-call-throughput-se,AI Agent Security Adaptive Tool-Call Throughput Se,ARATI SHINDE,2026-07-21 17:02:40.650000,1
+
+dakbsabsa/ai-agent-security-multi-step-tool-attacks,ai-agent-security-multi-step-tool-attacks,I PUTU KRISNA PRAMANA YUDA,2026-07-20 11:30:56.300000,9
+
+uctpexx123/aas-kun-lb66015-official-v1,AAS Kun LB66015 Official V1,uctpexx123,2026-07-20 03:17:18.670000,14
+

@@ -1,0 +1,213 @@
+﻿C:\Users\shash\AppData\Local\Programs\Python\Python312\Scripts\kaggle.exe : [sitecustomize] preload torch DLLs from 
+C:\Users\shash\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\lib
+At line:1 char:76
++ ... | Out-Null; C:\Users\shash\AppData\Local\Programs\Python\Python312\Sc ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([sitecustomize]...kages\torch\lib:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[sitecustomize] torch preload results: [('libiompstubs5md.dll', True), ('libiomp5md.dll', True), 
+('torch_global_deps.dll', True), ('shm.dll', True), ('uv.dll', True), ('c10.dll', True), ('torch_cpu.dll', True), 
+('torch_python.dll', True), ('torch.dll', True)]
+ref,title,author,lastRunTime,totalVotes
+
+qyq1693/ai-agent-security-marker-v13,ai-agent-security-marker-v13,QYQ1693,2026-07-08 11:16:33.520000,2
+
+yusuketogashi/ai-agent-sec-another-approach,AI Agent Sec | Another Approach ­ƒº¡,Yusuke Togashi,2026-07-19 21:31:40.777000,182
+
+sumangnalla/project-agent-security,PROJECT AGENT SECURITY,NALLA SUMANG,2026-07-17 00:22:32.147000,8
+
+lucifer19/jed-strategy-sentinel,ÔÜí­ƒº┐ JED Strategy Sentinel,Krizs├│ Gergely,2026-07-16 06:29:57.487000,28
+
+paul720810/hermes-openclaw-attack-v19-replica-20260707-122726,Hermes OpenClaw Attack v19-replica-20260707-122726,Paul720810,2026-07-07 12:27:30.230000,3
+
+paul720810/hermes-v19-replica-best-33-660,Hermes V19 Replica Best 33.660,Paul720810,2026-07-07 12:25:34.417000,2
+
+qyq1693/ai-agent-security-speed-v12,ai-agent-security-speed-v12,QYQ1693,2026-07-07 12:59:20.800000,0
+
+qyq1693/ai-agent-security-speed-v11,ai-agent-security-speed-v11,QYQ1693,2026-07-07 10:02:54.627000,0
+
+uditjain13/the-0-byte-submission-bug-guardrail-anatomy,The 0-Byte Submission Bug + Guardrail Anatomy,Udit Jain,2026-07-07 09:21:09.053000,3
+
+ducnamphan/jed-v6-0-proven-format,JED v6.0 ÔÇö Proven Format,Duc Nam Phan,2026-07-07 07:02:41.840000,1
+
+qyq1693/ai-agent-security-dense-v10,ai-agent-security-dense-v10,QYQ1693,2026-07-07 06:09:59.487000,0
+
+paul720810/hermes-openclaw-attack-v20-20260707-041613,Hermes OpenClaw Attack v20-20260707-041613,Paul720810,2026-07-07 04:24:07.803000,1
+
+pengwang91/jed-fill-k3-fasttriple,jed-fill-k3-fasttriple,Peng Wang,2026-07-07 03:25:58.420000,1
+
+pengwang91/jed-fill-k2-fastpair,jed-fill-k2-fastpair,Peng Wang,2026-07-07 03:25:23.517000,1
+
+devchandra/ai-agent-security-v72-peng-mech-noval-m35,AI Agent Security v72 Peng mech noval m35,Dr Chandrasen Pandey,2026-07-07 03:05:12.197000,0
+
+devchandra/ai-agent-security-v70-yusuke-tail8-margin32,AI Agent Security v70 Yusuke tail8 margin32,Dr Chandrasen Pandey,2026-07-07 03:03:22.513000,1
+
+devchandra/ai-agent-security-v71-peng-k2-exact2,AI Agent Security v71 Peng K2 exact2,Dr Chandrasen Pandey,2026-07-07 03:01:55.117000,1
+
+devchandra/ai-agent-security-v69b-yusuke-lb60435-tail8,AI Agent Security v69b Yusuke LB60435 tail8,Dr Chandrasen Pandey,2026-07-07 03:00:36.880000,2
+
+khj1222/ai-agent-security-working-note,AI Agent Security Working Note,khj1222,2026-09-03 11:10:10.690000,0
+
+qyq1693/ai-agent-security-dense-v9,ai-agent-security-dense-v9,QYQ1693,2026-07-15 03:00:39.630000,4
+
+pengwang91/jed-fill-k2-exact2,jed-fill-k2-exact2,Peng Wang,2026-07-06 22:39:46.987000,2
+
+pengwang91/jed-fill-post-noreason,jed-fill-post-noreason,Peng Wang,2026-07-06 22:39:13.740000,1
+
+pengwang91/jed-fill-noreason-short,jed-fill-noreason-short,Peng Wang,2026-07-06 22:38:40.663000,0
+
+pengwang91/jed-fill-mech-noval-m35,jed-fill-mech-noval-m35,Peng Wang,2026-07-06 22:37:37.750000,1
+
+pengwang91/jed-fill-mech-v2-control,jed-fill-mech-v2-control,Peng Wang,2026-07-06 22:37:03.783000,0
+
+rumblingb/ai-security-lb60120-yusuke-fork-20260706,AI Security LB60120 Yusuke Fork 20260706,rumbling_b,2026-07-06 17:42:46.173000,7
+
+verise6211/aas-pilk-gx2,aas-pilk-gx2,verise6211,2026-07-07 13:37:48.800000,8
+
+verise6211/aas-pilk-gx1,aas-pilk-gx1,verise6211,2026-07-06 15:34:00.500000,4
+
+ghazarosbarseghyan91/jed-attack-map-elites-archive,JED Attack ÔÇö MAP-Elites Archive,Ghazaros Barseghyan,2026-07-06 13:02:38.297000,0
+
+gautampatil9898/state-space-agent-attack-search-1,state-space-agent-attack-search-1,gautam patil,2026-07-06 11:03:13.680000,0
+
+paul720810/hermes-openclaw-attack-e005-20260706-082026,Hermes OpenClaw Attack E005-20260706-082026,Paul720810,2026-07-06 08:20:31.283000,1
+
+paul720810/hermes-openclaw-attack-e005-20260706-081850,Hermes OpenClaw Attack E005-20260706-081850,Paul720810,2026-07-06 08:18:54.240000,1
+
+paul720810/hermes-openclaw-attack-e005-20260706-081625,Hermes OpenClaw Attack E005-20260706-081625,Paul720810,2026-07-06 08:16:29.560000,2
+
+ducnamphan/jed-v5-5-budget-safe-n-275,JED v5.5 ÔÇö Budget Safe N~275,Duc Nam Phan,2026-07-06 08:09:59.497000,2
+
+jayanthpattela/attacking,Attacking,Jayanth Pattela,2026-07-06 09:45:03.490000,0
+
+paul720810/hermes-openclaw-attack-e005-20260706-054029,Hermes OpenClaw Attack E005-20260706-054029,Paul720810,2026-07-06 05:40:33.037000,1
+
+paul720810/hermes-openclaw-attack-e005-20260706-054013,Hermes OpenClaw Attack E005-20260706-054013,Paul720810,2026-07-06 05:40:17.733000,1
+
+paul720810/hermes-openclaw-attack-e005-20260706-053954,Hermes OpenClaw Attack E005-20260706-053954,Paul720810,2026-07-06 05:39:58.010000,1
+
+paul720810/hermes-openclaw-attack-e005-20260706-053933,Hermes OpenClaw Attack E005-20260706-053933,Paul720810,2026-07-06 05:39:37.570000,1
+
+paul720810/hermes-openclaw-attack-e005-20260706-053932,Hermes OpenClaw Attack E005-20260706-053932,Paul720810,2026-07-06 05:39:35.193000,1
+
+paul720810/hermes-openclaw-attack-e005-20260706-053900,Hermes OpenClaw Attack E005-20260706-053900,Paul720810,2026-07-06 05:39:04.013000,1
+
+paul720810/hermes-openclaw-attack-e005-20260706-053858,Hermes OpenClaw Attack E005-20260706-053858,Paul720810,2026-07-06 05:39:01.820000,1
+
+paul720810/hermes-openclaw-attack-e005-20260706-053818,Hermes OpenClaw Attack E005-20260706-053818,Paul720810,2026-07-06 05:38:23.307000,1
+
+paul720810/hermes-openclaw-attack-e005-20260706-053756,Hermes OpenClaw Attack E005-20260706-053756,Paul720810,2026-07-06 05:37:59.857000,1
+
+paul720810/hermes-openclaw-attack-e005-20260706-053718,Hermes OpenClaw Attack E005-20260706-053718,Paul720810,2026-07-06 05:37:22.807000,1
+
+paul720810/hermes-openclaw-attack-e005-20260706-053700,Hermes OpenClaw Attack E005-20260706-053700,Paul720810,2026-07-06 05:37:04.807000,1
+
+paul720810/auto-build-20260706-040938,auto-build 20260706-040938,Paul720810,2026-07-06 04:09:42.390000,1
+
+pengwang91/jed-fill-post-terse,jed-fill-post-terse,Peng Wang,2026-07-06 02:23:59.593000,2
+
+pengwang91/jed-fill-a2-mechanical,jed-fill-a2-mechanical,Peng Wang,2026-07-06 02:23:23.947000,3
+
+pengwang91/jed-fill-a2-base,jed-fill-a2-base,Peng Wang,2026-07-06 02:22:48.703000,2
+
+pengwang91/jed-fill-yusuke-m44,jed-fill-yusuke-m44,Peng Wang,2026-07-06 02:22:13.807000,2
+
+pengwang91/jed-fill-yusuke-m50,jed-fill-yusuke-m50,Peng Wang,2026-07-06 02:21:37.913000,2
+
+devchandra/ai-agent-security-v68b-bikram-v10-56-87,AI Agent Security v68b Bikram v10 56.87,Dr Chandrasen Pandey,2026-07-06 01:19:48.690000,1
+
+devchandra/ai-agent-security-v67b-pilkwang-jul5-56-6,AI Agent Security v67b Pilkwang Jul5 56.6,Dr Chandrasen Pandey,2026-07-06 01:18:47.960000,6
+
+devchandra/ai-agent-security-v66b-yusuke-lb60-bare-m37,AI Agent Security v66b Yusuke LB60 bare m37,Dr Chandrasen Pandey,2026-07-06 01:17:46.913000,5
+
+devchandra/ai-agent-security-v65b-yusuke-lb60-margin32,AI Agent Security v65b Yusuke LB60 margin32,Dr Chandrasen Pandey,2026-07-06 01:16:26.667000,6
+
+devchandra/ai-agent-security-v64-yusuke-lb60-safe-exact,AI Agent Security v64 Yusuke LB60 safe exact,Dr Chandrasen Pandey,2026-07-06 01:14:53.670000,1
+
+verise6211/aas-pilk-a3-k4,aas-pilk-a3-k4,verise6211,2026-07-06 00:11:49.123000,1
+
+verise6211/aas-pilk-a3-k2,aas-pilk-a3-k2,verise6211,2026-07-06 00:11:07.740000,1
+
+verise6211/aas-pilk-a3,aas-pilk-a3,verise6211,2026-07-06 00:10:23.923000,1
+
+pilkwang/ai-agent-v3-1-2-single-post-exfiltration,AI Agent v3.1.2 - Single-Post Exfiltration,Pilkwang Kim,2026-07-24 06:05:01.873000,189
+
+verise6211/aas-persona-1post,AAS Persona 1post,verise6211,2026-07-05 19:43:42.617000,2
+
+verise6211/aas-persona60,AAS Persona60,verise6211,2026-07-05 19:43:17.803000,2
+
+busyaprime/two-flow-properties-behind-four-attack-predicates,Two flow properties behind four attack predicates,Busya PRIME,2026-09-06 21:49:20.110000,2
+
+kaiwalyaatulraut/ai-agent-security-competition-solution,AI Agent Security Competition Solution,KAIWALYA RAUT,2026-08-13 11:37:47.210000,135
+
+ducnamphan/jed-v5-5-production-final,JED v5.5 ÔÇö Production Final,Duc Nam Phan,2026-07-05 17:14:39.260000,1
+
+ducnamphan/jed-attack-v5-0-mass-exfil,JED Attack v5.0 ÔÇö Mass EXFIL,Duc Nam Phan,2026-07-05 15:44:09.097000,1
+
+busyaprime/what-fires-and-what-its-worth,What Fires And What Its Worth,Busya PRIME,2026-07-05 15:41:57.170000,2
+
+ducnamphan/jed-attack-v3-0-probe-validated,JED Attack v3.0 ÔÇö Probe-Validated,Duc Nam Phan,2026-07-05 15:30:17.717000,1
+
+verise6211/aas-persona30,AAS Persona30,verise6211,2026-07-05 14:52:54.300000,3
+
+ducnamphan/jed-attack-v2-0-8-call,JED Attack v2.0 ÔÇö 8-Call,Duc Nam Phan,2026-07-05 14:04:33.663000,1
+
+konitac/aias-preliminary-submission-format-checker,AIAS - Preliminary Submission Format Checker,­ƒ½ákonita­ƒ½á,2026-07-05 13:43:47.727000,3
+
+qyq1693/ai-agent-security-multi-dense-attack-v8,ai-agent-security-multi-dense-attack-v8,QYQ1693,2026-07-06 11:11:21.067000,1
+
+loveautomn/notebookbef7d3ffbd,notebookbef7d3ffbd,love automn,2026-07-12 09:05:28.570000,0
+
+ducnamphan/jed-attack-v1-0-high-call,JED Attack v1.0 ÔÇö High-Call,Duc Nam Phan,2026-07-05 08:22:37.847000,3
+
+ducnamphan/jed-attack-v0-95-ultimate,JED Attack v0.95 ÔÇö Ultimate,Duc Nam Phan,2026-07-05 06:28:51.940000,4
+
+ducnamphan/jed-attack-v0-90-all-in-multi-call,JED Attack v0.90 ÔÇö All-In Multi-Call,Duc Nam Phan,2026-07-05 06:27:38.353000,1
+
+ducnamphan/jed-attack-v0-80-multi-call,JED Attack v0.80 ÔÇö Multi-Call,Duc Nam Phan,2026-07-05 06:25:32.887000,1
+
+ducnamphan/jed-attack-v0-70-model-aware,JED Attack v0.70 ÔÇö Model-Aware,Duc Nam Phan,2026-07-05 06:23:24.630000,2
+
+ducnamphan/jed-attack-v0-60-adaptive,JED Attack v0.60 ÔÇö Adaptive,Duc Nam Phan,2026-07-05 06:18:25.157000,2
+
+ducnamphan/jed-attack-v0-55-optimized,JED Attack v0.55 ÔÇö Optimized,Duc Nam Phan,2026-07-05 06:13:43.877000,2
+
+techtech69/lets-gpt,Lets-GPT,techtech69,2026-09-01 12:05:46.063000,0
+
+paul720810/hermes-openclaw-attack-e005-20260705-040747,Hermes OpenClaw Attack E005-20260705-040747,Paul720810,2026-07-05 04:07:51.543000,0
+
+verise6211/aas-persona,AAS Persona,verise6211,2026-07-05 03:20:49.367000,0
+
+verise6211/aas-sentinel,AAS Sentinel,verise6211,2026-07-05 03:17:26.520000,0
+
+pengwang91/jed-shortimp500-marker,jed-shortimp500-marker,Peng Wang,2026-07-05 01:07:36.590000,1
+
+pengwang91/jed-shortimp475-marker,jed-shortimp475-marker,Peng Wang,2026-07-05 01:07:01.493000,1
+
+pengwang91/jed-cleanimp460-marker,jed-cleanimp460-marker,Peng Wang,2026-07-05 01:06:27.773000,1
+
+pengwang91/jed-cleanimp445-marker,jed-cleanimp445-marker,Peng Wang,2026-07-05 01:05:51.777000,2
+
+pengwang91/jed-cleanimp430-marker,jed-cleanimp430-marker,Peng Wang,2026-07-05 01:05:16.753000,2
+
+pengwang91/jed-cleanimp480-marker,jed-cleanimp480-marker,Peng Wang,2026-07-04 19:16:56.390000,0
+
+ducnamphan/jed-attack-v0-50-fixed,JED Attack v0.50 ÔÇö Fixed,Duc Nam Phan,2026-07-04 19:15:51.240000,3
+
+verise6211/aas-caoyupeng-repro,AAS Caoyupeng Repro,verise6211,2026-07-04 17:41:30.730000,1
+
+gautampatil9898/state-space-agent-attack-search,state-space-agent-attack-search,gautam patil,2026-07-04 13:56:45.883000,1
+
+dedquoc/data-clean-exploit,Data Clean & Exploit,De DQ,2026-07-05 07:18:40.300000,1
+
+paul720810/hermes-openclaw-attack-e005-20260704-081127,Hermes OpenClaw Attack E005-20260704-081127,Paul720810,2026-07-04 08:11:31.140000,1
+
+paul720810/hermes-openclaw-attack-e005-20260704-081003,Hermes OpenClaw Attack E005-20260704-081003,Paul720810,2026-07-04 08:10:05.730000,1
+
+paul720810/hermes-openclaw-attack-e005-20260704-061228,Hermes OpenClaw Attack E005-20260704-061228,Paul720810,2026-07-04 06:12:32.037000,1
+
+drkongvis/agent-security-v1-baseline,agent-security-v1-baseline,Jet,2026-07-04 07:12:18.150000,1
+
+paul720810/hermes-openclaw-attack-e005-20260704-041518,Hermes OpenClaw Attack E005-20260704-041518,Paul720810,2026-07-04 04:15:22.277000,1
+

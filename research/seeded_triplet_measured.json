@@ -1,0 +1,41 @@
+{
+  "triplet": [
+    {
+      "seed": 42,
+      "cands": 209,
+      "validated": 209,
+      "raw": 17138.0,
+      "normalized": 85.69,
+      "pred": 61.5,
+      "pred_n": 150,
+      "elapsed_s": 9.02
+    },
+    {
+      "seed": 123,
+      "cands": 199,
+      "validated": 199,
+      "raw": 10374.0,
+      "normalized": 51.87,
+      "pred": 46.7,
+      "pred_n": 150,
+      "elapsed_s": 9.05
+    },
+    {
+      "seed": 999,
+      "cands": 153,
+      "validated": 153,
+      "raw": 12546.0,
+      "normalized": 62.73,
+      "pred": 61.5,
+      "pred_n": 150,
+      "elapsed_s": 9.06
+    }
+  ],
+  "mean_pred": 56.57,
+  "sd_pred": 8.54,
+  "se_pred": 4.933,
+  "t_vs55": 0.318,
+  "p_vs55": 0.7809,
+  "REAL_REPLAY_CEILING": 150,
+  "note": "SEEDED MockCompliantAgent local harness, not hosted rerolls; hosted band 85.800-91.860 confounded"
+}

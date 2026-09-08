@@ -1,0 +1,49 @@
+﻿C:\Users\shash\AppData\Local\Programs\Python\Python312\Scripts\kaggle.exe : [sitecustomize] preload torch DLLs from 
+C:\Users\shash\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\lib
+At line:1 char:105
++ ...  8; $p++) { C:\Users\shash\AppData\Local\Programs\Python\Python312\Sc ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([sitecustomize]...kages\torch\lib:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[sitecustomize] torch preload results: [('libiompstubs5md.dll', True), ('libiomp5md.dll', True), 
+('torch_global_deps.dll', True), ('shm.dll', True), ('uv.dll', True), ('c10.dll', True), ('torch_cpu.dll', True), 
+('torch_python.dll', True), ('torch.dll', True)]
+ref,title,author,lastRunTime,totalVotes
+
+emanuellcs/aias-deterministic-bounded-search,AIAS - Deterministic Bounded Search,Emanuel L├ízaro,2026-06-13 11:13:54.807000,6
+
+musnet/go-explore-red-team-multi-step-tool-attacks,­ƒÑç Go-Explore Red-Team ÔÇö Multi-Step Tool Attacks,MohamedMustafa,2026-06-13 04:52:01.927000,5
+
+debugendless/jed-attack-mutation-baseline,­ƒöô JED Attack: Mutation Baseline,Yamaguchi,2026-06-12 14:55:02.160000,10
+
+evgendvorkin/ai-agent,AI Agent,ðöð▓ð¥ÐÇð║ð©ð¢ ðòð▓ð│ðÁð¢ð©ð╣ ðÆð╗ð░ð┤ð©ð╝ð©ÐÇð¥ð▓ð©Ðç,2026-08-31 18:06:32.470000,371
+
+foysalemonshanto/ai-agent-security-v15,AI Agent Security V15,FOYSAL,2026-08-04 17:40:16.763000,546
+
+yaroslavkholmirzayev/ai-agent-security-first-submission,AI Agent Security - First Submission,Yaroslav kholmirzayev,2026-06-12 18:32:46.337000,29
+
+clawdyhuang/ai-agent-security-sov-v10,ai-agent-security-sov-v10,Clawdy Huang (Andy's AI),2026-07-05 14:17:06.067000,0
+
+clawdyhuang/ai-agent-security-sov-v9,ai-agent-security-sov-v9,Clawdy Huang (Andy's AI),2026-06-12 07:55:50.257000,3
+
+ayushkhaire/clean-getting-started-notebook,Clean Getting Started Notebook,Ayush Khaire,2026-06-12 13:38:51.800000,12
+
+ferencjuhsz/ghostpost-verify-and-keep-agent-red-team,GHOSTPOST ÔÇö verify-and-keep agent red-team,Catcatcher,2026-06-12 12:35:37.317000,26
+
+karnakbaevarthur/verify-and-keep-deterministic-red-team-attack,Verify-and-Keep: Deterministic Red-Team Attack,Karnakbayev Artur,2026-06-12 07:17:05.840000,56
+
+pilkwang/eda-agent-security-trajectory-search,EDA: Agent Security Trajectory Search,Pilkwang Kim,2026-06-13 22:34:19.580000,125
+
+kojimar/ai-agent-security-attack-baseline,AI Agent Security Attack Baseline,islet,2026-06-13 06:01:39.537000,26
+
+narajan/best-public-score,Best Public score,Rajan Nagarajan,2026-06-12 16:55:47.027000,5
+
+nawfeelrahman1124444/multi-step-tool-attacks-16-980,Multi-Step Tool Attacks - 16.980 ­ƒÅà­ƒöÑ,(ÒâÄÔùí <),2026-06-11 20:13:04.487000,18
+
+nawfeelrahman1124444/baseline-solution-4-900,Baseline Solution - 4.900 ­ƒöÑ­ƒ½í,(ÒâÄÔùí <),2026-06-11 19:12:50.857000,61
+
+nawfeelrahman1124444/getting-started-notebook-0-9,Getting Started Notebook - 0.9,(ÒâÄÔùí <),2026-06-21 16:53:58.270000,33
+
+martynaplomecka/getting-started-notebook,Getting Started Notebook,MartynaPlomecka,2026-07-13 13:04:02.040000,1767
+

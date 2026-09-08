@@ -1,0 +1,702 @@
+[
+ {
+  "ref": "souldrive/why-your-attack-completes-but-scores-blank",
+  "title": "Why Your Attack Completes but Scores BLANK 🧱",
+  "author": "souldrive",
+  "lastRunTime": "2026-09-02T12:01:10.777000",
+  "totalVotes": 7
+ },
+ {
+  "ref": "tkhanna96/h006-pilkwang-580",
+  "title": "H006 Pilkwang 580",
+  "author": "Tkhanna96",
+  "lastRunTime": "2026-06-23T07:17:14.343000",
+  "totalVotes": 7
+ },
+ {
+  "ref": "kokinnwakashuu/ai-agent-security-v001-redteam-bank",
+  "title": "AI Agent Security V001 Redteam Bank",
+  "author": "kokinnwakashuu",
+  "lastRunTime": "2026-06-27T00:05:56.337000",
+  "totalVotes": 7
+ },
+ {
+  "ref": "geokocha/eda-agent-security-sdk-deep-dive",
+  "title": "EDA Agent Security SDK Deep Dive",
+  "author": "Yuanchen Huang",
+  "lastRunTime": "2026-06-21T16:41:10.937000",
+  "totalVotes": 7
+ },
+ {
+  "ref": "vineetvsalimath/ai-agent-secure-3",
+  "title": "=Ai-agent secure 3",
+  "author": "Vineet v Salimath",
+  "lastRunTime": "2026-06-20T03:28:26.817000",
+  "totalVotes": 7
+ },
+ {
+  "ref": "xiaoz259/aas-final-submission-cd",
+  "title": "AAS | Final Submission - CD",
+  "author": "xz",
+  "lastRunTime": "2026-09-01T09:42:11.557000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "paul720810/hermes-attack-v71-n1000-20260721-102018",
+  "title": "Hermes Attack v71-n1000-20260721-102018",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-21T10:20:21.030000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "anvithpothula/aisec-sevstack",
+  "title": "AISec SevStack",
+  "author": "Anvith Pothula",
+  "lastRunTime": "2026-07-20T19:01:01.437000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "biohack44/jed-multi-step-attack-3753a0",
+  "title": "JED Multi Step Attack 3753a0",
+  "author": "Emre Cirak",
+  "lastRunTime": "2026-07-16T09:24:52.993000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "devchandra/ai-agent-security-v67b-pilkwang-jul5-56-6",
+  "title": "AI Agent Security v67b Pilkwang Jul5 56.6",
+  "author": "Dr Chandrasen Pandey",
+  "lastRunTime": "2026-07-06T01:18:47.960000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "devchandra/ai-agent-security-v65b-yusuke-lb60-margin32",
+  "title": "AI Agent Security v65b Yusuke LB60 margin32",
+  "author": "Dr Chandrasen Pandey",
+  "lastRunTime": "2026-07-06T01:16:26.667000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "akshitasrivastava1/omega-attack-v9-1-gemma-phrase-hunt",
+  "title": "omega attack v9 1 gemma phrase hunt",
+  "author": "Akshita Srivastava",
+  "lastRunTime": "2026-06-26T15:14:46.660000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "aman5153684/sentinel-alpha2co-700-break62",
+  "title": "sentinel-alpha2co-700-break62",
+  "author": "Aman Sharma",
+  "lastRunTime": "2026-06-26T05:04:23.207000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "alt0er/ai-agent-security-fresh",
+  "title": "AI Agent Security Fresh",
+  "author": "Pratik Acharya",
+  "lastRunTime": "2026-07-17T02:37:51.947000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "evilyevihut/ai-agent-security-fast-safe-560",
+  "title": "AI Agent Security Fast Safe 560",
+  "author": "Zhang.ZJ",
+  "lastRunTime": "2026-06-20T16:16:54.597000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "mdabdulalhasib/nexus-v1-ai-agent-attack",
+  "title": "Nexus v1 ai agent attack",
+  "author": "Md Abdul Al Hasib",
+  "lastRunTime": "2026-06-18T10:45:16.843000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "rauffauzanrambe/security-agresive-multi-attack-with-agents-ai",
+  "title": "Security Agresive Multi Attack with Agents AI",
+  "author": "Ra'uf Fauzan Rambe",
+  "lastRunTime": "2026-06-18T08:07:37.193000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "geokocha/replay-dense-exfiltration-first-submission",
+  "title": "Replay-Dense Exfiltration — First Submission",
+  "author": "Yuanchen Huang",
+  "lastRunTime": "2026-06-16T09:05:13.850000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "varunraosfanlkan/extraordinaries-agent-security",
+  "title": " extraordinaries-agent-security",
+  "author": "Varun Rao",
+  "lastRunTime": "2026-06-16T07:01:08.137000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "dhanvinsureshareddy/multiguard-validation-1",
+  "title": "Multiguard Validation 1",
+  "author": "Dhanvin S",
+  "lastRunTime": "2026-06-16T13:34:38.337000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "mdabdulalhasib/hmmm-let-s-give-another-solution",
+  "title": "Hmmm.... let's give another solution",
+  "author": "Md Abdul Al Hasib",
+  "lastRunTime": "2026-06-15T09:44:30.957000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "prtkpiyush/solutions-first-attempt",
+  "title": "Solutions_first_attempt",
+  "author": "PrtkPiyush",
+  "lastRunTime": "2026-06-14T19:37:04.890000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "tkhanna96/h026-calibrate-then-generate-nb",
+  "title": "H026 Calibrate Then Generate NB",
+  "author": "Tkhanna96",
+  "lastRunTime": "2026-06-24T19:16:10.727000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "kashyapsinhgohil/27-3-eda-agent-security-trajectory-search",
+  "title": "27.3-EDA: Agent Security Trajectory Search",
+  "author": "Kashyapsinh gohil",
+  "lastRunTime": "2026-06-13T10:47:06.970000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "junaid512/ai-agent-security-dense-exfiltration-calibrate",
+  "title": "AI Agent Security — Dense Exfiltration calibrate ",
+  "author": "Muhammad Junaid",
+  "lastRunTime": "2026-06-24T15:15:13.070000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "emanuellcs/aias-deterministic-bounded-search",
+  "title": "AIAS - Deterministic Bounded Search",
+  "author": "Emanuel Lázaro",
+  "lastRunTime": "2026-06-13T11:13:54.807000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "takamichitoda/the-objective-is-raw-per-second",
+  "title": "The objective is raw per second",
+  "author": "Takamichi Toda",
+  "lastRunTime": "2026-09-02T11:54:16.543000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "quan0095/security-eval-edge-fill",
+  "title": "Security Eval Edge Fill",
+  "author": "Quan Vu",
+  "lastRunTime": "2026-07-13T04:23:24.167000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "devchandra/ai-agent-security-v66b-yusuke-lb60-bare-m37",
+  "title": "AI Agent Security v66b Yusuke LB60 bare m37",
+  "author": "Dr Chandrasen Pandey",
+  "lastRunTime": "2026-07-06T01:17:46.913000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "ruhul20/red-team-ai-agent-security",
+  "title": "Red-team AI Agent Security",
+  "author": "Ruhul Amin",
+  "lastRunTime": "2026-08-29T10:25:53.707000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "emanuellcs/aias-agent",
+  "title": "AIAS Agent",
+  "author": "Emanuel Lázaro",
+  "lastRunTime": "2026-06-28T22:29:59.207000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "udaken10/hi-hihi-ho",
+  "title": "hi_hihi_ho",
+  "author": "really?",
+  "lastRunTime": "2026-06-26T15:13:40.787000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "qinggedada/v7-read-multipost-delete-hybrid",
+  "title": "V7 Read-Multipost + Delete Hybrid",
+  "author": "qinggedada",
+  "lastRunTime": "2026-06-25T06:24:06.543000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "maj0rt0m/private-eval-proxy",
+  "title": "Private-Eval Proxy",
+  "author": "MAJ0RT0M",
+  "lastRunTime": "2026-06-26T00:09:20.527000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "monkeydz/aisec-attack-v2",
+  "title": "aisec-attack-v2",
+  "author": "Dengzhe Hou",
+  "lastRunTime": "2026-06-16T08:44:53.030000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "imbikramsaha/ai-agent-security-baseline-score-21-285",
+  "title": "AI Agent Security - Baseline | Score - 21.285",
+  "author": "Bikram Saha",
+  "lastRunTime": "2026-06-15T18:09:29.880000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "tuannm3812/ai-agent-security-01-eda",
+  "title": "AI Agent Security 01 EDA",
+  "author": "tuannm3812",
+  "lastRunTime": "2026-06-14T14:49:43.597000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "quynthnh/sdk-walkthrough-attack-strategy",
+  "title": "SDK Walkthrough + Attack Strategy",
+  "author": "Quyền Thịnh",
+  "lastRunTime": "2026-06-13T14:50:38.350000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "chaitanyajamble/ai-agent-security-multi-step-tool-attack",
+  "title": "AI Agent Security-Multi step tool attack",
+  "author": "Chaitanya Jamble",
+  "lastRunTime": "2026-06-13T09:33:12.673000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "aminmahmoudalifayed/shadow-strike-advanced-multi-step-ai-agent-attack",
+  "title": "Shadow Strike: Advanced Multi-Step AI Agent Attack",
+  "author": "Dr/ameen Fayed",
+  "lastRunTime": "2026-06-12T20:42:02.143000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "musnet/go-explore-red-team-multi-step-tool-attacks",
+  "title": "🥇 Go-Explore Red-Team — Multi-Step Tool Attacks",
+  "author": "MohamedMustafa",
+  "lastRunTime": "2026-06-13T04:52:01.927000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "narajan/best-public-score",
+  "title": "Best Public score",
+  "author": "Rajan Nagarajan",
+  "lastRunTime": "2026-06-12T16:55:47.027000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "municef1/105-silver-private-lb-22-155-confused-deputy",
+  "title": "#105 Silver: Private LB 22.155 Confused Deputy",
+  "author": "안녕하세요이세입니다잘부탁드립니다",
+  "lastRunTime": "2026-09-02T11:11:39.087000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "rikitomo0526/ai-agent-security-attack-script-exp021",
+  "title": "AI Agent Security - Attack script exp021",
+  "author": "Rick",
+  "lastRunTime": "2026-08-31T14:23:23.270000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "eugeneyeung/ai-agent-security-private-pp-corp-wide",
+  "title": "AI Agent Security Private PP Corp Wide",
+  "author": "EUGENEYEUNG",
+  "lastRunTime": "2026-09-02T12:31:39.857000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "eugeneyeung/ai-agent-security-fillmax-m34-f099",
+  "title": "AI Agent Security fillmax_m34_f099",
+  "author": "EUGENEYEUNG",
+  "lastRunTime": "2026-09-02T12:31:36.373000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "paul720810/hermes-attack-v70-n900-20260721-101920",
+  "title": "Hermes Attack v70-n900-20260721-101920",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-21T10:19:24.107000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "qyq1693/ai-agent-security-dense-v9",
+  "title": "ai-agent-security-dense-v9",
+  "author": "QYQ1693",
+  "lastRunTime": "2026-07-15T03:00:39.630000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "verise6211/aas-pilk-gx1",
+  "title": "aas-pilk-gx1",
+  "author": "verise6211",
+  "lastRunTime": "2026-07-06T15:34:00.500000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "ducnamphan/jed-attack-v0-95-ultimate",
+  "title": "JED Attack v0.95 — Ultimate",
+  "author": "Duc Nam Phan",
+  "lastRunTime": "2026-07-05T06:28:51.940000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "rauffauzanrambe/ai-security-sot-of-multi-tools-safe-v9",
+  "title": "AI Security SoT of Multi Tools Safe V9",
+  "author": "Ra'uf Fauzan Rambe",
+  "lastRunTime": "2026-07-01T10:02:17.190000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "tamiltechno/mutation-attack",
+  "title": "Mutation Attack",
+  "author": "Chandru",
+  "lastRunTime": "2026-07-01T08:47:35.980000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "mayuening/notebookde0d25bc7d",
+  "title": "notebookde0d25bc7d",
+  "author": "Ma Yuening",
+  "lastRunTime": "2026-07-05T15:39:32.867000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "lucifer19/v9-hop-saturation-overdrive",
+  "title": "V9 — Hop Saturation Overdrive 🔥🚀",
+  "author": "Krizsó Gergely",
+  "lastRunTime": "2026-06-29T15:12:35.100000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "hashimrazi/attack-template-validator",
+  "title": "Attack Template Validator",
+  "author": "9Hash",
+  "lastRunTime": "2026-06-29T10:40:58.627000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "matthewblakeward/jed-red-team-winning-attack",
+  "title": "JED Red-Team Winning Attack",
+  "author": "Matthew Blake Ward",
+  "lastRunTime": "2026-06-28T10:05:01.870000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260628-001654",
+  "title": "Hermes OpenClaw Attack E005-20260628-001654",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-28T00:16:57.580000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260627-060617",
+  "title": "Hermes OpenClaw Attack E005-20260627-060617",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-27T06:06:21.677000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "kiranvitly/ai-agent-security-attack",
+  "title": "AI Agent Security Attack",
+  "author": "Kiran Vitly",
+  "lastRunTime": "2026-07-03T14:37:09.727000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "sud0su/ai-agent-security-v8-attack",
+  "title": "ai-agent-security-v8-attack",
+  "author": "sud0su",
+  "lastRunTime": "2026-06-25T07:11:34.883000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "souldrive/the-replay-wall-and-the-guardrail-mirror",
+  "title": "The Replay Wall and the Guardrail Mirror",
+  "author": "souldrive",
+  "lastRunTime": "2026-09-02T12:01:15.997000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "geokocha/eda-multi-cell-bandit-attack",
+  "title": "EDA Multi-Cell Bandit Attack",
+  "author": "Yuanchen Huang",
+  "lastRunTime": "2026-06-21T17:25:37.987000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "koushikkumardinda/ai-agent-security-replay-safe-exfiltration",
+  "title": "🛡️ AI Agent Security: Replay-Safe Exfiltration ",
+  "author": "KOUSHIK KUMAR DINDA",
+  "lastRunTime": "2026-08-25T03:24:00.537000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "tkhanna96/h006-s1-anchor-len60-n400",
+  "title": "H006 S1 Anchor Len60 N400",
+  "author": "Tkhanna96",
+  "lastRunTime": "2026-06-20T16:37:51.850000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "imbikramsaha/ai-agent-public-score-34-540",
+  "title": "AI Agent | Public Score - 34.540",
+  "author": "Bikram Saha",
+  "lastRunTime": "2026-06-19T07:15:35.487000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "qinggedada/v6-read-multipost-static-attacks",
+  "title": "V6 Read-Multipost Static Attacks",
+  "author": "qinggedada",
+  "lastRunTime": "2026-06-25T06:19:30.220000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "monkeydz/aisec-attack-v1",
+  "title": "aisec-attack-v1",
+  "author": "Dengzhe Hou",
+  "lastRunTime": "2026-06-16T08:38:43.983000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "chaitanyajamble/ai-agent-security-1",
+  "title": "AI Agent Security-1",
+  "author": "Chaitanya Jamble",
+  "lastRunTime": "2026-06-16T09:12:25.067000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "tkhanna96/gemma-k4-gpt-k1-nb",
+  "title": "Gemma K4 GPT K1 NB",
+  "author": "Tkhanna96",
+  "lastRunTime": "2026-06-15T20:53:13.027000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "hichambedrani/ai-agent-security-min-v1",
+  "title": "AI Agent Security Min v1",
+  "author": "hicham bedrani",
+  "lastRunTime": "2026-06-14T19:19:37.023000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "hichambedrani/ai-agent-security-v17",
+  "title": "AI Agent Security v17",
+  "author": "hicham bedrani",
+  "lastRunTime": "2026-06-14T18:56:40.300000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "carlysipahutar/jed-attack-v2",
+  "title": "jed-attack-v2",
+  "author": "carly sipahutar",
+  "lastRunTime": "2026-06-14T18:30:01.183000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "carlysipahutar/jed-attack-multi-step-v1",
+  "title": "jed-attack-multi-step-v1",
+  "author": "carly sipahutar",
+  "lastRunTime": "2026-06-14T18:08:01.843000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "tkhanna96/h006-simple-scale-600-nb",
+  "title": "H006 Simple Scale 600 NB",
+  "author": "Tkhanna96",
+  "lastRunTime": "2026-06-24T16:58:51.390000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "beicicc/security-eval-public",
+  "title": "Security Eval Public",
+  "author": "Kun Zhang",
+  "lastRunTime": "2026-06-13T15:08:00.590000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "wisdomdogah/jed-attack-submission",
+  "title": "JED Attack Submission",
+  "author": "Wisdom Dogah",
+  "lastRunTime": "2026-06-20T07:12:55.837000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "addonyas/adiya",
+  "title": "adiya",
+  "author": "Adiya Orazbek",
+  "lastRunTime": "2026-08-21T18:36:53.600000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "souldrive/drop-them-a-line-quietly-deletes-a-file",
+  "title": "Drop them a line quietly deletes a file",
+  "author": "souldrive",
+  "lastRunTime": "2026-09-02T12:02:35.160000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "godofthunder2407/ai-agent-sec",
+  "title": "AI Agent Sec ",
+  "author": "GodofThunder2407",
+  "lastRunTime": "2026-07-19T05:32:20.410000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "gouthamkonduru/twoforfamily",
+  "title": "TwoforFamily",
+  "author": "Goutham Konduru",
+  "lastRunTime": "2026-08-27T09:11:08.477000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "ducnamphan/jed-v21-0-best-combo",
+  "title": "JED v21.0 Best Combo",
+  "author": "Duc Nam Phan",
+  "lastRunTime": "2026-07-11T09:33:12.783000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "devchandra/ai-agent-security-v75-yusuke-lb60525-margin32",
+  "title": "AI Agent Security v75 Yusuke LB60525 margin32",
+  "author": "Dr Chandrasen Pandey",
+  "lastRunTime": "2026-07-10T16:08:45.630000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "rageshthangaraj/defensive-red-teaming",
+  "title": "Defensive red-teaming ",
+  "author": "Ragesh Thangaraj",
+  "lastRunTime": "2026-07-09T11:13:22.580000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "verise6211/aas-adaptive-e2e",
+  "title": "aas-adaptive-e2e",
+  "author": "verise6211",
+  "lastRunTime": "2026-07-10T07:09:20.927000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "qyq1693/ai-agent-security-multiturn-v14",
+  "title": "ai-agent-security-multiturn-v14",
+  "author": "QYQ1693",
+  "lastRunTime": "2026-07-12T08:29:21.547000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-v19-replica-20260707-122726",
+  "title": "Hermes OpenClaw Attack v19-replica-20260707-122726",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-07T12:27:30.230000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "uditjain13/the-0-byte-submission-bug-guardrail-anatomy",
+  "title": "The 0-Byte Submission Bug + Guardrail Anatomy",
+  "author": "Udit Jain",
+  "lastRunTime": "2026-07-07T09:21:09.053000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "pengwang91/jed-fill-a2-mechanical",
+  "title": "jed-fill-a2-mechanical",
+  "author": "Peng Wang",
+  "lastRunTime": "2026-07-06T02:23:23.947000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "verise6211/aas-persona30",
+  "title": "AAS Persona30",
+  "author": "verise6211",
+  "lastRunTime": "2026-07-05T14:52:54.300000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "konitac/aias-preliminary-submission-format-checker",
+  "title": "AIAS - Preliminary Submission Format Checker",
+  "author": "🫠konita🫠",
+  "lastRunTime": "2026-07-05T13:43:47.727000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "ducnamphan/jed-attack-v1-0-high-call",
+  "title": "JED Attack v1.0 — High-Call",
+  "author": "Duc Nam Phan",
+  "lastRunTime": "2026-07-05T08:22:37.847000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "ducnamphan/jed-attack-v0-50-fixed",
+  "title": "JED Attack v0.50 — Fixed",
+  "author": "Duc Nam Phan",
+  "lastRunTime": "2026-07-04T19:15:51.240000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "pengwang91/jed-cleanimp420-marker",
+  "title": "jed-cleanimp420-marker",
+  "author": "Peng Wang",
+  "lastRunTime": "2026-07-03T00:49:25.227000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "kokinnwakashuu/ai-agent-security-v035-marker-stack",
+  "title": "AI Agent Security v035 marker stack",
+  "author": "kokinnwakashuu",
+  "lastRunTime": "2026-07-01T16:15:42.467000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260630-161123",
+  "title": "Hermes OpenClaw Attack E005-20260630-161123",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-30T16:11:27.837000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260629-101001",
+  "title": "Hermes OpenClaw Attack E005-20260629-101001",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-29T10:10:05.957000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "adonisleu/jed-attack-control",
+  "title": "JED Attack Control",
+  "author": "ElijahMingLiu",
+  "lastRunTime": "2026-06-29T09:56:12.337000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260629-001115",
+  "title": "Hermes OpenClaw Attack E005-20260629-001115",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-29T00:11:21.067000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "jiamengzhangjemma/as-v80-template-20260628",
+  "title": "AS V80 Template 20260628",
+  "author": "Jemma",
+  "lastRunTime": "2026-06-28T09:13:28.930000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260628-080608",
+  "title": "Hermes OpenClaw Attack E005-20260628-080608",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-28T08:06:11.553000",
+  "totalVotes": 3
+ }
+]

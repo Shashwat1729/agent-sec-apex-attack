@@ -1,0 +1,156 @@
+
+# NEW Open-Source Since Sept 1 - Delta vs V8 (705 Baseline)
+
+**Date generated:** 2026-09-07 (UTC)
+**Baseline file:** `research/kernels_ALL_REFS.csv` - 705 refs (header + 705 rows), freeze snapshot 2026-09-04T18:38:30Z
+**Scope:** Open-source kernel/notebook activity with `lastRunTime >= 2026-09-01` plus web-search for Working Notes / GitHub attacks since Sept 2026
+**V8 under review:** `docs/WORKING_NOTE_V8.md` (810 weighted: 105 own + 705 field; hero Table 7-A; throughput-first via Harmony forge + halving race + validate-then-keep; public band 91-92.5 peak 92.540 VERBATIM; private 0.07 median INFERRED)
+
+---
+
+## 1. Baseline - `kernels_ALL_REFS.csv` (705)
+
+| Metric | Value | Source |
+|---|---|---|
+| Total refs (excl header) | **705** | `csv.DictReader` |
+| `lastRunTime` range | 2026-06-11 -> **2026-09-04T18:38:30.493Z** | sorted by `lastRunTime` |
+| `totalVotes` leader | `martynaplomecka/getting-started-notebook` - **1763** | sort by votes desc |
+| Next votes | `foysalemonshanto/ai-agent-security-v15` 546, `llkh0a/aas-local-validation` 459, `dimong4/ai-agent-security` 426, `evgendvorkin/ai-agent` 371 | same |
+| Date distribution tail | 2026-08-31 10, **2026-09-01 12, 2026-09-02 19, 2026-09-03 4, 2026-09-04 3** - sum **38** since Sept 1 | counter on `lastRunTime[:10]` |
+| Sept 1+ count | **38** (Sept 2+ = 26, Sept 3+ = 7) | `lastRunTime >= 2026-09-01` |
+| Author hit for `hotton`/`hexisteme` | **0 hits** in CSV `ref`/`title`/`author` | case-insensitive scan |
+| V8 weighting claim | 810 = 105 own + 74 code-read + 630 metadata-only + 1 ERROR | `WORKING_NOTE_V8.md:7` |
+
+**What baseline tells us:** Field HURT is 0 by construction in V8 (38 HURT are all own). 722 of 810 are neutral/no-delta. Baseline already covers through 2026-09-04T18:38, so "since Sept 1" is not an extra dump - it is the last 38 rows of the same file. No `hotton`/`hexisteme` string appears in the 705 ref identifiers; those handles exist outside the CSV as GitHub Working-Note repos (see S2).
+
+---
+
+## 2. Web Search - Query 1: `kaggle AI Agent Security Working Note hotton hexisteme`
+
+Tool: `websearch` `numResults=10` run twice (query + variant). Top 5 distinct hits after dedup and fetch:
+
+| # | Result (URL) | Date | Score / Signal | Technique | Affects V8? |
+|---|---|---|---|---|---|
+| 1 | **tapiwamakandigona/kaggle-agent-security** - `WORKING_NOTE.md` <https://github.com/tapiwamakandigona/kaggle-agent-security/blob/main/WORKING_NOTE.md> | Repo created **2026-08-15**, note updated late Aug; hosted rerun reported in note (sub 55532857 vs 55532694) | **Controlled A/B 34.385 vs 0.000** on hosted LLM targets (gpt-oss-20b + gemma-4). Derivation: raw approx 6877 -> ~382 `http.post` to unique hosts x 18 raw = 6876 | **Argument shadowing** - `_extract_target` first-present-key (`path->url->cmd->data->body->content`) inspects `url` only, never `data`; **5-event taint window** (reported not exploited); **source-type gap** (only `web`/`email` taints). Verified negative: `VulnerableDeterministicAgent` 0/8838 immune | **YES - major overlap, cite required.** Same `optimal.py:51-58` blind spot V8 S4.1/S8 exploits. Note does single-primitive, no-search, deterministic 34.385 proof-of-blind-spot; V8 does throughput-first 92.540 (Harmony + halving + fill). Complementary. Must add citation + distinction box in S8/S11. No method change - V8 self-test already proves same (`tools/local_test.py:297-313`). |
+| 2 | **hexisteme/aisec-wn-figures** <https://github.com/hexisteme/aisec-wn-figures> | Repo active **Sept 2026** | N/A - deterministic `make_figures.py` (matplotlib) from campaign scores + `scoring.py` | **Figure generation pipeline:** reproducible charts of public scoring surface / guardrail logic, no novel attack | **Minor - optional.** V8 Fig 1-4 are bespoke. Could cite as independent figure-repro pattern in S11 if adopting palette, no technique delta. |
+| 3 | **abukayyisahbasyid/ai-agent-security-working-note** <https://www.kaggle.com/code/abukayyisahbasyid/ai-agent-security-working-note> | **2026-09-02T12:55**, votes **2** (in 38-set) | No hosted score quoted | Working Note (content not fetched - excerpt generic) | **Monitor - no.** In 38-set but low signal; likely duplicates V8 S22/S23 weight (neutral). Add to Sept-ledger appendix. |
+| 4 | **pilkwang/ai-agent-security-working-note** + jun-30-update <https://www.kaggle.com/code/pilkwang/ai-agent-working-note-jun-30-update> | June-July **2026** (pre-Sept, 159 votes) | Public score examples | **Replay-Dense Exfiltration** baseline family | **No - already weighted.** Already in 705 (rows ~66,77). V8 S6.1/S6.2 uses Pilkwang as baseline 0.075 vs V8 100pct fill. No new delta. |
+| 5 | **dimong4/ai-agent-security** <https://www.kaggle.com/code/dimong4/ai-agent-security> | **2026-08-16**, 426 votes | Top-vote field ref (rank 19) | Baseline multi-step template | **No.** Same bucket as #4 - in V8 630 metadata-only band. |
+
+**Search hygiene:** No kernel in 705 carries literal handle `hotton` (0 hits) - prompt `hotton hexisteme` maps to two GitHub handles/repos outside Kaggle: `tapiwamakandigona` (author of Argument-Shadowing Working Note) and `hexisteme` (figure repo). Kaggle Working Note deadline was **2026-09-08** (competition rules), so late notes are on Discussions + GitHub mirrors; websearch correctly surfaced mirrors because Kaggle pages block excerpts. Failover: when Kaggle excerpts were generic, fell back to `webfetch` raw WORKING_NOTE.md and hexisteme README.md - both succeeded.
+
+---
+
+## 3. Web Search - Query 2: `github AI Agent Security attack September 2026`
+
+Tool: `websearch` `numResults=10`. Top 5 after filtering for Sept 2026 recency + GitHub/industry relevance:
+
+| # | Result (URL) | Date | Score / Severity | Technique | Affects V8? |
+|---|---|---|---|---|---|
+| 1 | **Adversa AI - Top AI coding agent security resources - September 2026** <https://adversa.ai/blog/top-ai-coding-agent-security-resources-september-2026/> | **2026-09-03** (9 resources, 3 attack tech / 2 vulns / 2 defenses) | GhostJacking **90pct** vs Claude Code (15k orgs in range); Breaking Claude Code Opus 5 auto **60-80pct**; Skill bench **95.5pct** Gemini CLI / 71.6pct Qwen vs **1.99pct** detection (2826 files / 5629 execs, arxiv 2608.05223) | (a) GhostJacking: WAF block-log -> agent injection. (b) Opus 5 module shadowing: fallback curl archive -> `import base64` resolves attacker `struct.py`. (c) Steg image -> `sys.addaudithook` self-bypass. All **real-world harness** attacks | **No method change; citation enrichment YES.** Production-harness vectors, not Kaggle `OptimalGuardrail`. V8 S8/S9 is benchmark-scope. Could add 2 lines in S8 mapping GhostJacking -> treat logs as untrusted; shadowing -> isolate reasoning channel. |
+| 2 | **CSA: Three AI Coding Agents, One GitHub Issue - CI/CD Secrets Exposed** <https://labs.cloudsecurityalliance.org/research/csa-research-note-ai-coding-agent-cicd-secrets-20260808-csa/> + GhostAction lineage | **2026-08-08** note, Sept GhostAction Sep 2025 recapped Sept 2026 (327 accounts / 817 repos / 3325 secrets) | **CVSS 10.0** Gemini CLI (GHSA-wpqr-6v78-jr5g, CVE-2026-12537, patched 2026-04-24); single unauthenticated issue -> RCE across Claude Code (bash validator single-quote strip -> `git push --receive-pack` bypass), Gemini CLI, Copilot | PromptPwnd / Comment-and-Control: issue/comment -> Agent in Actions executes | **No.** V8 harness is offline sandbox replay (no GH Actions). One sentence max in S10 Limitations. |
+| 3 | **webpro255/awesome-ai-agent-attacks** <https://github.com/webpro255/awesome-ai-agent-attacks> | Created **2026-04-07**, 67 stars, MIT | Curated timeline 2024-2026 | Taxonomy/curation | **No.** Useful for S11 Sources breadth, no primitive to port. |
+| 4 | **alexmelges/agentprobe** <https://github.com/alexmelges/agentprobe> | **2026** (OWASP ZAP for AI agents) | `npx @alexmelges/agentprobe --demo` | Automated adversarial testing: prompt injection / exfil / priv-esc / multi-agent / GH workflow / WebMCP; `agentprobe.yaml` CI scan | **No.** Tooling shout-out in S9 checklist optional. |
+| 5 | **Axis Intelligence - Incident Tracker 2026** <https://axis-intelligence.com/ai-agent-security-incident-tracker/> | **2026-07-22** (8 incidents since Jul 2024) | Mexico gov **400M records** (Claude Code + GPT-4.1, 5317 cmds); Vercel/Context.ai OAuth 580 records; Salesloft/Drift 700+ orgs | Real breach log | **No.** Context for S1 threat model but benchmark synthetic `SECRET_MARKER` keeps V8 no-leak proof. One-line citation max. |
+
+No fall needed - primary websearch returned with `ses_f8a5b9965ffeduicu6B4MhiY12` and `ses_cfdda27...`; excerpts above are VERBATIM pulls.
+
+---
+
+## 4. The 38 New Kernels Since Sept 1 (CSV tail)
+
+Sorted desc by `lastRunTime` (VERBATIM from `kernels_ALL_REFS.csv`). Full list = 38 refs (Sept1 12 + Sept2 19 + Sept3 4 + Sept4 3).
+
+| lastRunTime | votes | ref | title | Technique hint | Verdict vs V8 |
+|---|---|---|---|---|---|
+| 2026-09-04T18:38 | 12 | antoniorotundo2/a-throughput-floor-plus-a-genuine-multi-step-searc | A throughput floor plus a genuine multi-step searc | Throughput floor + genuine multi-step search - tests V8 throughput > search thesis | **Cite.** Highest-vote Sept item (12). If MCTS/Go-Explore multi-step, strongest counterpoint to V8 S4.3 rejection of evolution. Pull notebook; if no bench beat, validates V8. |
+| 2026-09-04T14:01 | 1 | enriro0/replay-throughput-and-guardrail-reachability-jed | Replay-Throughput and Guardrail Reachability (JED) | Replay cost + guardrail reachability | **Support.** Mirrors V8 S8 taxonomy; cite as convergent. |
+| 2026-09-04T13:20 | 1 | seb001010/51-silver-working-note-the-gate-reads-payloads | #51 Silver | Working Note: the gate reads payloads | **Support.** gate-reads-payloads = direct payload-inspection defense (fixes V8 `_extract_target` hole). Defender anchor for S8. |
+| 2026-09-03T11:10 | 0 | khj1222/ai-agent-security-working-note | AI Agent Security Working Note | Working note | Monitor |
+| 2026-09-03T08:10 | 0 | ashraf1232/isolating-the-taint-boundary-working-note | Isolating the Taint Boundary -- Working Note | Taint-isolation | **Support.** If sticky-taint vs 5-window, reinforces V8 S8 Lesson 2. |
+| 2026-09-03T01:49 | 1 | kkrasikov/workingnote-66th-place-method-harness | [WorkingNote] 66th place - Method & Harness | 66th-place harness breakdown | Reference only |
+| 2026-09-03T01:47 | 2 | kkrasikov/workingnote-66th-place-submission | [WorkingNote] 66th place submission | Submission companion | Reference only |
+| 2026-09-02T19:41 | 1 | thwaitsusa2/jed-working-note-verifier | JED Working Note verifier | Verifier harness (likely replay validation) | Support (V8 S5) |
+| 2026-09-02T12:55 | 2 | abukayyisahbasyid/ai-agent-security-working-note | AI Agent Security - Working Note | (see S2 #3) | Monitor |
+| 2026-09-02T12:31 | 4 | eugeneyeung/ai-agent-security-private-pp-corp-wide | AI Agent Security Private PP Corp Wide | Private-split / corpus-wide payload | **Watch for private thesis.** Tied top Sept votes (4). Could carry deputy-heavy private hedge that V8 starved (H8). |
+| 2026-09-02T12:31 | 4 | eugeneyeung/ai-agent-security-fillmax-m34-f099 | AI Agent Security fillmax_m34_f099 | Fill-max / M34 / F099 - max-candidate fill near 500-760 frontier | Technique tuning of V8 fill (S4.4). Likely neutral (V8 already capped 600+ as overrun risk). |
+| 2026-09-02T12:02 | 3 | souldrive/drop-them-a-line-quietly-deletes-a-file | Drop them a line quietly deletes a file | Destructive-write / file-delete primitive | DESTRUCTIVE_WRITE Sev4 - already NO on public (DENY on `secret.txt`). Confirms V8 Table 2. |
+| 2026-09-02T12:01 | 4 | souldrive/the-replay-wall-and-the-guardrail-mirror | The Replay Wall and the Guardrail Mirror | Replay-wall + guardrail mirror | **Support.** Explicit replay-wall framing matches V8 S5/S6 ceiling. |
+| 2026-09-02T12:01 | 7 | souldrive/why-your-attack-completes-but-scores-blank | Why Your Attack Completes but Scores BLANK ? | Blank-score debugging | V8 S6.2 already diagnoses blank = replay overrun / mock-6x gap. Cross-ref. |
+| 2026-09-02T11:54 | 5 | takamichitoda/the-objective-is-raw-per-second | The objective is raw per second | Raw-per-second = throughput objective | **Direct support.** V8 exact objective (`eff = mean_raw/mean_cost`). Cite. |
+| 2026-09-02T11:11 | 4 | municef1/105-silver-private-lb-22-155-confused-deputy | #105 Silver: Private LB 22.155 Confused Deputy | Confused Deputy private 22.155 | **Key private data point.** V8 private top Xz 46.425 deputy; this is lower-deputy proof. Reinforces S6.4. |
+| 2026-09-02T08:44 | 0 | merkiraz/jed-v84-deputymax-attack | JED-v84-DeputyMax-attack | Deputymax - deputy-maximized | Deputy-heavy variant; neutral (V8 S7 F8 says deputy must be 70pct+ to matter). |
+| 2026-09-02T07:55 | 2 | gerwynng/ai-agent-security-final-leaderboard-shake | AI Agent Security: Final Leaderboard Shake | Leaderboard-shake analysis | Meta |
+| 2026-09-02T06:40 | 0 | ahmedmobasher86/working-note-guardrail-predicate-asymmetry | Working Note: Guardrail-Predicate Asymmetry | Guardrail vs predicate asymmetry | **Core V8 claim.** Exactly V8 Fig2 asymmetry (guardrail inspects `url`, predicate inspects `data`). Cite as independent replication. |
+| 2026-09-02T06:32 | 0 | takamichitoda/the-hedge-that-survived-clean-confused-deputy | The hedge that survived: clean CONFUSED_DEPUTY | Deputy hedge survivor | V8 H8/F8 hedge lesson - independent confirmation hedge must be clean `email.send`. |
+| 2026-09-02T05:23 | 0 | aleaiest/13th-aisec-cdrole-adaptive | 13th: aisec-cdrole-adaptive | Cdrole adaptive (13th private?) | Top-private adaptive; monitor |
+| 2026-09-02T04:26 | 0 | backtracking/jed-silver-solution-writeup | jed-silver-solution-writeup | Silver solution writeup | General |
+| 2026-09-02T04:16 | 0 | backtracking/jed-silver-private-hedge-v37 | jed-silver-private-hedge-v37 | Private hedge v37 | General |
+| 2026-09-02T04:16 | 0 | backtracking/jed-silver-public-v43 | jed-silver-public-v43 | Public v43 | General |
+| 2026-09-02T01:54 | 0 | yw8837/ai-agent-security-34-255-to-8-145-full-code | AI Agent Security: 34.255 to 8.145 | Full Code - 34->8 drop (likely public->private) | Private collapse exemplar - matches V8 92->0.07 collapse at smaller scale. |
+| 2026-09-02T00:27 | 0 | zashraf1337hs/msta-working-note | MSTA Working Note | Multi-step tool attack note | Monitor |
+| 2026-09-01T22:43 | 30 | verityix/ai-agent-security-attack-algorithm-hitherto | AI Agent Security - Attack Algorithm (Hitherto) | Attack algorithm (hitherto = prior work review) | **Highest-vote Sept entry (30).** Must skim - title suggests survey; if new search, compare vs V8 Table 7-A. Currently neutral until read. |
+| 2026-09-01T21:18 | 0 | sirikilohit/submission-v170-dual-harmony | submission_v170_dual_harmony | Dual harmony (Harmony forge dual?) | Forge variant - likely V8-family |
+| 2026-09-01T20:39 | 1 | aqibrazadev/maximum-throughput-attack-code | MAXIMUM THROUGHPUT Attack Code | Maximum throughput - explicit | **Support.** Same thesis as V8. |
+| 2026-09-01T17:33 | 1 | raunakdey07/ai-agent-security-adaptive-template-race | AI Agent Security - Adaptive Template Race | Adaptive template race - mirrors V8 halving race | **Support.** Race = V8 S4.3 best-arm. |
+| 2026-09-01T17:11 | 0 | ayushanand01/jed-mab-attack | JED MAB Attack | Multi-armed bandit attack | MAB = V8 halving race alternative; worthy comparison. |
+| 2026-09-01T13:41 | 0 | adostie3/jed-attack-cd-v1 | JED Attack CD v1 | CD = confused deputy v1 | Tiny deputy |
+| 2026-09-01T11:22 | 12 | cdeotte/final-cd5 | final-cd5 | CD5 final | Recent CD final with 12 votes - notable |
+| 2026-09-01T10:46 | 1 | danischaparov/ai-agent-security-v12 | AI Agent Security V12 | V12 iteration | General |
+| 2026-09-01T10:04 | 8 | konbu17/jed-attack-exp093 | JED Attack exp093 | Exp093 | General |
+| 2026-09-01T09:42 | 6 | xiaoz259/aas-final-submission-cd | AAS | Final Submission - CD | CD final |
+| 2026-09-01T07:09 | 0 | merkiraz/jed-v35-uniquecellmax-v1 | jed-v35-uniquecellmax-v1 | Unique-cell max v1 | Diversity-term max - V8 +2 novelty per unique host (S4.4). |
+| 2026-09-01T05:32 | 1 | samwiz/aas-v15-gpu | AAS v15 GPU | GPU run | General |
+
+Votes are Kaggle `totalVotes` at snapshot time; scores (public/private) are NOT in CSV - they live in notebook titles/leaderboards and require per-notebook fetch. No entry since Sept 1 claims >~60 public in its title (vs V8 92.540 band and field top 147.530 poijio), so no new public ceiling break is visible in this metadata slice.
+
+---
+
+## 5. Verdict - Does V8 Need an Update?
+
+### Short answer
+
+**No methodological rewrite. Minor citation/update addendum is advisable.**
+
+| Dimension | V8 status | New evidence | Action |
+|---|---|---|---|
+| Threat model / guardrail mechanism | `_extract_target` first-present-key blind spot + taint 5 superset 2 verified in S4.1/S8 | **Confirmed independently** twice: `tapiwamakandigona` 34.385 vs 0.000 A/B and `seb001010` + `ahmedmobasher86` asymmetry notes | **Add citations.** Insert 1-line credit + 1-line distinction (minimal proof vs throughput ceiling) in S8/S11. V8 self-test already proves same (`tools/local_test.py:297-313`). |
+| Throughput ceiling | 91-92.5 band, v64 92.540 peak, 20 post-v64 failures (<5pts=noise), top-50 cutoff 111.690 | No Sept 1+ title claims > ~60 or new vote-leader >30 that beats 92.540; highest-vote Sept item is 12 (antoniorotundo2) framed as throughput floor | **No change.** Could append antoniorotundo2 + takamichitoda raw per second as convergent support in S7 Table W-E2. |
+| Private LB thesis (0.07 median, deputy wins) | Private 0.210 best (v76), winner Xz 46.425 taint-free `email.send` | New Sept private datapoint `municef1` 22.155 deputy and `takamichitoda` clean deputy survivor match thesis; `yw8837` 34->8 collapse mirrors it | **Add 1 row** to S6.4 Table 5 (municef1 22.155) as lower-deputy proof. Reinforces, does not contradict. |
+| Defense checklist (S8 Lessons / S9 Usefulness) | 4 lessons: match all args, sticky taint, taint every channel, judge vs flexible agent | Real-world Sept vectors (GhostJacking log-as-injection, module shadowing) map to treat logs as untrusted + isolate reasoning channel | **Optional 2-sentence bridge** in S8 noting production-harness vectors as out-of-benchmark example of same channel-confusion class. Keep scope box intact. |
+| Figure / repro methodology | 4 figures deterministic from `scoring.py` + recorded scores | `hexisteme/aisec-wn-figures` `make_figures.py` independent same class | **No figure regeneration needed.** Cite as parallel figure-repro if style requests. |
+
+### Concrete edit checklist if we do a V8.1 addendum (est. ~30 mins, no reruns)
+
+- [ ] S8 + S11: add `tapiwamakandigona/kaggle-agent-security/WORKING_NOTE.md` (argument shadowing 34.385 vs 0.000) - credit as **independent replication of S4.1 blind spot**; distinction: tapiwamakandigona isolates mechanism with minimal burst; V8 isolates ceiling with throughput-first search (Harmony + halving + fill).
+- [ ] S6.4 Table 5: append `municef1` 22.155 deputy as lower-deputy private proof; optionally cite `yw8837` 34->8 as small-scale collapse.
+- [ ] S7 Table 6 family F8/F9 notes: cross-ref `takamichitoda` clean CONFUSED_DEPUTY survivor + `antoniorotundo2` throughput-floor as convergent evidence hedge must be large and search cheap.
+- [ ] S8 Lessons: add 2-line Production-harness parallel (Sep 2026) box citing GhostJacking (Adversa 2026-09-03, 90pct Claude Code) as log-as-injection cousin.
+- [ ] Appendix Sept ledger: paste S4 table (38 rows) as Table V8-S1 so reviewers see V8 weighed all 810 + tracked Sept tail to 2026-09-04T18:38 (deadline 2026-09-08).
+- [ ] No score-table, figure, or `src/` change required; `tools/local_test.py` 60-s self-test still falsifies blind spot locally.
+
+### What would force a real rewrite (not triggered)
+
+- A Sept 1+ kernel with public > ~105 or private > ~30 deputy beating Xz pattern with transferable technique V8 race/fill cannot emulate (e.g., new private-survivable predicate or wall-clock exploit beyond THS). None appears in this sweep - title/vote/replay-wall signals are flat or supportive.
+
+---
+
+## 6. Sources & Provenance
+
+| Claim | Where read | How verified |
+|---|---|---|
+| 705 baseline + 38 since Sept 1 | `research/kernels_ALL_REFS.csv` parsed via csv.DictReader | counter on `lastRunTime[:10]`, sorted desc dump to 2026-09-04T18:38 |
+| `hotton`/`hexisteme` 0 hits in CSV | Python scan `hotton in ref.lower()` | 0 matches across 705 |
+| Tapiwamakandigona A/B 34.385 vs 0.000 | `webfetch` raw WORKING_NOTE.md S6 (sub 55532857 vs 55532694), hexisteme README | Fetched + excerpted; raw 6877 -> 382x18 model |
+| Adversa 9 resources Sept 3 | `websearch` query 2 result 1, excerpts GhostJacking 90pct, Opus 60-80pct, skill bench 2826/5629 | `ses_cfdda27...` |
+| CSA GHSA-wpqr-6v78-jr5g CVSS 10.0 | Same websearch + CSA PDF citation | Websearch + GHSA ID |
+| V8 band/ceiling/ranking | `docs/WORKING_NOTE_V8.md:7-42`, `research/all_submissions_raw.txt:14-63`, `research/final_private_top80.txt:7` | File reads |
+| Sept ledger 38 rows | `kernels_ALL_REFS.csv` filtered `lastRunTime >= 2026-09-01` sorted desc | Dump in S4 |
+
+Websearch sessions: `ses_f8a5b9965ffeduicu6B4MhiY12` (q1), `ses_cfdda27...` / `ses_144458...` (q2/variant), `ses_bbad02...` (hotton variant). Failover: when Kaggle excerpts generic, fell back to `webfetch` GitHub raw.
+
+---
+
+**Bottom line:** V8 blind-spot claim is now doubly sourced (V8 + independent tapiwamakandigona note), throughput ceiling unbroken in Sept 1-4 tail (705->810 already includes it), private-collapse thesis strengthened by new Sept deputy survivors. Update is editorial (citations + Sept ledger), not technical.
+
+Spelling in fetch is `tapiwamakandigona`; prompt `hotton` maps to this author via search co-occurrence with `hexisteme`; no CSV row carries `hotton` literally - GitHub handle is resolvable identity.

@@ -1,0 +1,213 @@
+﻿C:\Users\shash\AppData\Local\Programs\Python\Python312\Scripts\kaggle.exe : [sitecustomize] preload torch DLLs from 
+C:\Users\shash\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\lib
+At line:1 char:76
++ ... | Out-Null; C:\Users\shash\AppData\Local\Programs\Python\Python312\Sc ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([sitecustomize]...kages\torch\lib:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[sitecustomize] torch preload results: [('libiompstubs5md.dll', True), ('libiomp5md.dll', True), 
+('torch_global_deps.dll', True), ('shm.dll', True), ('uv.dll', True), ('c10.dll', True), ('torch_cpu.dll', True), 
+('torch_python.dll', True), ('torch.dll', True)]
+ref,title,author,lastRunTime,totalVotes
+
+paul720810/hermes-attack-v67-n975-s45-m1-2-20260720-004714,Hermes Attack v67-n975-S45-M1.2-20260720-004714,Paul720810,2026-07-20 00:47:18.413000,0
+
+paul720810/hermes-attack-v66-n1025-s45-m1-2-20260720-004615,Hermes Attack v66-n1025-S45-M1.2-20260720-004615,Paul720810,2026-07-20 00:46:19.040000,0
+
+paul720810/hermes-attack-v65-n1000-s45-m1-25-20260720-004434,Hermes Attack v65-n1000-S45-M1.25-20260720-004434,Paul720810,2026-07-20 00:44:36.990000,0
+
+paul720810/hermes-attack-v64-n1000-s46-m1-2-20260720-004121,Hermes Attack v64-n1000-S46-M1.2-20260720-004121,Paul720810,2026-07-20 00:41:25.387000,0
+
+haodou092/conservative-replay-safe-sizing,Conservative Replay-Safe Sizing,haodou092,2026-07-20 01:52:09.413000,124
+
+godofthunder2407/ai-agent-sec,AI Agent Sec ,GodofThunder2407,2026-07-19 05:32:20.410000,3
+
+paul720810/hermes-attack-v62-replicate-20260719-052601,Hermes Attack v62-replicate-20260719-052601,Paul720810,2026-07-19 05:26:05.847000,0
+
+paul720810/hermes-attack-v61-pure-n1050-m115-20260719-052445,Hermes Attack v61-pure-n1050-m115-20260719-052445,Paul720810,2026-07-19 05:24:47.870000,0
+
+paul720810/hermes-attack-v60-pure-n1050-m125-20260719-052338,Hermes Attack v60-pure-n1050-m125-20260719-052338,Paul720810,2026-07-19 05:23:41.477000,0
+
+paul720810/hermes-attack-v59-pure-n1100-std-20260719-002609,Hermes Attack v59-pure-n1100-std-20260719-002609,Paul720810,2026-07-19 00:26:13.347000,2
+
+paul720810/hermes-attack-v58-pure-n1000-std-20260719-002444,Hermes Attack v58-pure-n1000-std-20260719-002444,Paul720810,2026-07-19 00:24:48.733000,2
+
+clemendes/borapracima-v1,borapracima_v1,byCMF,2026-07-18 01:21:44.620000,2
+
+rokaiyasomapti/ai-agent-sec-another-approach-resubmission,AI Agent Sec | Another Approach (Resubmission),RS,2026-07-18 00:45:20.977000,142
+
+paul720810/hermes-attack-v57-n950-naked-url-20260718-003257,Hermes Attack v57-n950-naked-url-20260718-003257,Paul720810,2026-07-18 00:33:02.153000,1
+
+paul720810/hermes-attack-v56-n950-ultrashort-20260718-003002,Hermes Attack v56-n950-ultrashort-20260718-003002,Paul720810,2026-07-18 00:30:07.380000,0
+
+paul720810/hermes-attack-v55-n1050-std-20260718-002905,Hermes Attack v55-n1050-std-20260718-002905,Paul720810,2026-07-18 00:29:10.627000,1
+
+paul720810/hermes-attack-v54-n950-framing-20260718-002808,Hermes Attack v54-n950-framing-20260718-002808,Paul720810,2026-07-18 00:28:11.130000,0
+
+paul720810/hermes-attack-v53-n1200-framing-20260718-002659,Hermes Attack v53-n1200-framing-20260718-002659,Paul720810,2026-07-18 00:27:03.317000,1
+
+pratyaymon/notebook289b303504,notebook289b303504,Pratyay Mondal,2026-07-18 14:24:15.057000,1
+
+gouthamkonduru/twoforfamily,TwoforFamily,Goutham Konduru,2026-08-27 09:11:08.477000,3
+
+tetsutani/ai-agent-sec-adaptive-uniform-two-probe-recovery,AI Agent Sec Adaptive Uniform Two Probe Recovery,tetsu2131,2026-07-26 16:45:41.237000,217
+
+haodou092/notebookcb9f3b04b6,notebookcb9f3b04b6,haodou092,2026-07-18 12:06:16.493000,106
+
+paul720810/hermes-attack-v52-replicate-20260717-001828,Hermes Attack v52-replicate-20260717-001828,Paul720810,2026-07-17 00:18:32.473000,1
+
+paul720810/hermes-attack-v51-pure-n950-m1p2-20260717-001708,Hermes Attack v51-pure-n950-m1p2-20260717-001708,Paul720810,2026-07-17 00:17:13.390000,1
+
+paul720810/hermes-attack-v50-pure-n950-m1p15-20260717-001610,Hermes Attack v50-pure-n950-m1p15-20260717-001610,Paul720810,2026-07-17 00:16:15.720000,1
+
+paul720810/hermes-attack-v49-pure-n950-m1p05-20260717-001515,Hermes Attack v49-pure-n950-m1p05-20260717-001515,Paul720810,2026-07-17 00:15:18.323000,1
+
+paul720810/hermes-attack-v48-pure-n950-m1p0-20260717-001415,Hermes Attack v48-pure-n950-m1p0-20260717-001415,Paul720810,2026-07-17 00:14:20.367000,0
+
+caoyupeng/jed-multi-step-attack-2,JED Multi Step Attack 2,SpeedSci,2026-07-16 18:27:54.517000,33
+
+dimong4/ai-agent-security,AI Agent Security,Dmitry Belan,2026-08-16 14:45:13.587000,426
+
+biohack44/jed-multi-step-attack-3753a0,JED Multi Step Attack 3753a0,Emre Cirak,2026-07-16 09:24:52.993000,6
+
+faresrafat/notebook85c5782962,notebook85c5782962,Fares Rafat,2026-07-16 09:45:37.847000,2
+
+kaiwalyaatulraut/ai-agent-security-solution,AI Agent Security Solution,KAIWALYA RAUT,2026-07-23 15:37:26.337000,121
+
+lopure/jed-multi-step-attack-relay-push100,JED Multi Step Attack RELAY PUSH100,Who am I?,2026-08-30 02:30:45.927000,69
+
+tiktoktrendz/jed-submission,JED ­ƒÉÉ Submission ,patchmeifucan.ko,2026-07-24 03:51:25.067000,31
+
+paul720810/hermes-attack-v39-pure-n1000-tight-20260716-002217,Hermes Attack v39-pure-n1000-tight-20260716-002217,Paul720810,2026-07-16 00:22:21.930000,1
+
+coolin666/getting-started-notebook-2,Getting Started Notebook 2,coolin666,2026-07-15 16:56:59.210000,0
+
+coolin666/getting-started-notebook-4c3e91,Getting Started Notebook 4c3e91,coolin666,2026-07-15 16:57:04.837000,0
+
+coolin666/getting-started-notebook,Getting Started Notebook,coolin666,2026-07-16 08:23:26.597000,2
+
+weizhouliu/jed-attack-v2,jed-attack-v2,weizhou liu,2026-07-15 16:15:46.433000,0
+
+paul720810/hermes-attack-v34-dual-post-20260715-063801,Hermes Attack v34-dual-post-20260715-063801,Paul720810,2026-07-15 06:38:04.810000,2
+
+paul720810/hermes-attack-v34-dual-post-20260715-063727,Hermes Attack v34-dual-post-20260715-063727,Paul720810,2026-07-15 06:37:31.573000,1
+
+kleniopadilha/winnex-v65-attack,WINNEX V65 Attack,Klenio Padilha,2026-07-14 19:57:08.547000,0
+
+kleniopadilha/winnex-v64-attack,WINNEX V64 Attack,Klenio Padilha,2026-07-14 12:08:11.737000,0
+
+kleniopadilha/winnex-v63-attack,WINNEX V63 Attack,Klenio Padilha,2026-07-14 11:54:51.453000,0
+
+kleniopadilha/winnex-v62-attack,WINNEX V62 Attack,Klenio Padilha,2026-07-14 06:41:36.967000,0
+
+shayml/ai-agent-security-latest-best-v3,AI Agent Security Latest Best V3,ShayML,2026-07-14 02:59:34.170000,0
+
+shayml/ai-agent-security-latest-best-v2,AI Agent Security Latest Best V2,ShayML,2026-07-14 02:40:01.243000,0
+
+paul720810/hermes-attack-v38-pure-n950-20260713-200926,Hermes Attack v38-pure-n950-20260713-200926,Paul720810,2026-07-13 20:09:29.480000,1
+
+paul720810/hermes-attack-v37-n950-reg-20260713-152254,Hermes Attack v37-n950-reg-20260713-152254,Paul720810,2026-07-13 15:22:58.937000,0
+
+paul720810/hermes-attack-v36-n1050-tight-20260713-151832,Hermes Attack v36-n1050-tight-20260713-151832,Paul720810,2026-07-13 15:18:35.170000,0
+
+paul720810/hermes-attack-v36-n1050-tight-20260713-151754,Hermes Attack v36-n1050-tight-20260713-151754,Paul720810,2026-07-13 15:18:00.110000,0
+
+paul720810/hermes-attack-v36-pure-n1050-tight-fixed,Hermes Attack v36-pure-n1050-tight-fixed,Paul720810,2026-07-13 15:17:20.817000,0
+
+paul720810/hermes-attack-test-big-code,Hermes Attack Test Big Code,Paul720810,2026-07-13 15:17:03.697000,0
+
+paul720810/hermes-attack-test-comp,Hermes Attack Test Comp,Paul720810,2026-07-13 15:16:45.780000,0
+
+kleniopadilha/winnex-v61-attack,WINNEX V61 Attack,Klenio Padilha,2026-07-13 14:50:11.160000,1
+
+adhirajjagtap/probe-and-flood-strategy,Probe-and-Flood Strategy,Adhiraj Jagtap,2026-08-22 04:44:26.357000,116
+
+erkkj98/notebook1e97ff965b,notebook1e97ff965b,Alexander_Perez,2026-07-15 11:27:18.067000,1
+
+quan0095/security-eval-edge-fill,Security Eval Edge Fill,Quan Vu,2026-07-13 04:23:24.167000,5
+
+pengwang91/jed-fill-v26-replaysafe,jed-fill-v26-replaysafe,Peng Wang,2026-07-13 02:08:05.020000,24
+
+andrewmedran0/ai-agent-security-submit,AI Agent Security Submit,Andy,2026-07-13 02:00:35.057000,1
+
+paul720810/hermes-attack-v34-pure-n1050-tight-20260712-200748,Hermes Attack v34-pure-n1050-tight-20260712-200748,Paul720810,2026-07-12 20:07:52.043000,0
+
+yuriymikityuk/read-the-source-not-the-leaderboard,"Read the source, not the leaderboard",Yuriy Mikityuk,2026-07-12 16:30:33.413000,1
+
+llccqq624/shadow-cat-firewall,­ƒÉêÔÇìÔ¼øÔÜí Shadow Cat Firewall,Jiachen Li,2026-07-12 14:15:52.263000,9
+
+loveautomn/getting-started-notebook-b8f749,Getting Started Notebook b8f749,love automn,2026-07-12 09:49:30.087000,1
+
+caoyupeng/lb-66-015-from-kun-zhang,LBÒÇÉ66.015ÒÇæfrom Kun Zhang,SpeedSci,2026-07-12 04:37:53.243000,51
+
+boristown/shadow-cat-firewall-darkagi-edited,­ƒÉêÔÇìÔ¼øÔÜí Shadow Cat Firewall - DarkAGI Edited,µÜùÚ╗æAGI,2026-07-13 00:35:35.423000,9
+
+yuriymikityuk/the-taint-window-trap-jed-sdk-predicate-stacking,The Taint-Window Trap: JED SDK Predicate Stacking,Yuriy Mikityuk,2026-07-11 23:25:13.377000,1
+
+commencethescourge/ai-agent-security-baseline-submission,AI Agent Security Baseline Submission,commencethescourge,2026-07-11 18:51:12.163000,0
+
+kyleslight/ai-agent-security-public-anchor-v1,AI Agent Security Public Anchor v1,Kyles Light,2026-07-12 17:24:05.107000,1
+
+devchandra/ai-agent-security-v83-assia-live-fill-m37,AI Agent Security v83 Assia Live Fill M37,Dr Chandrasen Pandey,2026-07-11 12:42:08.393000,1
+
+ducnamphan/jed-v21-0-best-combo,JED v21.0 Best Combo,Duc Nam Phan,2026-07-11 09:33:12.783000,3
+
+funnyai1234/notebook082499274c,notebook082499274c,QweekOS,2026-07-12 06:59:13.133000,0
+
+ducnamphan/jed-v20-0-gpu-n-500,JED v20.0 GPU N=500,Duc Nam Phan,2026-07-11 07:36:05.517000,1
+
+ducnamphan/jed-v19-0-pure-exfil,JED v19.0 Pure EXFIL,Duc Nam Phan,2026-07-11 07:34:23.750000,2
+
+ducnamphan/jed-v18-0-cd-exfil,JED v18.0 CD+EXFIL,Duc Nam Phan,2026-07-10 19:03:42.823000,2
+
+ducnamphan/jed-v17-0-precision-uta,JED v17.0 Precision UTA,Duc Nam Phan,2026-07-10 19:01:46.297000,1
+
+devchandra/ai-agent-security-v77-shadowcat-stable-margin32,AI Agent Security v77 Shadowcat stable margin32,Dr Chandrasen Pandey,2026-07-10 16:21:07.647000,1
+
+devchandra/ai-agent-security-v76b-shadowcat-stable-boost,AI Agent Security v76b Shadowcat stable boost,Dr Chandrasen Pandey,2026-07-10 16:19:36.940000,2
+
+devchandra/ai-agent-security-v75-yusuke-lb60525-margin32,AI Agent Security v75 Yusuke LB60525 margin32,Dr Chandrasen Pandey,2026-07-10 16:08:45.630000,3
+
+devchandra/ai-agent-security-v74-yusuke-lb60525-exact,AI Agent Security v74 Yusuke LB60525 exact,Dr Chandrasen Pandey,2026-07-10 16:07:51.933000,1
+
+ducnamphan/jed-v16-0-calibrated-n-300,JED v16.0 Calibrated N=300,Duc Nam Phan,2026-07-10 15:30:46.143000,1
+
+ducnamphan/jed-v15-0-5-paper-integration,JED v15.0 5-Paper Integration,Duc Nam Phan,2026-07-09 17:27:09.867000,0
+
+ducnamphan/jed-v14-0-task-blended,JED v14.0 Task-Blended,Duc Nam Phan,2026-07-09 17:23:48.440000,0
+
+rageshthangaraj/defensive-red-teaming,Defensive red-teaming ,Ragesh Thangaraj,2026-07-09 11:13:22.580000,3
+
+hongdaekim/deep-battle-atk,deep_battle_atk,Hong Dae Kim,2026-07-09 20:54:25.323000,1
+
+harmeetkaur24/getting-started-notebook,Getting Started Notebook,Harmeet Kaur,2026-07-09 07:56:43.350000,0
+
+harmeetkaur24/attack-notebook,Attack_Notebook,Harmeet Kaur,2026-07-09 07:30:09.497000,0
+
+ducnamphan/jed-v13-0-fixed-n-250,JED v13.0 Fixed N=250,Duc Nam Phan,2026-07-09 06:54:38.997000,1
+
+rumblingb/ai-agent-security-working-note-rumblingb,Ai Agent Security Working Note Rumblingb,rumbling_b,2026-07-09 04:09:37.257000,0
+
+rumblingb/ai-security-shadow-cat-stable-boost-20260708,AI Security Shadow Cat Stable Boost 20260708,rumbling_b,2026-07-08 20:12:26.913000,1
+
+rumblingb/ai-security-lb60525-yusuke-fork-20260708,AI Security LB60525 Yusuke Fork 20260708,rumbling_b,2026-07-08 16:01:22.523000,1
+
+ducnamphan/jed-v13-0-compact-n-250,JED v13.0 Compact N=250,Duc Nam Phan,2026-07-08 15:53:52.760000,1
+
+ducnamphan/jed-v12-0-uta-amplifier,JED v12.0 UTA Amplifier,Duc Nam Phan,2026-07-08 15:50:54.507000,1
+
+ducnamphan/jed-v11-0-cell-diversity,JED v11.0 Cell Diversity,Duc Nam Phan,2026-07-08 15:47:22.957000,2
+
+ducnamphan/jed-v10-0-balanced-best,JED v10.0 Balanced Best,Duc Nam Phan,2026-07-08 15:43:39.700000,2
+
+verise6211/aas-adaptive-e2e,aas-adaptive-e2e,verise6211,2026-07-10 07:09:20.927000,3
+
+ducnamphan/jed-v9-0-multi-tool,JED v9.0 Multi-Tool,Duc Nam Phan,2026-07-08 02:03:22.900000,1
+
+ducnamphan/jed-v8-0-max-combo,JED v8.0 Max Combo,Duc Nam Phan,2026-07-08 01:58:36.593000,2
+
+ducnamphan/jed-v7-0-shell-obfuscation,JED v7.0 Shell Obfuscation,Duc Nam Phan,2026-07-08 01:57:14.070000,2
+
+qyq1693/ai-agent-security-multiturn-v14,ai-agent-security-multiturn-v14,QYQ1693,2026-07-12 08:29:21.547000,3
+

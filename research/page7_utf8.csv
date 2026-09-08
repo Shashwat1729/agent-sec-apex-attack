@@ -1,0 +1,213 @@
+﻿C:\Users\shash\AppData\Local\Programs\Python\Python312\Scripts\kaggle.exe : [sitecustomize] preload torch DLLs from 
+C:\Users\shash\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\lib
+At line:1 char:105
++ ...  8; $p++) { C:\Users\shash\AppData\Local\Programs\Python\Python312\Sc ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([sitecustomize]...kages\torch\lib:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[sitecustomize] torch preload results: [('libiompstubs5md.dll', True), ('libiomp5md.dll', True), 
+('torch_global_deps.dll', True), ('shm.dll', True), ('uv.dll', True), ('c10.dll', True), ('torch_cpu.dll', True), 
+('torch_python.dll', True), ('torch.dll', True)]
+ref,title,author,lastRunTime,totalVotes
+
+junaid512/anatomy-of-an-agentic-jailbreak,Anatomy of an Agentic Jailbreak ,Muhammad Junaid,2026-06-23 10:55:48.543000,1
+
+chaitanyajamble/ai-agent-security-msta-2,AI Agent Security - MSTA/2,Chaitanya Jamble,2026-06-16 10:16:16.483000,3
+
+monkeydz/aisec-attack-v2,aisec-attack-v2,Dengzhe Hou,2026-06-16 08:44:53.030000,5
+
+geokocha/replay-dense-exfiltration-first-submission,Replay-Dense Exfiltration ÔÇö First Submission,Yuanchen Huang,2026-06-16 09:05:13.850000,6
+
+monkeydz/aisec-attack-v1,aisec-attack-v1,Dengzhe Hou,2026-06-16 08:38:43.983000,4
+
+chaitanyajamble/ai-agent-security-1,AI Agent Security-1,Chaitanya Jamble,2026-06-16 09:12:25.067000,4
+
+varunraosfanlkan/extraordinaries-agent-security, extraordinaries-agent-security,Varun Rao,2026-06-16 07:01:08.137000,6
+
+paul720810/hermes-openclaw-attack-v5-4-4-20260616-034038,Hermes OpenClaw Attack v5.4.4-20260616-034038,Paul720810,2026-06-16 03:40:41.340000,2
+
+tkhanna96/h006-multimsg-200x3-nb,H006 multimsg 200x3 NB,Tkhanna96,2026-06-24 19:15:46.093000,2
+
+tkhanna96/k4-d1r1-routed-v3-nb,K4 D1R1 Routed v3 NB,Tkhanna96,2026-06-15 20:53:19.140000,3
+
+tkhanna96/k4-d1r1-routed-nb,K4 D1R1 Routed NB,Tkhanna96,2026-06-15 20:53:15.840000,2
+
+tkhanna96/gemma-k4-gpt-k1-nb,Gemma K4 GPT K1 NB,Tkhanna96,2026-06-15 20:53:13.027000,4
+
+tkhanna96/k4-d1r1-routed-v2-nb,K4 D1R1 Routed v2 NB,Tkhanna96,2026-06-15 20:53:09.927000,2
+
+tkhanna96/k4-d1r1-routed-v4-nb,K4 D1R1 Routed v4 NB,Tkhanna96,2026-06-15 20:52:18.230000,2
+
+jek1wantaufik/tool-attack-submission,Tool Attack Submission,Jeki Wan Taufik,2026-06-15 18:48:13.547000,23
+
+dhanvinsureshareddy/multiguard-validation-1,Multiguard Validation 1,Dhanvin S,2026-06-16 13:34:38.337000,6
+
+hasnain201/aas-local-validation,AAS  Local validation,Hasnain khan,2026-06-15 14:01:19.490000,1
+
+qinggedada/agent-security-v1,Agent Security V1,qinggedada,2026-06-15 11:52:02.293000,2
+
+paul720810/hermes-openclaw-attack-v5-4-4-20260615-111041,Hermes OpenClaw Attack v5.4.4-20260615-111041,Paul720810,2026-06-15 11:10:44.370000,2
+
+paul720810/hermes-openclaw-attack-v5-4-4-20260615-094527,Hermes OpenClaw Attack v5.4.4-20260615-094527,Paul720810,2026-06-15 09:45:31.247000,2
+
+mdabdulalhasib/hmmm-let-s-give-another-solution,Hmmm.... let's give another solution,Md Abdul Al Hasib,2026-06-15 09:44:30.957000,6
+
+paul720810/hermes-openclaw-attack-v5-4-4-20260615-093845,Hermes OpenClaw Attack v5.4.4-20260615-093845,Paul720810,2026-06-15 09:38:47.793000,2
+
+paul720810/hermes-openclaw-attack-v5-4-4-20260615-093314,Hermes OpenClaw Attack v5.4.4-20260615-093314,Paul720810,2026-06-15 09:33:18.240000,2
+
+paul720810/hermes-openclaw-attack-v5-4-4-20260615-090607,Hermes OpenClaw Attack v5.4.4-20260615-090607,Paul720810,2026-06-15 09:06:10.667000,2
+
+yaroslavkholmirzayev/replay-dense-boundary-exact-aggressive,Replay Dense Boundary Exact + Aggressive,Yaroslav kholmirzayev,2026-06-22 11:08:20.077000,104
+
+imbikramsaha/ai-agent-security-baseline-score-21-285,AI Agent Security - Baseline | Score - 21.285,Bikram Saha,2026-06-15 18:09:29.880000,5
+
+paul720810/hermes-openclaw-attack-v5-4-4-20260615-050418,Hermes OpenClaw Attack v5.4.4-20260615-050418,Paul720810,2026-06-15 05:04:22.227000,2
+
+paul720810/hermes-openclaw-attack-v5-4-4-20260615-045937,Hermes OpenClaw Attack v5.4.4-20260615-045937,Paul720810,2026-06-15 04:59:40.123000,2
+
+paul720810/hermes-openclaw-attack-v5-4-4-20260615-045242,Hermes OpenClaw Attack v5.4.4-20260615-045242,Paul720810,2026-06-15 04:52:45.823000,2
+
+pilkwang/ai-agent-replay-dense-exfiltration,AI Agent: Replay-Dense Exfiltration,Pilkwang Kim,2026-06-16 09:52:13.737000,231
+
+tarikumehdi/perfect-1000-score-attack,Perfect 1000 Score Attack,Tariku Mehdi,2026-06-15 17:06:49.943000,2
+
+shamarjordan/notebook794e4c7509,notebook794e4c7509,Shamar Jordan,2026-06-14 21:09:49.583000,1
+
+tkhanna96/h006-static-400-slot-10-nb,H006 Static 400 Slot 10 NB,Tkhanna96,2026-06-24 19:15:10.450000,2
+
+prtkpiyush/solutions-first-attempt,Solutions_first_attempt,PrtkPiyush,2026-06-14 19:37:04.890000,6
+
+hichambedrani/ai-agent-security-min-v1,AI Agent Security Min v1,hicham bedrani,2026-06-14 19:19:37.023000,4
+
+shamarjordan/notebook354da3e7b2,notebook354da3e7b2,Shamar Jordan,2026-06-14 19:21:20.443000,2
+
+hichambedrani/ai-agent-security-v18,AI Agent Security v18,hicham bedrani,2026-06-14 18:59:51.660000,3
+
+hichambedrani/ai-agent-security-v17,AI Agent Security v17,hicham bedrani,2026-06-14 18:56:40.300000,4
+
+hichambedrani/ai-agent-security-eval-v13,AI Agent Security Eval v13,hicham bedrani,2026-06-14 18:41:15.580000,2
+
+shamarjordan/albalgorithim,AlBalgorithim,Shamar Jordan,2026-06-14 20:29:58.613000,3
+
+carlysipahutar/jed-attack-v2,jed-attack-v2,carly sipahutar,2026-06-14 18:30:01.183000,4
+
+carlysipahutar/jed-attack-multi-step-v1,jed-attack-multi-step-v1,carly sipahutar,2026-06-14 18:08:01.843000,4
+
+tkhanna96/h026-calibrate-then-generate-nb,H026 Calibrate Then Generate NB,Tkhanna96,2026-06-24 19:16:10.727000,6
+
+paul720810/hermes-openclaw-attack-v5-5,Hermes OpenClaw Attack v5.5,Paul720810,2026-06-14 16:50:38.977000,2
+
+tkhanna96/h006-simple-scale-600-nb,H006 Simple Scale 600 NB,Tkhanna96,2026-06-24 16:58:51.390000,4
+
+tkhanna96/h026-4post-direct-nb,H026 4post Direct NB,Tkhanna96,2026-06-14 16:27:19.393000,3
+
+foysalemonshanto/ai-agent-security-v12,AI Agent Security V12,FOYSAL,2026-07-25 04:07:34.263000,317
+
+nicolepatterson8910/attack-py,attack.py,Nicole Patterson,2026-06-25 18:45:44.070000,0
+
+tkhanna96/h026-adaptive-verify-keep-nb,H026 Adaptive Verify-Keep NB,Tkhanna96,2026-06-14 15:31:08.450000,2
+
+maximbatykovich/ai-agent,AI Agent,Maxim Batykovich,2026-06-15 18:47:19.370000,11
+
+tkhanna96/h006-persona-4post-900-nb,H006 Persona 4post 900 NB,Tkhanna96,2026-06-14 14:48:08.803000,2
+
+pavloivanin/ai-agent-security-multi-step-attack-engine-eda,AI Agent Security: Multi-Step Attack Engine EDA,Pavlo Ivanin,2026-06-14 14:33:24.743000,2
+
+tonylagumen/final-ai-agent-sec-ver19,final_ai_agent_sec_ver19,Tony Lagumen,2026-06-15 13:45:13.517000,1
+
+imbikramsaha/ai-agent-security-explained-eda-starter,AI Agent Security Explained EDA Starter ,Bikram Saha,2026-06-14 13:11:19.297000,9
+
+tkhanna96/h006-2turn-4post-400-nb,H006 2turn 4post 400 NB,Tkhanna96,2026-06-14 11:23:45.277000,1
+
+mdabdulalhasib/solution-using-very-deep-reaserch,Solution using very deep reaserch,Md Abdul Al Hasib,2026-06-14 14:47:53.540000,9
+
+tkhanna96/h006-4post-email-stack-nb,H006 4post Email Stack NB,Tkhanna96,2026-06-14 10:15:20.650000,1
+
+tkhanna96/h006-4post-400-nb,H006 4post 400 NB,Tkhanna96,2026-06-14 09:33:06.313000,1
+
+tkhanna96/h006-simple-scale-2000-nb,H006 Simple Scale 2000 NB,Tkhanna96,2026-06-14 08:58:17.353000,1
+
+tkhanna96/h006-simple-scale-900-nb,H006 Simple Scale 900 NB,Tkhanna96,2026-06-14 08:37:51.650000,1
+
+tuannm3812/ai-agent-security-01-eda,AI Agent Security 01 EDA,tuannm3812,2026-06-14 14:49:43.597000,5
+
+chaitanyajamble/ai-agent-security-multi-step-tool-attacks-3,AI Agent Security - Multi step tool attacks-3,Chaitanya Jamble,2026-06-14 10:42:52.813000,2
+
+paul720810/hermes-openclaw-attack-v4,Hermes OpenClaw Attack v4,Paul720810,2026-06-14 01:14:04.030000,3
+
+tkhanna96/h006-v2-h007-stack-nb,H006-v2 + H007 STACK NB,Tkhanna96,2026-06-13 21:20:04.130000,1
+
+tkhanna96/h006-v3-optimize-nb,H006-v3 OPTIMIZE NB,Tkhanna96,2026-06-13 21:21:40.997000,1
+
+tkhanna96/h006-v2-scale-2k-nb,H006-v2 SCALE 2k NB,Tkhanna96,2026-06-13 21:19:48.657000,1
+
+tkhanna96/h006-v2-geometry-nb,H006-v2 geometry NB,Tkhanna96,2026-06-13 21:01:48.323000,1
+
+chetansahney/openaisoln1,OpenAISoln1,Chetan Sahney,2026-06-13 19:33:57.193000,1
+
+tkhanna96/h006-pre-taint-exfil-probe-nb,H006 Pre-Taint EXFIL Probe NB,Tkhanna96,2026-06-13 18:41:51.517000,3
+
+karnakbaevarthur/multi-endpoint-severity-stacker,Multi Endpoint Severity Stacker ,Karnakbayev Artur,2026-06-16 05:28:20.557000,118
+
+yaroslavkholmirzayev/ai-agent-security-v8-9-10-11,AI Agent Security - V8-9-10-11,Yaroslav kholmirzayev,2026-06-13 16:31:44.520000,11
+
+caoyupeng/ai-agent-security-v2-exfil-mass-shift,AI Agent Security - V2 Exfil Mass Shift,SpeedSci,2026-06-13 16:01:18.113000,72
+
+beicicc/security-eval-public,Security Eval Public,Kun Zhang,2026-06-13 15:08:00.590000,4
+
+quynthnh/sdk-walkthrough-attack-strategy,SDK Walkthrough + Attack Strategy,Quyß╗ün Thß╗ïnh,2026-06-13 14:50:38.350000,5
+
+chaitanyajamble/ai-agent-security-multi-step-tool-attacks,AI Agent Security _ Multi-Step-Tool-Attacks,Chaitanya Jamble,2026-06-14 02:47:54.610000,1
+
+mdabdulalhasib/kronos-fixed-without-time-limit,KRONOS |  Fixed without time limit,Md Abdul Al Hasib,2026-06-13 13:45:06.097000,2
+
+llkh0a/aas-local-validation,AAS | Local validation,Kh0a,2026-08-24 01:51:34.697000,460
+
+anthonytherrien/agent-security-trajectory,Agent Security Trajectory,AnthonyTherrien,2026-06-13 11:29:02.027000,21
+
+kashyapsinhgohil/27-3-eda-agent-security-trajectory-search,27.3-EDA: Agent Security Trajectory Search,Kashyapsinh gohil,2026-06-13 10:47:06.970000,6
+
+avikdas567/diversity-optimized-multi-step-agent-red-teaming,Diversity Optimized Multi-Step Agent Red Teaming,Avik Das,2026-06-19 03:13:52.060000,20
+
+junaid512/agent-security-attack-submission,Agent-Security Attack Submission,Muhammad Junaid,2026-07-03 18:25:52.880000,62
+
+roy210005/ai-agent-sec-v1,AI agent sec- V1,Sojib Chandra Roy,2026-06-13 07:37:13.510000,2
+
+chaitanyajamble/ai-agent-security-multi-step-tool-attack,AI Agent Security-Multi step tool attack,Chaitanya Jamble,2026-06-13 09:33:12.673000,5
+
+chavarost/jed-attack-v8,JED Attack v8,Chavarost Choampangpacharapan,2026-06-15 05:05:56.483000,3
+
+lucifer19/cognitive-firewall,­ƒºá­ƒøí´©Å Cognitive Firewall,Krizs├│ Gergely,2026-07-18 07:16:57.437000,90
+
+caoyupeng/ai-agent-security-trajectory-search-plus-2,AI Agent Security - Trajectory Search Plus-2,SpeedSci,2026-06-13 06:19:16.750000,8
+
+sohaibdevv/ai-agent-security,AI Agent Security,Sohaib Malik,2026-06-13 06:01:35.907000,8
+
+rauffauzanrambe/agent-v20-security-for-the-openai,Agent V20 Security for the OpenAI,Ra'uf Fauzan Rambe,2026-06-13 05:30:41.627000,8
+
+mdabdulalhasib/apex-attack-engine-multi-step,APEX Attack Engine: Multi-Step,Md Abdul Al Hasib,2026-06-13 04:37:22.090000,8
+
+yw8837/ai-agent-security-34-255-to-8-145-full-code,AI Agent Security: 34.255 to 8.145 | Full Code,yw8837,2026-09-02 01:54:07.787000,0
+
+yujiyyy/jed-benchmark-demystified,JED Benchmark Demystified,yuji y,2026-06-13 02:32:48.663000,2
+
+aadias777/ais-attack-notebook,AIS Attack Notebook,Aadi77,2026-06-13 02:00:41.900000,1
+
+yaroslavkholmirzayev/ai-agent-security-trajectory-search,­ƒæ¥AI Agent Security - Trajectory Search,Yaroslav kholmirzayev,2026-06-13 08:29:31.747000,23
+
+arnavkewalram/ais-attack-notebook,AIS Attack Notebook,Arnav Kewalram,2026-06-24 11:11:29.803000,18
+
+arnavkewalram/ai-agent-security-attack,AI Agent Security Attack,Arnav Kewalram,2026-06-15 16:39:18.173000,3
+
+aminmahmoudalifayed/shadow-strike-advanced-multi-step-ai-agent-attack,Shadow Strike: Advanced Multi-Step AI Agent Attack,Dr/ameen Fayed,2026-06-12 20:42:02.143000,5
+
+wisdomdogah/jed-attack-submission,JED Attack Submission,Wisdom Dogah,2026-06-20 07:12:55.837000,4
+
+junaid512/ai-agent-security-dense-exfiltration-calibrate,AI Agent Security ÔÇö Dense Exfiltration calibrate ,Muhammad Junaid,2026-06-24 15:15:13.070000,6
+
+hasnain201/baseline-solution-4-900,Baseline Solution - 4.900 ,Hasnain khan,2026-06-12 18:06:12.087000,3
+
+verityix/ai-agent-security-attack-algorithm-hitherto,AI Agent Security ÔÇö Attack Algorithm (Hitherto),Verity IX,2026-09-01 22:43:29.540000,30
+

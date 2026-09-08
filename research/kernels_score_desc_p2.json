@@ -1,0 +1,702 @@
+[
+ {
+  "ref": "pengwang91/jed-fill-yusuke-m50",
+  "title": "jed-fill-yusuke-m50",
+  "author": "Peng Wang",
+  "lastRunTime": "2026-07-06T02:21:37.913000",
+  "totalVotes": 2
+ },
+ {
+  "ref": "caoyupeng/real-submission-fork-from-pilkwang-changed",
+  "title": "[real submission]Fork from pilkwang-changed",
+  "author": "SpeedSci",
+  "lastRunTime": "2026-07-01T16:16:04.887000",
+  "totalVotes": 10
+ },
+ {
+  "ref": "evilyevihut/ai-agent-security-fast-safe-560",
+  "title": "AI Agent Security Fast Safe 560",
+  "author": "Zhang.ZJ",
+  "lastRunTime": "2026-06-20T16:16:54.597000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "paul720810/hermes-attack-v58-pure-n1000-std-20260719-002444",
+  "title": "Hermes Attack v58-pure-n1000-std-20260719-002444",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-19T00:24:48.733000",
+  "totalVotes": 2
+ },
+ {
+  "ref": "paul720810/hermes-attack-v59-pure-n1100-std-20260719-002609",
+  "title": "Hermes Attack v59-pure-n1100-std-20260719-002609",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-19T00:26:13.347000",
+  "totalVotes": 2
+ },
+ {
+  "ref": "pengwang91/jed-fill-yusuke-m44",
+  "title": "jed-fill-yusuke-m44",
+  "author": "Peng Wang",
+  "lastRunTime": "2026-07-06T02:22:13.807000",
+  "totalVotes": 2
+ },
+ {
+  "ref": "paul720810/hermes-attack-v70-n900-20260721-101920",
+  "title": "Hermes Attack v70-n900-20260721-101920",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-21T10:19:24.107000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "malikhammadfarooq/per-post-exfil-budget-sized",
+  "title": "Per-Post EXFIL, Budget-Sized",
+  "author": "Hammad Farooq",
+  "lastRunTime": "2026-08-28T16:46:39.417000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "kashyapsinhgohil/multi-step-tool",
+  "title": " Multi-Step Tool",
+  "author": "Kashyapsinh gohil",
+  "lastRunTime": "2026-08-27T13:17:52.687000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "devchandra/ai-agent-security-v66b-yusuke-lb60-bare-m37",
+  "title": "AI Agent Security v66b Yusuke LB60 bare m37",
+  "author": "Dr Chandrasen Pandey",
+  "lastRunTime": "2026-07-06T01:17:46.913000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "karnakbaevarthur/multi-endpoint-severity-stacker",
+  "title": "Multi Endpoint Severity Stacker ",
+  "author": "Karnakbayev Artur",
+  "lastRunTime": "2026-06-16T05:28:20.557000",
+  "totalVotes": 118
+ },
+ {
+  "ref": "verityix/ai-agent-security-attack-algorithm-hitherto",
+  "title": "AI Agent Security — Attack Algorithm (Hitherto)",
+  "author": "Verity IX",
+  "lastRunTime": "2026-09-01T22:43:29.540000",
+  "totalVotes": 30
+ },
+ {
+  "ref": "berkahkarya/ai-agent-security-v50-probe-verify-attack",
+  "title": "AI Agent Security - v50 Probe-Verify Attack",
+  "author": "Berkahkarya Dev",
+  "lastRunTime": "2026-06-19T20:11:26.260000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "yaroslavkholmirzayev/ai-agent-security-achieve-and-validate",
+  "title": "AI Agent Security | achieve and validate 🌀",
+  "author": "Yaroslav kholmirzayev",
+  "lastRunTime": "2026-06-30T09:23:24.307000",
+  "totalVotes": 29
+ },
+ {
+  "ref": "arizalfirdaus123/multi-turn-exfiltration-with-adaptive-burst",
+  "title": "Multi-Turn Exfiltration with Adaptive Burst",
+  "author": "Arizal Muluk",
+  "lastRunTime": "2026-07-02T09:14:05.297000",
+  "totalVotes": 62
+ },
+ {
+  "ref": "evilyevihut/ai-agent-security-fast-safe-520",
+  "title": "AI Agent Security Fast Safe 520",
+  "author": "Zhang.ZJ",
+  "lastRunTime": "2026-06-19T08:32:42.957000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "xiaoz259/aas-final-submission-cd",
+  "title": "AAS | Final Submission - CD",
+  "author": "xz",
+  "lastRunTime": "2026-09-01T09:42:11.557000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "paul720810/hermes-attack-v55-n1050-std-20260718-002905",
+  "title": "Hermes Attack v55-n1050-std-20260718-002905",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-18T00:29:10.627000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "geokocha/replay-dense-exfiltration-first-submission",
+  "title": "Replay-Dense Exfiltration — First Submission",
+  "author": "Yuanchen Huang",
+  "lastRunTime": "2026-06-16T09:05:13.850000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "junaid512/anatomy-of-an-agentic-jailbreak",
+  "title": "Anatomy of an Agentic Jailbreak ",
+  "author": "Muhammad Junaid",
+  "lastRunTime": "2026-06-23T10:55:48.543000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "paul720810/hermes-attack-v52-replicate-20260717-001828",
+  "title": "Hermes Attack v52-replicate-20260717-001828",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-17T00:18:32.473000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "rikitomo0526/ai-agent-security-attack-script-exp021",
+  "title": "AI Agent Security - Attack script exp021",
+  "author": "Rick",
+  "lastRunTime": "2026-08-31T14:23:23.270000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "paul720810/hermes-attack-v38-pure-n950-20260713-200926",
+  "title": "Hermes Attack v38-pure-n950-20260713-200926",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-13T20:09:29.480000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "paul720810/hermes-attack-v49-pure-n950-m1p05-20260717-001515",
+  "title": "Hermes Attack v49-pure-n950-m1p05-20260717-001515",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-17T00:15:18.323000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "malikhammadfarooq/jed-x-adaptive-trace-guided-attack-search",
+  "title": "JED-X: Adaptive Trace-Guided Attack Search",
+  "author": "Hammad Farooq",
+  "lastRunTime": "2026-08-25T10:29:38.847000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "paul720810/hermes-attack-v50-pure-n950-m1p15-20260717-001610",
+  "title": "Hermes Attack v50-pure-n950-m1p15-20260717-001610",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-17T00:16:15.720000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "isakatsuyoshi/jed-clean-email-rick-use-allcaps-n2000",
+  "title": "JED clean email Rick USE allcaps N2000",
+  "author": "ISAKA Tsuyoshi",
+  "lastRunTime": "2026-08-30T12:47:19.800000",
+  "totalVotes": 2
+ },
+ {
+  "ref": "jek1wantaufik/tool-attack-submission",
+  "title": "Tool Attack Submission",
+  "author": "Jeki Wan Taufik",
+  "lastRunTime": "2026-06-15T18:48:13.547000",
+  "totalVotes": 23
+ },
+ {
+  "ref": "pengwang91/jed-cleanimp445-marker",
+  "title": "jed-cleanimp445-marker",
+  "author": "Peng Wang",
+  "lastRunTime": "2026-07-05T01:05:51.777000",
+  "totalVotes": 2
+ },
+ {
+  "ref": "kleniopadilha/winnex-v61-attack",
+  "title": "WINNEX V61 Attack",
+  "author": "Klenio Padilha",
+  "lastRunTime": "2026-07-13T14:50:11.160000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "paul720810/hermes-attack-v51-pure-n950-m1p2-20260717-001708",
+  "title": "Hermes Attack v51-pure-n950-m1p2-20260717-001708",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-17T00:17:13.390000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "paul720810/hermes-attack-v39-pure-n1000-tight-20260716-002217",
+  "title": "Hermes Attack v39-pure-n1000-tight-20260716-002217",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-16T00:22:21.930000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "pengwang91/jed-cleanimp430-marker",
+  "title": "jed-cleanimp430-marker",
+  "author": "Peng Wang",
+  "lastRunTime": "2026-07-05T01:05:16.753000",
+  "totalVotes": 2
+ },
+ {
+  "ref": "paul720810/hermes-attack-v53-n1200-framing-20260718-002659",
+  "title": "Hermes Attack v53-n1200-framing-20260718-002659",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-18T00:27:03.317000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "pengwang91/jed-cleanimp420-marker",
+  "title": "jed-cleanimp420-marker",
+  "author": "Peng Wang",
+  "lastRunTime": "2026-07-03T00:49:25.227000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "junaid512/agent-security-attack-submission",
+  "title": "Agent-Security Attack Submission",
+  "author": "Muhammad Junaid",
+  "lastRunTime": "2026-07-03T18:25:52.880000",
+  "totalVotes": 62
+ },
+ {
+  "ref": "karnakbaevarthur/dynamic-replay-architecture",
+  "title": "Dynamic Replay Architecture",
+  "author": "Karnakbayev Artur",
+  "lastRunTime": "2026-06-18T10:24:40.760000",
+  "totalVotes": 35
+ },
+ {
+  "ref": "paul720810/hermes-attack-v72-m112-20260721-151926",
+  "title": "Hermes Attack v72-m112-20260721-151926",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-21T15:19:30.777000",
+  "totalVotes": 2
+ },
+ {
+  "ref": "paul720810/hermes-attack-v57-n950-naked-url-20260718-003257",
+  "title": "Hermes Attack v57-n950-naked-url-20260718-003257",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-18T00:33:02.153000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "tkhanna96/gemma-k4-gpt-k1-nb",
+  "title": "Gemma K4 GPT K1 NB",
+  "author": "Tkhanna96",
+  "lastRunTime": "2026-06-15T20:53:13.027000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "imbikramsaha/ai-agent-public-score-34-540",
+  "title": "AI Agent | Public Score - 34.540",
+  "author": "Bikram Saha",
+  "lastRunTime": "2026-06-19T07:15:35.487000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "yw8837/ai-agent-security-34-255-to-8-145-full-code",
+  "title": "AI Agent Security: 34.255 to 8.145 | Full Code",
+  "author": "yw8837",
+  "lastRunTime": "2026-09-02T01:54:07.787000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "verise6211/aas-pilk-a3-k2",
+  "title": "aas-pilk-a3-k2",
+  "author": "verise6211",
+  "lastRunTime": "2026-07-06T00:11:07.740000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260704-041518",
+  "title": "Hermes OpenClaw Attack E005-20260704-041518",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-04T04:15:22.277000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "pratyaymon/notebook289b303504",
+  "title": "notebook289b303504",
+  "author": "Pratyay Mondal",
+  "lastRunTime": "2026-07-18T14:24:15.057000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "caoyupeng/ai-agent-security-v2-exfil-mass-shift",
+  "title": "AI Agent Security - V2 Exfil Mass Shift",
+  "author": "SpeedSci",
+  "lastRunTime": "2026-06-13T16:01:18.113000",
+  "totalVotes": 72
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-v20-20260707-041613",
+  "title": "Hermes OpenClaw Attack v20-20260707-041613",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-07T04:24:07.803000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "yaroslavkholmirzayev/ai-agent-security-v8-9-10-11",
+  "title": "AI Agent Security - V8-9-10-11",
+  "author": "Yaroslav kholmirzayev",
+  "lastRunTime": "2026-06-13T16:31:44.520000",
+  "totalVotes": 11
+ },
+ {
+  "ref": "tkhanna96/h006-s1-anchor-len60-n400",
+  "title": "H006 S1 Anchor Len60 N400",
+  "author": "Tkhanna96",
+  "lastRunTime": "2026-06-20T16:37:51.850000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260628-001654",
+  "title": "Hermes OpenClaw Attack E005-20260628-001654",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-28T00:16:57.580000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260630-161123",
+  "title": "Hermes OpenClaw Attack E005-20260630-161123",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-30T16:11:27.837000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "devchandra/ai-agent-security-v25-dual-350",
+  "title": "AI Agent Security V25 Dual 350",
+  "author": "Dr Chandrasen Pandey",
+  "lastRunTime": "2026-06-19T05:11:16.107000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260627-060617",
+  "title": "Hermes OpenClaw Attack E005-20260627-060617",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-27T06:06:21.677000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260627-140935",
+  "title": "Hermes OpenClaw Attack E005-20260627-140935",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-27T14:09:39.207000",
+  "totalVotes": 7
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260627-101429",
+  "title": "Hermes OpenClaw Attack E005-20260627-101429",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-27T10:14:32.553000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "rageshthangaraj/defensive-red-teaming",
+  "title": "Defensive red-teaming ",
+  "author": "Ragesh Thangaraj",
+  "lastRunTime": "2026-07-09T11:13:22.580000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-v19-replica-20260707-122726",
+  "title": "Hermes OpenClaw Attack v19-replica-20260707-122726",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-07T12:27:30.230000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "akshitasrivastava1/omega-attack-v5-0-ai-agent-security",
+  "title": "OMEGA ATTACK v5.0 - AI Agent Security",
+  "author": "Akshita Srivastava",
+  "lastRunTime": "2026-06-18T22:04:20.273000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "outliar/agi-deputy-nb1-v11b-gpt2000-gem2000-sub",
+  "title": "agi-deputy-nb1-v11b-gpt2000-gem2000_sub",
+  "author": "Mohammad Shadab Alam",
+  "lastRunTime": "2026-08-27T13:27:46.890000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "mayuening/notebookde0d25bc7d",
+  "title": "notebookde0d25bc7d",
+  "author": "Ma Yuening",
+  "lastRunTime": "2026-07-05T15:39:32.867000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "aleaiest/13th-aisec-cdrole-adaptive",
+  "title": "🥇 13th: aisec-cdrole-adaptive",
+  "author": "Taewoong Kim",
+  "lastRunTime": "2026-09-02T05:23:21.907000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "paul720810/hermes-openclaw-attack-e005-20260626-161244",
+  "title": "Hermes OpenClaw Attack E005-20260626-161244",
+  "author": "Paul720810",
+  "lastRunTime": "2026-06-26T16:12:49.710000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "adonisleu/jed-attack-submission",
+  "title": "JED Attack Submission",
+  "author": "ElijahMingLiu",
+  "lastRunTime": "2026-07-04T05:59:03.727000",
+  "totalVotes": 35
+ },
+ {
+  "ref": "verise6211/aas-pilk-a3-k4",
+  "title": "aas-pilk-a3-k4",
+  "author": "verise6211",
+  "lastRunTime": "2026-07-06T00:11:49.123000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "kojimar/ai-agent-security-attack-baseline",
+  "title": "AI Agent Security Attack Baseline",
+  "author": "islet",
+  "lastRunTime": "2026-06-13T06:01:39.537000",
+  "totalVotes": 26
+ },
+ {
+  "ref": "paul720810/hermes-attack-v34-dual-post-20260715-063801",
+  "title": "Hermes Attack v34-dual-post-20260715-063801",
+  "author": "Paul720810",
+  "lastRunTime": "2026-07-15T06:38:04.810000",
+  "totalVotes": 2
+ },
+ {
+  "ref": "mdabdulalhasib/solution-using-very-deep-reaserch",
+  "title": "Solution using very deep reaserch",
+  "author": "Md Abdul Al Hasib",
+  "lastRunTime": "2026-06-14T14:47:53.540000",
+  "totalVotes": 9
+ },
+ {
+  "ref": "kashyapsinhgohil/27-3-eda-agent-security-trajectory-search",
+  "title": "27.3-EDA: Agent Security Trajectory Search",
+  "author": "Kashyapsinh gohil",
+  "lastRunTime": "2026-06-13T10:47:06.970000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "pilkwang/eda-agent-security-trajectory-search",
+  "title": "EDA: Agent Security Trajectory Search",
+  "author": "Pilkwang Kim",
+  "lastRunTime": "2026-06-13T22:34:19.580000",
+  "totalVotes": 125
+ },
+ {
+  "ref": "junaid512/ai-agent-security-dense-exfiltration-calibrate",
+  "title": "AI Agent Security — Dense Exfiltration calibrate ",
+  "author": "Muhammad Junaid",
+  "lastRunTime": "2026-06-24T15:15:13.070000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "yaroslavkholmirzayev/ai-agent-security-trajectory-search",
+  "title": "👾AI Agent Security - Trajectory Search",
+  "author": "Yaroslav kholmirzayev",
+  "lastRunTime": "2026-06-13T08:29:31.747000",
+  "totalVotes": 23
+ },
+ {
+  "ref": "anthonytherrien/agent-security-trajectory",
+  "title": "Agent Security Trajectory",
+  "author": "AnthonyTherrien",
+  "lastRunTime": "2026-06-13T11:29:02.027000",
+  "totalVotes": 21
+ },
+ {
+  "ref": "qyq1693/ai-agent-security-multiturn-v14",
+  "title": "ai-agent-security-multiturn-v14",
+  "author": "QYQ1693",
+  "lastRunTime": "2026-07-12T08:29:21.547000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "arnavkewalram/ais-attack-notebook",
+  "title": "AIS Attack Notebook",
+  "author": "Arnav Kewalram",
+  "lastRunTime": "2026-06-24T11:11:29.803000",
+  "totalVotes": 18
+ },
+ {
+  "ref": "kokinnwakashuu/ai-agent-security-v035-marker-stack",
+  "title": "AI Agent Security v035 marker stack",
+  "author": "kokinnwakashuu",
+  "lastRunTime": "2026-07-01T16:15:42.467000",
+  "totalVotes": 3
+ },
+ {
+  "ref": "maximbatykovich/ai-agent",
+  "title": "AI Agent",
+  "author": "Maxim Batykovich",
+  "lastRunTime": "2026-06-15T18:47:19.370000",
+  "totalVotes": 11
+ },
+ {
+  "ref": "eugeneyeung/ai-agent-security-private-pp-corp-wide",
+  "title": "AI Agent Security Private PP Corp Wide",
+  "author": "EUGENEYEUNG",
+  "lastRunTime": "2026-09-02T12:31:39.857000",
+  "totalVotes": 4
+ },
+ {
+  "ref": "cdeotte/final-cd5",
+  "title": "final-cd5",
+  "author": "Chris Deotte",
+  "lastRunTime": "2026-09-01T11:22:00.160000",
+  "totalVotes": 12
+ },
+ {
+  "ref": "kkrasikov/workingnote-66th-place-submission",
+  "title": "[WorkingNote] 66th place submission",
+  "author": "Kirill Krasikov",
+  "lastRunTime": "2026-09-03T01:47:28.770000",
+  "totalVotes": 2
+ },
+ {
+  "ref": "tatuhelander/jed-attack-forge33-email",
+  "title": "JED Attack Forge33 Email",
+  "author": "Tatu Helander",
+  "lastRunTime": "2026-08-30T04:56:56.473000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "adhirajjagtap/omni-stack-multiplier-v25",
+  "title": "OMNI_STACK_MULTIPLIER_V25",
+  "author": "Adhiraj Jagtap",
+  "lastRunTime": "2026-06-28T15:51:02.503000",
+  "totalVotes": 18
+ },
+ {
+  "ref": "akshitasrivastava1/omega-attack-v9-0-secret-marker-n250",
+  "title": "omega attack v9 0 secret marker n250",
+  "author": "Akshita Srivastava",
+  "lastRunTime": "2026-06-25T16:01:05.927000",
+  "totalVotes": 7
+ },
+ {
+  "ref": "seungjunleeofficial/aas-v14-cd-only-kaggle-submit",
+  "title": "aas_v14_cd_only_kaggle_submit",
+  "author": "Seungjun Lee",
+  "lastRunTime": "2026-08-31T08:23:03.777000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "caoyupeng/ai-agent-security-trajectory-search-plus-2",
+  "title": "AI Agent Security - Trajectory Search Plus-2",
+  "author": "SpeedSci",
+  "lastRunTime": "2026-06-13T06:19:16.750000",
+  "totalVotes": 8
+ },
+ {
+  "ref": "samwiz/aas-v8deputy-gpu",
+  "title": "AAS v8deputy GPU",
+  "author": "Sam-wiz",
+  "lastRunTime": "2026-08-31T18:00:03.953000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "hiranorm/publiclb-21-465-privatelb-21-465-aas-email-hedge",
+  "title": "[publicLB:21.465,privateLB:21.465]aas-email-hedge",
+  "author": "Hira Norm",
+  "lastRunTime": "2026-08-26T15:30:22.893000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "imbikramsaha/ai-agent-security-baseline-score-21-285",
+  "title": "AI Agent Security - Baseline | Score - 21.285",
+  "author": "Bikram Saha",
+  "lastRunTime": "2026-06-15T18:09:29.880000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "ruhul20/red-team-ai-agent-security",
+  "title": "Red-team AI Agent Security",
+  "author": "Ruhul Amin",
+  "lastRunTime": "2026-08-29T10:25:53.707000",
+  "totalVotes": 5
+ },
+ {
+  "ref": "josephadamski91/conditional-draft-generation-control-v4",
+  "title": "Conditional Draft Generation Control V4",
+  "author": "Joseph Adamski",
+  "lastRunTime": "2026-08-30T00:10:43.450000",
+  "totalVotes": 2
+ },
+ {
+  "ref": "zhtngr/suffix-allow-guardrail-033-n700",
+  "title": "Suffix Allow Guardrail 033 n700",
+  "author": "kawasaki",
+  "lastRunTime": "2026-06-30T00:11:39.417000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "anvithpothula/aisec-jedcd6",
+  "title": "aisec-jedcd6",
+  "author": "Anvith Pothula",
+  "lastRunTime": "2026-08-31T01:57:22.693000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "ducnamphan/jed-v6-0-proven-format",
+  "title": "JED v6.0 — Proven Format",
+  "author": "Duc Nam Phan",
+  "lastRunTime": "2026-07-07T07:02:41.840000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "sebastianmateus/champion-v8-1-cdframe-0811000200",
+  "title": "Champion V8 1 Cdframe 0811000200",
+  "author": "Sebastian Mateus",
+  "lastRunTime": "2026-08-11T00:02:04.833000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "ducnamphan/jed-v13-0-fixed-n-250",
+  "title": "JED v13.0 Fixed N=250",
+  "author": "Duc Nam Phan",
+  "lastRunTime": "2026-07-09T06:54:38.997000",
+  "totalVotes": 1
+ },
+ {
+  "ref": "aleixlopez/v49-confused-deputy-hedge",
+  "title": "v49_confused_deputy_hedge",
+  "author": "Aleix López",
+  "lastRunTime": "2026-08-30T18:34:13.233000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "wguesdon/ai-agent-security-attack-v19",
+  "title": "AI Agent Security - Attack v19",
+  "author": "Will",
+  "lastRunTime": "2026-08-31T11:40:39.420000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "outliar/agi-deputy-nb2-v14-gpt2000-gem2000-sub",
+  "title": "agi-deputy-nb2-v14-gpt2000-gem2000_sub",
+  "author": "Mohammad Shadab Alam",
+  "lastRunTime": "2026-08-27T13:27:25.930000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "akshitasrivastava1/omega-attack-v9-1-gemma-phrase-hunt",
+  "title": "omega attack v9 1 gemma phrase hunt",
+  "author": "Akshita Srivastava",
+  "lastRunTime": "2026-06-26T15:14:46.660000",
+  "totalVotes": 6
+ },
+ {
+  "ref": "maqsoudtawaliou/aas-attack-deputy-uncond-frac97",
+  "title": "AAS Attack Deputy Uncond Frac97",
+  "author": "Maqsoud Tawaliou",
+  "lastRunTime": "2026-08-16T05:49:53.737000",
+  "totalVotes": 0
+ },
+ {
+  "ref": "ducnamphan/jed-v19-0-pure-exfil",
+  "title": "JED v19.0 Pure EXFIL",
+  "author": "Duc Nam Phan",
+  "lastRunTime": "2026-07-11T07:34:23.750000",
+  "totalVotes": 2
+ }
+]

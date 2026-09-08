@@ -1,0 +1,34 @@
+﻿kaggle : [sitecustomize] preload torch DLLs from 
+C:\Users\shash\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\lib
+At line:1 char:1
++ kaggle competitions leaderboard -c ai-agent-security-multi-step-tool- ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([sitecustomize]...kages\torch\lib:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[sitecustomize] torch preload results: [('libiompstubs5md.dll', True), ('libiomp5md.dll', True), 
+('torch_global_deps.dll', True), ('shm.dll', True), ('uv.dll', True), ('c10.dll', True), ('torch_cpu.dll', True), 
+('torch_python.dll', True), ('torch.dll', True)]
+Next Page Token = CfDJ8ImuQD4OY2pEnVW2WQ-kgndeK6-dxVJ4nIFAirpIGkSSd8FdrXcjro7ejLCwls50r02L76iD0-1m2sAtyrfR7qg
+  teamId  teamName                        submissionDate              score     
+--------  ------------------------------  --------------------------  --------  
+16306198  Xz                              2026-09-01 09:42:11.633000  46.42500  
+16427676  no shake thanks :)              2026-09-01 11:02:53.246000  42.99000  
+16477808  live to win                     2026-09-01 10:15:41.013000  42.17500  
+16306963  kansai-kanto-kaggler            2026-09-01 12:17:42.470000  41.32500  
+16326568  Giovanny RodrÝguez              2026-09-01 11:26:23.206000  40.36500  
+16682387  poijio                          2026-09-01 13:12:43.710000  37.69000  
+16389032  Civitasmass                     2026-09-01 13:02:05.903000  34.51000  
+16369039  Team name placeholder           2026-09-01 06:42:05.183000  33.30000  
+16368010  Simon R³ba (Refractal AI)       2026-09-01 12:08:59.846000  30.86000  
+16557804  Býnh                            2026-09-01 01:31:27.063000  30.81000  
+16368992  Mohammad Shadab Alam            2026-09-01 17:12:21.656000  30.04000  
+16368759  MOONMOON                        2026-09-01 02:22:49.936000  29.74500  
+16612067  Solo ranker(Looking 4 company)  2026-09-01 00:18:23.286000  29.67000  
+16368989  esprit                          2026-09-01 00:00:55.480000  29.62500  
+16555376  Will Rice                       2026-09-01 13:30:57.210000  29.52000  
+16705210  go                              2026-08-31 15:47:48.786000  29.46000  
+16765597  Kigdom                          2026-08-31 15:53:23.526000  29.35500  
+16319904  Kevin Arvai                     2026-09-01 01:00:58.940000  29.23000  
+16715620  using different guardrails      2026-09-01 07:40:02.663000  29.07000  
+16394826  untitled                        2026-09-01 05:21:20.003000  29.05500  

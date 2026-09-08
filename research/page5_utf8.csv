@@ -1,0 +1,213 @@
+﻿C:\Users\shash\AppData\Local\Programs\Python\Python312\Scripts\kaggle.exe : [sitecustomize] preload torch DLLs from 
+C:\Users\shash\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\lib
+At line:1 char:105
++ ...  8; $p++) { C:\Users\shash\AppData\Local\Programs\Python\Python312\Sc ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([sitecustomize]...kages\torch\lib:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[sitecustomize] torch preload results: [('libiompstubs5md.dll', True), ('libiomp5md.dll', True), 
+('torch_global_deps.dll', True), ('shm.dll', True), ('uv.dll', True), ('c10.dll', True), ('torch_cpu.dll', True), 
+('torch_python.dll', True), ('torch.dll', True)]
+ref,title,author,lastRunTime,totalVotes
+
+kiranvitly/ai-agent-security-attack,AI Agent Security Attack,Kiran Vitly,2026-07-03 14:37:09.727000,4
+
+paul720810/hermes-openclaw-attack-e005-20260626-040151,Hermes OpenClaw Attack E005-20260626-040151,Paul720810,2026-06-26 04:01:53.870000,1
+
+udaken10/hi-hihi-ho,hi_hihi_ho,really?,2026-06-26 15:13:40.787000,5
+
+paul720810/hermes-openclaw-attack-e005-20260625-221411,Hermes OpenClaw Attack E005-20260625-221411,Paul720810,2026-06-25 22:14:15.173000,1
+
+maj0rt0m/private-eval-proxy-gpu,Private-Eval Proxy (GPU),MAJ0RT0M,2026-06-26 00:10:56.557000,9
+
+paul720810/hermes-openclaw-attack-e005-20260625-200905,Hermes OpenClaw Attack E005-20260625-200905,Paul720810,2026-06-25 20:09:10.797000,1
+
+paul720810/hermes-openclaw-attack-e005-20260625-200702,Hermes OpenClaw Attack E005-20260625-200702,Paul720810,2026-06-25 20:07:05.450000,1
+
+paul720810/hermes-openclaw-attack-e005-20260625-180903,Hermes OpenClaw Attack E005-20260625-180903,Paul720810,2026-06-25 18:09:07.097000,3
+
+ghazarosbarseghyan91/ai-agent-security-multi-step-tool-attacks-v21,AI Agent Security Multi-Step Tool Attacks v21,Ghazaros Barseghyan,2026-06-29 11:47:10.327000,1
+
+paul720810/hermes-openclaw-attack-e005-20260625-161241,Hermes OpenClaw Attack E005-20260625-161241,Paul720810,2026-06-25 16:12:44.770000,0
+
+funcnano/ai-agent-security-auto-attack,AI Agent Security Auto Attack,func-nano,2026-06-27 04:40:47.463000,2
+
+udaken10/advancedmultipredicateattack,AdvancedMultiPredicateAttack,really?,2026-06-25 22:51:24.030000,1
+
+akshitasrivastava1/omega-attack-v9-0-secret-marker-n250,omega attack v9 0 secret marker n250,Akshita Srivastava,2026-06-25 16:01:05.927000,7
+
+udaken10/les-s-read-the-sdk,Les's_read_the_SDK,really?,2026-06-26 05:16:32.537000,2
+
+paul720810/hermes-openclaw-attack-e005-20260625-140800,Hermes OpenClaw Attack E005-20260625-140800,Paul720810,2026-06-25 14:08:04.950000,0
+
+jiamengzhangjemma/ai-agent-security-v82-clean-attackpy-cpu-20260625,AI Agent Security V82 Clean Attackpy CPU 20260625,Jemma,2026-06-26 14:14:15.923000,1
+
+jiamengzhangjemma/ai-agent-security-v81-clean-attackpy-20260625,AI Agent Security V81 Clean Attackpy 20260625,Jemma,2026-06-25 13:57:14.597000,0
+
+jiamengzhangjemma/ai-agent-security-v80-dualpost-nb-20260625,AI Agent Security V80 Dualpost NB 20260625,Jemma,2026-06-25 14:00:28.267000,0
+
+adhirajjagtap/omni-stack-multiplier-v25,OMNI_STACK_MULTIPLIER_V25,Adhiraj Jagtap,2026-06-28 15:51:02.503000,18
+
+paul720810/hermes-openclaw-attack-e005-20260625-120737,Hermes OpenClaw Attack E005-20260625-120737,Paul720810,2026-06-25 12:07:41.380000,0
+
+irongm/omega-attack-v8-7-multi-phrase-n250,omega attack v8 7 multi phrase n250,IRON GM,2026-06-25 09:08:50.770000,0
+
+paul720810/hermes-openclaw-attack-e005-20260625-080918,Hermes OpenClaw Attack E005-20260625-080918,Paul720810,2026-06-25 08:09:23.147000,1
+
+qinggedada/v9-4-cell-targeted-attack,V9 4-Cell Targeted Attack,qinggedada,2026-06-25 07:27:05.637000,1
+
+qinggedada/v8-gold-targeted-multi-cell,V8 Gold-Targeted Multi-Cell,qinggedada,2026-06-25 07:26:26.120000,2
+
+kiluazen/aas-clone-best,AAS Clone Best,kiluazen,2026-06-25 10:10:37.460000,1
+
+sud0su/ai-agent-security-v8-attack,ai-agent-security-v8-attack,sud0su,2026-06-25 07:11:34.883000,4
+
+aman5153684/sentinel-alpha2co-700-break62,sentinel-alpha2co-700-break62,Aman Sharma,2026-06-26 05:04:23.207000,6
+
+qinggedada/v7-read-multipost-delete-hybrid,V7 Read-Multipost + Delete Hybrid,qinggedada,2026-06-25 06:24:06.543000,5
+
+paul720810/hermes-openclaw-attack-e005-20260625-060859,Hermes OpenClaw Attack E005-20260625-060859,Paul720810,2026-06-25 06:11:08.493000,2
+
+maj0rt0m/private-eval-proxy,Private-Eval Proxy,MAJ0RT0M,2026-06-26 00:09:20.527000,5
+
+alt0er/ai-agent-security-fresh,AI Agent Security Fresh,Pratik Acharya,2026-07-17 02:37:51.947000,6
+
+alt0er/ai-agent-security-submission,AI Agent Security Submission,Pratik Acharya,2026-06-25 00:26:10.873000,1
+
+irongm/omega-attack-v8-6-gemma-b-n450,omega attack v8 6 gemma b n450,IRON GM,2026-06-24 21:28:50.393000,1
+
+djenkivanov/local-validation-guide,Local Validation Guide,Djenk Ivanov,2026-06-24 22:10:33.250000,27
+
+pengwang91/jed-daily-20260625-620-proven-control,jed-daily-20260625-620-proven-control,Peng Wang,2026-06-25 03:26:43.873000,1
+
+paul720810/hermes-openclaw-attack-e005-20260624-160919,Hermes OpenClaw Attack E005-20260624-160919,Paul720810,2026-06-24 16:09:24.117000,1
+
+paul720810/hermes-openclaw-attack-e005-20260624-160707,Hermes OpenClaw Attack E005-20260624-160707,Paul720810,2026-06-24 16:07:11.997000,3
+
+manderson240/agent-security-mcts-attack-20260624-1526,Agent Security MCTS Attack 20260624-1526,Mike Anderson,2026-06-24 17:19:47.977000,1
+
+souldrive/the-replay-wall-and-the-guardrail-mirror,The Replay Wall and the Guardrail Mirror,souldrive,2026-09-02 12:01:15.997000,4
+
+tensorliu/jed-attack-nb-v3,JED Attack NB v3,Chang Liu,2026-06-24 13:27:39.077000,0
+
+tensorliu/jed-attack-nb-v2,JED Attack NB v2,Chang Liu,2026-06-24 14:33:20.210000,0
+
+ckyasb/ai-agent-security-attack,ai-agent-security-attack,ckyasb,2026-06-25 17:50:01.913000,1
+
+junaid512/ai-agent,AI Agent,Muhammad Junaid,2026-06-24 17:33:24.417000,0
+
+paul720810/hermes-openclaw-attack-e005-20260624-123750,Hermes OpenClaw Attack E005-20260624-123750,Paul720810,2026-06-24 13:16:14.843000,0
+
+paul720810/hermes-openclaw-attack-e005-20260624-121821,Hermes OpenClaw Attack E005-20260624-121821,Paul720810,2026-06-24 12:18:25.497000,3
+
+khj1222/aisec-exfil-fill-648,aisec-exfil-fill-648,khj1222,2026-06-24 12:00:35.967000,0
+
+khj1222/aisec-exfil-fill-644,aisec-exfil-fill-644,khj1222,2026-06-24 11:49:23.963000,0
+
+teisnestech/notebookf94cc567e4,notebookf94cc567e4,Teisnes Tech,2026-06-24 23:11:00.417000,0
+
+paul720810/hermes-openclaw-attack-e005-20260624-080921,Hermes OpenClaw Attack E005-20260624-080921,Paul720810,2026-06-24 08:09:24.687000,0
+
+bigbag1983/ai-agent-security-attack-v9,AI Agent Security Attack v9,PavelLiashkov,2026-06-24 06:25:56.863000,0
+
+paul720810/hermes-openclaw-attack-e005-20260624-060827,Hermes OpenClaw Attack E005-20260624-060827,Paul720810,2026-06-24 06:08:31.613000,0
+
+paul720810/hermes-openclaw-attack-e005-20260624-060737,Hermes OpenClaw Attack E005-20260624-060737,Paul720810,2026-06-24 06:07:41.463000,0
+
+paul720810/hermes-openclaw-attack-e005-20260624-040715,Hermes OpenClaw Attack E005-20260624-040715,Paul720810,2026-06-24 04:07:18.423000,1
+
+paul720810/hermes-openclaw-attack-e005-20260624-020556,Hermes OpenClaw Attack E005-20260624-020556,Paul720810,2026-06-24 02:06:00.377000,1
+
+paul720810/hermes-openclaw-attack-e005-20260624-020503,Hermes OpenClaw Attack E005-20260624-020503,Paul720810,2026-06-24 02:05:07.470000,1
+
+pengwang91/jed-daily-20260624-400-multi2-exploration,jed-daily-20260624-400-multi2-exploration,Peng Wang,2026-06-24 00:18:44.773000,1
+
+pengwang91/jed-daily-20260624-700-near-ref-wording,jed-daily-20260624-700-near-ref-wording,Peng Wang,2026-06-24 00:18:09.557000,1
+
+pengwang91/jed-daily-20260624-720-ref-retry-t4,jed-daily-20260624-720-ref-retry-t4,Peng Wang,2026-06-24 00:17:34.387000,1
+
+pengwang91/jed-daily-20260624-667-reference-control,jed-daily-20260624-667-reference-control,Peng Wang,2026-06-24 00:16:59.283000,1
+
+pengwang91/jed-daily-20260624-620-proven-control,jed-daily-20260624-620-proven-control,Peng Wang,2026-06-24 00:13:09.673000,1
+
+gdataranger/jed-attack-starter-v3-1-2-fixed,JED Attack ÔÇö Starter (v3.1.2 Fixed),Mark Susol,2026-06-26 14:18:35.887000,53
+
+pengwang91/jed-attack-fastco-740-t4b,JED Attack Fastco 740 T4b,Peng Wang,2026-06-23 21:33:54.967000,1
+
+pengwang91/jed-attack-alpha2co-760-t4b,JED Attack Alpha2co 760 T4b,Peng Wang,2026-06-23 21:33:53.517000,1
+
+pengwang91/jed-attack-alpha2co-720-gpu,JED Attack Alpha2co 720 GPU,Peng Wang,2026-06-23 21:29:10.367000,1
+
+pengwang91/jed-attack-alpha2co-680-gpu,JED Attack Alpha2co 680 GPU,Peng Wang,2026-06-23 21:29:08.820000,1
+
+pengwang91/jed-attack-alpha2co-700,JED Attack Alpha2co 700,Peng Wang,2026-06-23 21:05:43.377000,0
+
+aristotelesborges84/notebookb5f47fc1d9,notebookb5f47fc1d9,Aristoteles Borges Oliveira,2026-06-23 18:12:40.297000,1
+
+aristotelesborges84/notebooka2d33dc7a3,notebooka2d33dc7a3,Aristoteles Borges Oliveira,2026-06-23 17:58:06.390000,1
+
+aristotelesborges84/notebook29ca6d58e7,notebook29ca6d58e7,Aristoteles Borges Oliveira,2026-06-23 16:46:54.367000,1
+
+paul720810/hermes-openclaw-attack-e005-20260623-160628,Hermes OpenClaw Attack E005-20260623-160628,Paul720810,2026-06-23 16:06:32.717000,1
+
+paul720810/hermes-openclaw-attack-e005-20260623-160546,Hermes OpenClaw Attack E005-20260623-160546,Paul720810,2026-06-23 16:05:50.180000,1
+
+simplexcomplex/run-the-ai-agent-locally-without-a-gpu,Run the AI Agent Locally WITHOUT a GPU,Aryan Yadav,2026-06-23 18:42:01.860000,8
+
+akshitasrivastava1/omega-attack-v8-5-baseline-n500,omega attack v8 5 baseline n500,Akshita Srivastava,2026-06-23 14:30:35.493000,1
+
+arizalfirdaus123/multi-turn-exfiltration-with-adaptive-burst,Multi-Turn Exfiltration with Adaptive Burst,Arizal Muluk,2026-07-02 09:14:05.297000,62
+
+logiclab/test-deep,TEST´╝ÜDEEP,LogicLab,2026-06-26 01:04:28.800000,1
+
+yaroslavkholmirzayev/ai-agent-security-achieve-and-validate,AI Agent Security | achieve and validate ­ƒîÇ,Yaroslav kholmirzayev,2026-06-30 09:23:24.307000,29
+
+ericyhs/ai-agent-security-attack-v0-4,AI Agent Security Attack v0-4,EricYHS,2026-06-23 10:45:30.920000,3
+
+akshitasrivastava1/omega-attack-v8-4-n500-gemma-a,omega attack v8 4 n500 gemma a,Akshita Srivastava,2026-06-23 06:27:21.860000,3
+
+paul720810/hermes-openclaw-attack-e005-20260623-040534,Hermes OpenClaw Attack E005-20260623-040534,Paul720810,2026-06-23 04:05:37.637000,1
+
+paul720810/hermes-openclaw-attack-e005-20260623-020944,Hermes OpenClaw Attack E005-20260623-020944,Paul720810,2026-06-23 02:09:49.067000,1
+
+paul720810/hermes-openclaw-attack-e005-20260623-020427,Hermes OpenClaw Attack E005-20260623-020427,Paul720810,2026-06-23 02:04:30.940000,1
+
+paul720810/hermes-openclaw-attack-e005-20260623-000740,Hermes OpenClaw Attack E005-20260623-000740,Paul720810,2026-06-23 00:07:44.280000,1
+
+paul720810/hermes-openclaw-attack-e005-20260623-000650,Hermes OpenClaw Attack E005-20260623-000650,Paul720810,2026-06-23 00:06:56.197000,1
+
+lucifer19/shadow-cat-firewall,­ƒÉêÔÇìÔ¼øÔÜí Shadow Cat Firewall,Krizs├│ Gergely,2026-07-18 07:51:20.777000,75
+
+akshitasrivastava1/omega-attack-v8-3-gemma-phrase-a,omega attack v8 3 gemma phrase a,Akshita Srivastava,2026-06-22 22:39:59.277000,0
+
+anasriaz/ai-agent-security,AI Agent Security ,Anas Riaz,2026-08-29 19:06:44.697000,108
+
+paul720810/hermes-openclaw-attack-e005-20260622-181838,Hermes OpenClaw Attack E005-20260622-181838,Paul720810,2026-06-22 18:18:43.980000,1
+
+paul720810/hermes-openclaw-attack-e005-20260622-181355,Hermes OpenClaw Attack E005-20260622-181355,Paul720810,2026-06-22 18:13:58.687000,1
+
+sgzk001/ai-agent-security-smoke-submit,ai-agent-security-smoke-submit,SGzK001,2026-06-22 15:18:23.820000,1
+
+paul720810/hermes-openclaw-attack-e005-20260622-121312,Hermes OpenClaw Attack E005-20260622-121312,Paul720810,2026-06-22 12:13:17.067000,3
+
+paul720810/hermes-openclaw-attack-e005-20260622-121024,Hermes OpenClaw Attack E005-20260622-121024,Paul720810,2026-06-22 12:11:24.337000,1
+
+canqiang/aiagsec-submission,AIAgSec Submission,Xander,2026-07-17 12:53:15.090000,82
+
+saharmgh/notebook3,notebook3,Sahar Mgh,2026-07-13 15:02:11.393000,1
+
+souldrive/why-your-attack-completes-but-scores-blank,Why Your Attack Completes but Scores BLANK ­ƒº▒,souldrive,2026-09-02 12:01:10.777000,7
+
+seyominaoto/jed-attack-multi-strategy,jed attack multi strategy,Seyominaoto,2026-06-23 07:08:28.707000,0
+
+sgzk001/ai-agent-security-optimized-attack,ai-agent-security-optimized-attack,SGzK001,2026-06-26 06:02:19.530000,1
+
+rauffauzanrambe/chain-of-thought-security-mileware,Chain of Thought Security Mileware,Ra'uf Fauzan Rambe,2026-06-22 04:42:42.473000,8
+
+paul720810/hermes-openclaw-attack-e005-20260622-035525,Hermes OpenClaw Attack E005-20260622-035525,Paul720810,2026-06-22 03:55:28.923000,2
+
+paul720810/hermes-openclaw-attack-e005-20260622-025415,Hermes OpenClaw Attack E005-20260622-025415,Paul720810,2026-06-22 02:54:19.540000,2
+
+caoyupeng/v23-alpha2co-667-break60,V23 Alpha2CO 667 Break60,SpeedSci,2026-06-22 02:49:18.317000,94
+
